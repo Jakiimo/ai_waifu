@@ -1,0 +1,29 @@
+{
+  "dataset_version": "m2-tsundere-v2",
+  "source": "direct_user_feedback_in_current_conversation",
+  "review_scope": "30 sampled training scenarios, not full-corpus correctness verification",
+  "reviewed": 30,
+  "pass": 18,
+  "revise": 12,
+  "reject": 0,
+  "pending": 0,
+  "revise_categories": [
+    "study",
+    "technical"
+  ],
+  "pass_categories": [
+    "comfort",
+    "daily",
+    "relationship"
+  ],
+  "category_style_feedback": "学习与技术台词生硬，保留场景并重写口吻；此偏好也用于后续同类场景修订。",
+  "requested_examples": [
+    "hoho",
+    "怎么样，现在有听懂吗～",
+    "还真是可爱呢，就让姐姐来教教你吧"
+  ],
+  "rewrite_applied": false,
+  "corpus_review": "incomplete",
+  "csv_sha256": "84efd1bd188a35fcf6dfc0d1f1ed7ee4f4c48af210fb056e188985a79431cb08",
+  "experiment_outputs": "unchanged v2 originals; review does not approve model outputs"
+}

@@ -1,0 +1,52 @@
+{
+  "dataset_version": "m2-tsundere-v3",
+  "rubric_version": "tsundere-v3",
+  "selected": "strong_examples",
+  "status": "provisional_not_qualified",
+  "ready_to_freeze": false,
+  "probe_sha256": "96e66a2e1d7760f01379d6eb3cdd831743c2ec5f8c6b102805697d97d439d26e",
+  "inspection": "AI-assisted non-blind qualitative inspection, not human rating",
+  "scope": {
+    "dev_cases": 9,
+    "prompt_candidates": 3,
+    "generated_answers": 27,
+    "full_dev_cases": 24
+  },
+  "reason": "保留含训练区示例的候选；存在Hoho等表达，但任务理解、技术正确性与角色一致性仍未达标。不宣称改写后原模型质量改善。",
+  "observations": [
+    {
+      "case": "dev-09",
+      "finding": "strong_examples使用Hoho，但把演示顺序答成开发流程，角色词并没有解决理解问题。"
+    },
+    {
+      "case": "dev-13",
+      "finding": "三种候选对labels=-100都有错误，不能因为语气变俏皮就判合格。"
+    },
+    {
+      "case": "dev-21",
+      "finding": "被夸的情境仍偏普通助手表达，缺少预期反差。"
+    },
+    {
+      "case": "dev-22",
+      "finding": "strong_examples提到倾听吐槽，但又转向解决方案和细节追问；strong_profile仍说等待解决方案。"
+    },
+    {
+      "case": "dev-23",
+      "finding": "三种候选均能利用给定前文回答猫名薄荷；不能推断长期记忆。"
+    },
+    {
+      "case": "dev-24",
+      "finding": "strong_examples没有要求用户上线，但short自称暖男，偏离成年女性角色。"
+    }
+  ],
+  "human_review": "12 requested rewrites applied; 18 passed sample replies retained; new 12 replies not human re-rated",
+  "human_review_summary": "results/m2/human_review_summary.json",
+  "revision_report": "results/m2/revision_report.json",
+  "next_work": [
+    "按开发集实际失败继续优化基线与核查角色反应",
+    "记录新回复复读意见，准备可冻结的实验版本",
+    "最终测试集留到M5；M3正式训练未执行"
+  ],
+  "test_generations": "not_run",
+  "new_adapter_training": "not_run"
+}

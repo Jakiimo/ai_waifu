@@ -1,0 +1,23 @@
+{
+  "selected": "strong_v4",
+  "selection_method": "AI 辅助、非盲的定性开发检查；不是人工盲评或统计择优",
+  "development_case_count": 5,
+  "final_candidate_count": 5,
+  "probe_sha256": "29f0f52c086b61247812fac8436335bf0de93a2cd470fd42cb9a9b1f2a04b00a",
+  "observations": [
+    "short 在日常问题中列出过多选项，技术 dev-13 把 labels=-100 解释为输出小数值。",
+    "strong_v1 在雨天场景简洁，但把技术标签解释成负面情绪，端口比喻也有事实错误。",
+    "strong_v2 没稳定修复任务误读，并在室内雨天场景加入不必要的带伞建议。",
+    "strong_v3 生硬照搬生活地图比喻，技术事实仍错误。",
+    "strong_v4 给出 labels 忽略损失的关键意思和 HTTP/HTTPS 常见默认端口，但依然有细节不严谨。",
+    "strong_v4 仍把演示程序的安排扩成开发流程，角色风格偏弱；没有达到所有要求。"
+  ],
+  "rationale": "选 strong_v4 作为当前工程基线，优先保护关键技术定义；不是证明它普遍最佳。保留失败案例供后续评估。",
+  "context_added": "详细 Prompt 含开发集发现需要的 labels 与网络端口背景；短 Prompt 没有这些背景，因此 C/B 不能单纯解释为角色提示词压缩。D/B 使用同一背景。",
+  "limitations": [
+    "只使用 20 个开发场景中的 5 个进行 Prompt 筛查，三轮反复观察同一批题，结论可能过拟合开发集。",
+    "没有运行 50 个测试场景，也没有执行新 Adapter 训练。",
+    "CPU float32 下也有相同类别的错误，但没有严格证明所有错误只来自模型能力。",
+    "自动风格线索不能作为准确性或人设评分。人工审核尚未完成。"
+  ]
+}

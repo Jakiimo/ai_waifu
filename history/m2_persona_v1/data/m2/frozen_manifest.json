@@ -1,0 +1,25 @@
+{
+  "dataset_version": "m2-persona-v1",
+  "persona": "俏皮、偏二次元，轻快但有帮助",
+  "selected_strong_prompt": "strong_v4",
+  "rubric_version": "persona-v1",
+  "files": {
+    "configs/m2.json": "76e1ba6dff465c7ad171e7abfd4b268075ea2e5a47c5e9a15fd4ac9eb6a1f65a",
+    "configs/m2_prompts.json": "98f5124a4c2ea4b235fc295c2fd788f631054511c47cb3ad6780f03460e1705b",
+    "data/m2/raw_cards.jsonl": "8f5bfd9857158c2b780db53db8d2d9db67820c743e8759ea1abeebd39a5f0146",
+    "data/m2/train.jsonl": "256a2ac68af75467ab580506d39949b927826b14024b5cf43f7b44fcecc405e5",
+    "data/m2/dev_scenarios.jsonl": "81edaf2397ff983343328f4816d899d0a66d3be6c6cc67ab4d2d1dd04f30be1f",
+    "data/test_scenarios.jsonl": "a7b74e00a23ece52f74407fede21c928cd396568d45c6a92f72b8d6ef3fae8be",
+    "configs/m2_rubric.json": "040d1e14fac0810e4293d05674a86c671bfae56e67991159a95311bd7d3d5525"
+  },
+  "evidence_files": {
+    "results/m2/prompt_probe.json": "29f0f52c086b61247812fac8436335bf0de93a2cd470fd42cb9a9b1f2a04b00a",
+    "results/m2/prompt_decision.json": "2693a9e52f957f70be6ca3891eed1ac693e871096b57447517578b146f9c95db",
+    "results/m2/data_report.json": "37299829e546b5f5b4cdbb89c22892cf2731395017a8226b8aeb3c30324053a4"
+  },
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "human_review": "pending",
+  "test_generations": "not_run",
+  "note": "冻结用于避免调参时改动标准，不证明人工审核完成。若需改数据，创建新版本并重新冻结。"
+}

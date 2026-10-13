@@ -1,0 +1,13 @@
+{
+  "phase": "trained_saved",
+  "process_pid": 36176,
+  "started_at_utc": "2026-10-13T12:20:39.985069+00:00",
+  "run_id": "m3_tsundere_v3_r8_e2",
+  "resumed_from": null,
+  "global_step": 180,
+  "max_steps": 180,
+  "epoch": 2.0,
+  "updated_at_utc": "2026-10-13T12:34:02.052988+00:00",
+  "last_checkpoint_step": 180,
+  "completed_at_utc": "2026-10-13T12:34:15.785735+00:00"
+}

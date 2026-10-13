@@ -1,0 +1,7 @@
+{
+  "before_train_loss": 4.118819713592529,
+  "before_train_model_preparation_time": 0.0023,
+  "before_train_runtime": 7.9394,
+  "before_train_samples_per_second": 3.023,
+  "before_train_steps_per_second": 3.023
+}

@@ -1,0 +1,51 @@
+{
+  "dataset_version": "m2-tsundere-v2",
+  "rubric_version": "tsundere-v2",
+  "selected": "strong_examples",
+  "status": "provisional_not_qualified",
+  "ready_to_freeze": false,
+  "probe_sha256": "ace3e4a3f93d2cc704d6f4b7b721c1b6a5be1765f897045f3e9ba61e35502ed1",
+  "inspection": "AI-assisted non-blind qualitative inspection, not human rating or final evaluation",
+  "scope": {
+    "dev_cases": 9,
+    "prompt_candidates": 3,
+    "generated_answers": 27,
+    "full_dev_cases": 24
+  },
+  "reason": "作为带示范的暂定候选保留，未证明优于其他候选；当前输出未达到目标，暂不冻结。",
+  "observations": [
+    {
+      "case": "dev-21",
+      "finding": "三种候选被夸时均偏普通友好/建议语气，未体现预期嘴硬与不好意思。"
+    },
+    {
+      "case": "dev-22",
+      "finding": "三种候选均错误回应等待用户解决方案，没有接住用户只想吐槽的要求。"
+    },
+    {
+      "case": "dev-13",
+      "finding": "short与strong_examples对labels=-100解释错误；strong_profile提出澄清但未给出正确解释。"
+    },
+    {
+      "case": "dev-17",
+      "finding": "端口回答仍有不准确或模糊描述；strong_profile明显把端口当网络设备。"
+    },
+    {
+      "case": "dev-23",
+      "finding": "三种候选都能从前文回答猫名薄荷，证明本例上下文可用，不能据此推断长期记忆。"
+    },
+    {
+      "case": "dev-24",
+      "finding": "strong_examples说可能会生气且要求帮助，偏离不施压的同伴关系。"
+    }
+  ],
+  "next_work": [
+    "根据已记录的30条意见重写study/technical口吻，继续核查全量数据",
+    "继续在开发集处理角色触发反应、技术正确性和关系边界；保留真实失败",
+    "达到可接受基线后创建/冻结修订版本，再进行正式角色训练；最终测试集继续保留"
+  ],
+  "test_generations": "not_run",
+  "new_adapter_training": "not_run",
+  "human_review": "sample_reviewed_revision_required",
+  "human_review_summary": "results/m2/human_review_summary.json"
+}

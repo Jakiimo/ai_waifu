@@ -1,0 +1,17 @@
+{
+  "run_id": "m3_tsundere_v3_r8_e2",
+  "verified_reload": true,
+  "training_updates": 180,
+  "development_observations": 18,
+  "final_test": "not_run",
+  "files": {
+    "results/m3_tsundere_v3_r8_e2/training.json": "a94627c6a08c65eaf6e7403405f13ebd70aabbceea2bdd5a8069f238d2cc5771",
+    "results/m3_tsundere_v3_r8_e2/reload_verification.json": "f4d05ca2dfd74160025480247f7626ba9c2ac9dff5068aac9efa395cefd050ce",
+    "results/m3_tsundere_v3_r8_e2/development_comparison.json": "a3b14da274bb43e889377f4d721a055c5fe42fa003552eb7679bb20049b0573a",
+    "outputs/m3_tsundere_v3_r8_e2/run_manifest.json": "a94627c6a08c65eaf6e7403405f13ebd70aabbceea2bdd5a8069f238d2cc5771",
+    "outputs/m3_tsundere_v3_r8_e2/training_script.py": "c216ec6f43261f863b7c7d5e64d0c7a91bdb1ea241e4bd5ab23fccf2dc2fef62",
+    "outputs/m3_tsundere_v3_r8_e2/training_config.json": "4e9d3ed79b0c5c4cc3e85e0b4104b49c80dd13e0e66d1619490c7ac58b4cf853",
+    "outputs/m3_tsundere_v3_r8_e2/inference_script.py": "5587d021efa204c3facf9fafd4de5fa12beeaa53ab28e86e5cdd9728daa00808",
+    "outputs/m3_tsundere_v3_r8_e2/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6"
+  }
+}

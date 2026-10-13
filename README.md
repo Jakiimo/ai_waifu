@@ -4,7 +4,7 @@
 
 当前角色是“凛音”，嘴硬心软的傲娇型，见 [角色卡](docs/凛音_角色卡.md)。M2 主流程已经统一到 `m2-tsundere-v3`：360 条训练样本／120 个场景族（含60条带前文样本）、24 个开发场景、60 个最终测试场景。当前 [30条台词抽查](results/m2/review_samples.md) 与 [开发集对照](results/m2/prompt_comparison.md) 都对应这个版本。
 
-M1本地推理、小样本训练和新进程重载已通过。M2已完成v3数据与实验准备：当前30条抽查全部pass，23项检查通过，固定9题×3种Prompt的27条实际回答已保存，本轮详细基线选定strong_examples并冻结。原模型的角色和技术失败保留，不宣称模型质量合格或微调改善。M3正式训练、M4 Demo、M5最终评测尚未执行。
+M1本地推理、小样本训练和新进程重载已通过。M2已完成v3数据与实验准备：当前30条抽查全部pass，23项检查通过，固定9题×3种Prompt的27条实际回答已保存，本轮详细基线选定strong_examples并冻结。原模型的角色和技术失败保留，不宣称模型质量合格或微调改善。M3已实际训练360条实例×2轮、完成180次更新和新进程重载；开发loss从4.1188降到3.3701，Adapter约4.17MiB。当前生成仍有训话、技术错误和约束偏离，未宣称质量提升。M4 Demo与M5最终评测尚未执行。
 
 本次版本混用的原因与修复见 [M2一致性排查](docs/M2_一致性排查.md)。旧版完整准备包保存在 `history/m2_persona_v1/` 和 `history/m2_tsundere_v2/`；`data/m2_tsundere_v2/` 仅保留首次候选快照，主流程现在读取 `data/m2/`。
 
@@ -12,11 +12,13 @@ M1本地推理、小样本训练和新进程重载已通过。M2已完成v3数�
 
 最新台词偏好与审核结果见 [人工抽查反馈](docs/M2_人工抽查反馈.md)。
 
-实际记录见 [M1 验证记录](docs/M1_验证记录.md) 和 [M2 验证记录](docs/M2_验证记录.md)。
+实际记录见 [M1 验证记录](docs/M1_验证记录.md) 、[M2 验证记录](docs/M2_验证记录.md) 和 [M3 验证记录](docs/M3_验证记录.md)。
 
 ## 从这里开始
 
 - [M1 入门教程](docs/M1_入门教程.md)：适合没有微调经验的读者，按步骤运行并解释原理。
+- [M3 入门教程](docs/M3_入门教程.md)：正式训练、新进程重载与开发观察，逐步解释原理。
+- [M3 开发对照](results/m3_tsundere_v3_r8_e2/development_comparison.md)：真实原模型与LoRA回答，保留失败。
 - [M2 入门教程](docs/M2_入门教程.md)：理解训练/开发/测试、数据增强、强 Prompt 基线与冻结。
 - [M2 数据说明](data/m2/DATA_CARD.md)：合成来源、360 条与 120 个场景的区别、多轮监督和人工审核状态。
 - [开发集 Prompt 对照](results/m2/prompt_comparison.md) 与 [选择记录](results/m2/prompt_decision.md)：真实输出和失败分析。
@@ -51,7 +53,19 @@ M2 当前检查命令：
 .venv/bin/python scripts/m2.py status
 ```
 
-准备包已冻结，prepare_data校验文件，dev-probe核对并复用冻结回答，freeze校验已有清单，均不覆盖记录。当前30条示范全部pass；具体学习步骤及只读标签练习见M2教程第5节。M1的train命令只处理12条教学样本，M3需使用正式角色训练入口。
+准备包已冻结，prepare_data校验文件，dev-probe核对并复用冻结回答，freeze校验已有清单，均不覆盖记录。当前30条示范全部pass；具体学习步骤及只读标签练习见M2教程第5节。M1的train命令只处理12条教学样本，M3使用下方独立训练入口。
+
+M3本轮已训练完成，可以按教程检查：
+
+```bash
+.venv/bin/python scripts/m3.py inspect-data
+.venv/bin/python scripts/m3.py train
+.venv/bin/python scripts/m3.py verify
+.venv/bin/python scripts/m3.py dev-compare
+.venv/bin/python scripts/m3.py status
+```
+
+同一run的train不会覆盖或重复训练，dev-compare会复用当前开发观察；verify实际从磁盘加载模型。正式配置在configs/m3.json，独立产物在outputs/m3_tsundere_v3_r8_e2/，记录在results/m3_tsundere_v3_r8_e2/。
 
 本机采用 PyTorch MPS、Transformers 和 PEFT 的普通 LoRA，不是 4-bit QLoRA。`.venv` 使用 Python 3.12；完整实测依赖在 `requirements-lock.txt`。
 

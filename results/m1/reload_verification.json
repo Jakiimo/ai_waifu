@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-13T08:12:14.461921+00:00",
+  "new_process_pid": 34060,
+  "device": "mps",
+  "different_process_from_training": true,
+  "base_logits_match": true,
+  "adapter_logits_match": true,
+  "reload_max_logit_error": 0.0,
+  "adapter_effect_max_logit_delta": 4.71875,
+  "answer": "学习的过程可能会有起伏，感到迷茫是很正常的。你可以尝试以下方法：\n\n1. **回顾与总结**：花时间回顾当天学的内容，试着总结一下重点和难点。\n2. **寻找资源**：如果觉得某些内容难以理解，可以找一些相关的视频教程或者书籍来辅助学习。\n3. **实践应用**：理论知识需要通过实践才能真正掌握。尝试将所学的知识应用到实际中去，比如做练习题或",
+  "answer_matches_before_reload": true,
+  "verified": true,
+  "config_sha256": "ccbd6be1aab3f4a08806757015582e3008f3d4f8c07f99153531af24a22df4bb",
+  "data_sha256": "144d509b4c8dd97e3c52ce3623e5a7ca60425464ee34659f0ce6e543a1506aee",
+  "adapter_sha256": "614b46b03d2946b1784025b4e3add6f04e723c79f60546f5f385db4592ddabf9",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+}

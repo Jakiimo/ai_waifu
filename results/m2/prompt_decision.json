@@ -1,0 +1,53 @@
+{
+  "dataset_version": "m2-tsundere-v3",
+  "rubric_version": "tsundere-v3",
+  "selected": "strong_examples",
+  "status": "selected_with_known_limitations",
+  "ready_to_freeze": true,
+  "probe_sha256": "e87a69c0af2713560276ae831969bac9cf4b330df5ef47b1d5bedb1963f8ba8d",
+  "inspection": "AI-assisted non-blind qualitative inspection, not human rating",
+  "scope": {
+    "dev_cases": 9,
+    "prompt_candidates": 3,
+    "generated_answers": 27,
+    "full_dev_cases": 24
+  },
+  "reason": "本轮固定strong_examples作为详细Prompt基线：包含关系、学习与技术训练区示范，适合检验后续Adapter的额外变化。当前三种候选的实际失败保留，不宣称最优、效果合格或质量提升。冻结表示本轮实验条件选定，不要求原模型已经达到目标风格。",
+  "observations": [
+    {
+      "case": "dev-09",
+      "finding": "strong_examples使用Hoho，但把演示顺序答成开发流程，角色词并没有解决理解问题。"
+    },
+    {
+      "case": "dev-13",
+      "finding": "三种候选对labels=-100都有错误，不能因为语气变俏皮就判合格。"
+    },
+    {
+      "case": "dev-21",
+      "finding": "被夸的情境仍偏普通助手表达，缺少预期反差。"
+    },
+    {
+      "case": "dev-22",
+      "finding": "strong_examples提到倾听吐槽，但又转向解决方案和细节追问；strong_profile仍说等待解决方案。"
+    },
+    {
+      "case": "dev-23",
+      "finding": "三种候选均能利用给定前文回答猫名薄荷；不能推断长期记忆。"
+    },
+    {
+      "case": "dev-24",
+      "finding": "strong_examples没有要求用户上线，但short自称暖男，偏离成年女性角色。"
+    }
+  ],
+  "human_review": "user explicitly approved all 30 current sampled training targets; not model outputs or full corpus",
+  "human_review_summary": "results/m2/human_review_summary.json",
+  "revision_report": "results/m2/revision_report.json",
+  "next_work": [
+    "学习与复跑M2的数据结构、标签和实验校验",
+    "M3接入正式LoRA训练，使用当前冻结数据和多轮编码",
+    "M5在60个冻结测试场景上生成四组回答并人工评估，报告失败与收益"
+  ],
+  "test_generations": "not_run",
+  "new_adapter_training": "not_run",
+  "quality_status": "known task-understanding, factual and persona failures retained"
+}

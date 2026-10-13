@@ -1,0 +1,24 @@
+{
+  "dataset_version": "m2-tsundere-v2",
+  "persona": "凛音，嘴硬心软的傲娇型",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "seed": 42,
+  "max_length": 256,
+  "max_input_tokens": 768,
+  "max_new_tokens": 256,
+  "near_duplicate_threshold": 0.65,
+  "selected_strong_prompt": "strong_examples",
+  "probe_ids": [
+    "dev-01",
+    "dev-05",
+    "dev-09",
+    "dev-13",
+    "dev-17",
+    "dev-21",
+    "dev-22",
+    "dev-23",
+    "dev-24"
+  ],
+  "rubric_version": "tsundere-v2",
+  "notes": "120 个场景族、360 条训练实例；包含60条带前文样本，只监督最后回复。全部 Prompt 不附加旧版领域知识提示。"
+}

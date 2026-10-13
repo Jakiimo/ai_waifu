@@ -1,0 +1,41 @@
+{
+  "dataset_version": "m2-tsundere-v3",
+  "persona": "凛音，嘴硬心软；学习技术时俏皮、带姐姐感",
+  "selected_strong_prompt": "strong_examples",
+  "rubric_version": "tsundere-v3",
+  "files": {
+    "configs/m2.json": "6e31b78ba9c4ab617852204f003a9b11e98b51adca1174d8ff35cc75043af368",
+    "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+    "data/m2/raw_cards.jsonl": "0c0583133fc59af24b08fb2d495908ed6fabca93e7bef9fda47c25b246a85eaa",
+    "data/m2/train.jsonl": "79f9214bc52c485440b8138c1801cc021d655a6f469a3011077c74573c16a6cc",
+    "data/m2/dev_scenarios.jsonl": "e737b3e92bbb4107a094288be2cb0ebb317a0b1e176b1715091b2099ec0b120d",
+    "data/test_scenarios.jsonl": "e99b81ff1ca0622fc6b67f1bb9208e868155090819cf1ec25a649c382a6fdfa2",
+    "configs/m2_rubric.json": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+    "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27",
+    "prepare_data.py": "29026c34a415cfbaa88d17688d1c9e495cc6ae8511136f291074c4c5c85f10cc",
+    "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+    "scripts/m2.py": "36d67b89df2e1fc64ec03471b6747b5dafc43d5dc58c4865e407a2fb6f7c5e58"
+  },
+  "evidence_files": {
+    "results/m2/prompt_probe.json": "e87a69c0af2713560276ae831969bac9cf4b330df5ef47b1d5bedb1963f8ba8d",
+    "results/m2/prompt_decision.json": "ff49ce6009c4662730dc86a860f71706093559670b7535c8d9afcef743e931c8",
+    "results/m2/data_report.json": "e273a4705ef58d93654fdf7787d5bcad6d0e993451af2a339bf2f373fd6158c6"
+  },
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "human_review": {
+    "review_scope": "sampled training targets, not full-corpus review",
+    "sample_size": 30,
+    "reviewed": 30,
+    "pass": 30,
+    "revise": 0,
+    "reject": 0,
+    "pending": 0,
+    "revisions_applied": 12,
+    "previous_version_reviewed": 30,
+    "status": "sample_review_complete",
+    "corpus_review": "not_verified"
+  },
+  "test_generations": "not_run",
+  "note": "冻结用于避免调参时改动标准，不证明人工审核完成。若需改数据，创建新版本并重新冻结。"
+}

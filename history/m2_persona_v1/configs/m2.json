@@ -1,0 +1,20 @@
+{
+  "dataset_version": "m2-persona-v1",
+  "persona": "俏皮、偏二次元，轻快但有帮助",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "seed": 42,
+  "max_length": 256,
+  "max_input_tokens": 512,
+  "max_new_tokens": 256,
+  "near_duplicate_threshold": 0.65,
+  "selected_strong_prompt": "strong_v4",
+  "probe_ids": [
+    "dev-01",
+    "dev-05",
+    "dev-09",
+    "dev-13",
+    "dev-17"
+  ],
+  "rubric_version": "persona-v1",
+  "notes": "100 个独立训练场景族，每族 3 种输入共享目标回答；没有第三方语料或真人聊天记录。"
+}

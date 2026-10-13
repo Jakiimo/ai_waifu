@@ -1,0 +1,2293 @@
+{
+  "dataset_version": "m2-tsundere-v3",
+  "persona": "凛音，嘴硬心软；学习技术时俏皮、带姐姐感",
+  "raw_families": 120,
+  "raw_variants": 360,
+  "contextual_examples": 60,
+  "single_turn_examples": 300,
+  "rubric_version": "tsundere-v3",
+  "training_examples": 360,
+  "training_families": 120,
+  "unique_target_answers": 120,
+  "dev_scenarios": 24,
+  "test_scenarios": 60,
+  "removed": [],
+  "train_categories": {
+    "daily": 75,
+    "comfort": 75,
+    "study": 75,
+    "technical": 75,
+    "relationship": 60
+  },
+  "dev_categories": {
+    "daily": 4,
+    "comfort": 4,
+    "study": 4,
+    "technical": 4,
+    "stability": 4,
+    "relationship": 4
+  },
+  "test_categories": {
+    "daily": 10,
+    "comfort": 10,
+    "study": 10,
+    "technical": 10,
+    "stability": 10,
+    "relationship": 10
+  },
+  "max_training_tokens": 152,
+  "max_inference_input_tokens": 676,
+  "isolation": {
+    "threshold": 0.65,
+    "near_pairs_at_threshold": 0,
+    "closest_cross_split_pairs": [
+      {
+        "left": "v3-train-technical-07-v2",
+        "right": "test-technical-07",
+        "similarity": 0.3667
+      },
+      {
+        "left": "v3-train-technical-01-v1",
+        "right": "test-technical-07",
+        "similarity": 0.3103
+      },
+      {
+        "left": "v3-train-technical-02-v2",
+        "right": "test-technical-07",
+        "similarity": 0.25
+      },
+      {
+        "left": "v3-train-daily-21-v1",
+        "right": "test-daily-08",
+        "similarity": 0.2353
+      },
+      {
+        "left": "v3-train-technical-17-v3",
+        "right": "test-technical-04",
+        "similarity": 0.2273
+      },
+      {
+        "left": "v3-train-technical-03-v2",
+        "right": "test-technical-04",
+        "similarity": 0.2174
+      },
+      {
+        "left": "v3-train-technical-10-v2",
+        "right": "test-technical-04",
+        "similarity": 0.2174
+      },
+      {
+        "left": "v3-train-technical-12-v2",
+        "right": "test-technical-04",
+        "similarity": 0.2174
+      },
+      {
+        "left": "v3-train-technical-16-v3",
+        "right": "test-technical-04",
+        "similarity": 0.2174
+      },
+      {
+        "left": "v3-train-technical-18-v3",
+        "right": "test-technical-04",
+        "similarity": 0.2174
+      }
+    ],
+    "limitation": "字符三元组检查，不是语义泄漏证明；同族改写有意保留，需人工抽样。"
+  },
+  "token_checks": [
+    {
+      "id": "v3-train-daily-01-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-01-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-02-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 35,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-02-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-02-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-03-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 40,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-03-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-03-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-04-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-04-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-05-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 48,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-daily-05-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-daily-05-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-daily-06-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 36,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 36,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-daily-06-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 36,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-07-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-07-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-daily-07-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-08-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-08-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-08-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-09-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 30,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-daily-09-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 30,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-daily-09-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 30,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-daily-10-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 44,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-10-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 44,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-daily-10-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 44,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-11-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-11-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-11-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-12-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-12-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-12-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-13-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-13-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-13-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-14-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-14-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-15-v1",
+      "prompt_tokens": 77,
+      "answer_tokens": 43,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-daily-15-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 43,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-15-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-daily-16-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 41,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-16-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-16-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-17-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 32,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-17-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 32,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-daily-17-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 32,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-daily-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-18-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-18-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-19-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-19-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-19-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-20-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-20-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 40,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-20-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-21-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 43,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-21-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 43,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-21-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 43,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-daily-22-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-daily-22-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 42,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-22-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 42,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-23-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 33,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-daily-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 33,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-23-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 33,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-24-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 38,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-24-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-25-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-25-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-25-v3",
+      "prompt_tokens": 77,
+      "answer_tokens": 39,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-01-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-01-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-comfort-02-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-02-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-02-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-03-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-03-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 40,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-04-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-04-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-04-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-05-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-05-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-05-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 39,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-06-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 31,
+      "padding_tokens": 153
+    },
+    {
+      "id": "v3-train-comfort-06-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 31,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-06-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 31,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-comfort-07-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-07-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-07-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-08-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-08-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-08-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 37,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-09-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 36,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-comfort-09-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 36,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-09-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 36,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-10-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 39,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-10-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 39,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-10-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-11-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-11-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 43,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-11-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 43,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-comfort-12-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-12-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 37,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-12-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-13-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 35,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-13-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 35,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-13-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-14-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 32,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-comfort-14-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 32,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 32,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-comfort-15-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-15-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 42,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-15-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-16-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 29,
+      "padding_tokens": 153
+    },
+    {
+      "id": "v3-train-comfort-16-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 29,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-comfort-16-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 29,
+      "padding_tokens": 154
+    },
+    {
+      "id": "v3-train-comfort-17-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-comfort-17-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-17-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-18-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-18-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-19-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-19-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-19-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-20-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 34,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-20-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 34,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-comfort-20-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 34,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-comfort-21-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 41,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-21-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 41,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-21-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-22-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 43,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-comfort-22-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 43,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-22-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-23-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-23-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 40,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-23-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-24-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-24-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-24-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-25-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-25-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-study-01-v1",
+      "prompt_tokens": 77,
+      "answer_tokens": 53,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-study-01-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-01-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-02-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 44,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-02-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 44,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-02-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 44,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-03-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-03-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-04-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-04-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-05-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 46,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-05-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 46,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-05-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 46,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-06-v1",
+      "prompt_tokens": 76,
+      "answer_tokens": 49,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-06-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 49,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-07-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 50,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-07-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 50,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-07-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 50,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-08-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-08-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-08-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-09-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-09-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-09-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 47,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-10-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-10-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-10-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-11-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 46,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-11-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-11-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 46,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-12-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-12-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 45,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-12-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 45,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-13-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-13-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-13-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 45,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-14-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 53,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-14-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-14-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-15-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 50,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-15-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 50,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-15-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 50,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-16-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-16-v2",
+      "prompt_tokens": 77,
+      "answer_tokens": 47,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-16-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-17-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 51,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-17-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 51,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-study-17-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 51,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 45,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-18-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-18-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 45,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-19-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-19-v2",
+      "prompt_tokens": 77,
+      "answer_tokens": 46,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-19-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-20-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-20-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-20-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 54,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-study-21-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 48,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-21-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 48,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-21-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-22-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-22-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-22-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 48,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-23-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-23-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 53,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-study-24-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-24-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 49,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-25-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-25-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 49,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-01-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 59,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 59,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-01-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 59,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-02-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 56,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-02-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 56,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-02-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 56,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-03-v1",
+      "prompt_tokens": 69,
+      "answer_tokens": 57,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 57,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-03-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 57,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-04-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 47,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-technical-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 47,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-technical-04-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-technical-05-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 52,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-technical-05-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 52,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-05-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 52,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-06-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 62,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 62,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-technical-06-v3",
+      "prompt_tokens": 77,
+      "answer_tokens": 62,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-technical-07-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 53,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-07-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-07-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-08-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-08-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-08-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 60,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-technical-09-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-09-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-09-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-10-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 51,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-technical-10-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 51,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-technical-10-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 51,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-11-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 56,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-11-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 56,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-11-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 56,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-12-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 60,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-12-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-12-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-13-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-13-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-13-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-14-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 61,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-technical-14-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 61,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 61,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-technical-15-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 53,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-technical-15-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 53,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-15-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 53,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-16-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 54,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-16-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 54,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-16-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-17-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-17-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 60,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-17-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-18-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 54,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-technical-18-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-18-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-19-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 58,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-19-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 58,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-19-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 58,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-20-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-20-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 54,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-20-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-21-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 79,
+      "padding_tokens": 105
+    },
+    {
+      "id": "v3-train-technical-21-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 79,
+      "padding_tokens": 104
+    },
+    {
+      "id": "v3-train-technical-21-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 79,
+      "padding_tokens": 105
+    },
+    {
+      "id": "v3-train-technical-22-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 54,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-22-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-22-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-23-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 64,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 64,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-23-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 64,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-24-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 49,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-technical-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 49,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-24-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-technical-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 65,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-technical-25-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 65,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-25-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 65,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-relationship-01-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 32,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-01-v2",
+      "prompt_tokens": 97,
+      "answer_tokens": 32,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-01-v3",
+      "prompt_tokens": 101,
+      "answer_tokens": 32,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-02-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 37,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-relationship-02-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 37,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-relationship-02-v3",
+      "prompt_tokens": 99,
+      "answer_tokens": 37,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-03-v1",
+      "prompt_tokens": 94,
+      "answer_tokens": 34,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-relationship-03-v2",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-03-v3",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 30,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v2",
+      "prompt_tokens": 99,
+      "answer_tokens": 30,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 30,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-05-v1",
+      "prompt_tokens": 108,
+      "answer_tokens": 28,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-05-v2",
+      "prompt_tokens": 105,
+      "answer_tokens": 28,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-05-v3",
+      "prompt_tokens": 107,
+      "answer_tokens": 28,
+      "padding_tokens": 121
+    },
+    {
+      "id": "v3-train-relationship-06-v1",
+      "prompt_tokens": 101,
+      "answer_tokens": 40,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-06-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 40,
+      "padding_tokens": 116
+    },
+    {
+      "id": "v3-train-relationship-06-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 40,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-07-v1",
+      "prompt_tokens": 100,
+      "answer_tokens": 33,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-07-v2",
+      "prompt_tokens": 98,
+      "answer_tokens": 33,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-relationship-07-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 33,
+      "padding_tokens": 121
+    },
+    {
+      "id": "v3-train-relationship-08-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-08-v2",
+      "prompt_tokens": 101,
+      "answer_tokens": 31,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-relationship-08-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-09-v1",
+      "prompt_tokens": 97,
+      "answer_tokens": 33,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-09-v2",
+      "prompt_tokens": 94,
+      "answer_tokens": 33,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-relationship-09-v3",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-10-v1",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-10-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 34,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-relationship-10-v3",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-11-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 31,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-11-v2",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-11-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 31,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-relationship-12-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 41,
+      "padding_tokens": 116
+    },
+    {
+      "id": "v3-train-relationship-12-v2",
+      "prompt_tokens": 102,
+      "answer_tokens": 41,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-12-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 41,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-13-v1",
+      "prompt_tokens": 103,
+      "answer_tokens": 40,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-13-v2",
+      "prompt_tokens": 99,
+      "answer_tokens": 40,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-relationship-13-v3",
+      "prompt_tokens": 103,
+      "answer_tokens": 40,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-14-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-14-v2",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-14-v3",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-15-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 29,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-relationship-15-v2",
+      "prompt_tokens": 95,
+      "answer_tokens": 29,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-relationship-15-v3",
+      "prompt_tokens": 97,
+      "answer_tokens": 29,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-relationship-16-v1",
+      "prompt_tokens": 93,
+      "answer_tokens": 33,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-relationship-16-v2",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-16-v3",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-17-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 40,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-17-v2",
+      "prompt_tokens": 101,
+      "answer_tokens": 40,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-17-v3",
+      "prompt_tokens": 97,
+      "answer_tokens": 40,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-relationship-18-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 38,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-18-v2",
+      "prompt_tokens": 104,
+      "answer_tokens": 38,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-18-v3",
+      "prompt_tokens": 106,
+      "answer_tokens": 38,
+      "padding_tokens": 112
+    },
+    {
+      "id": "v3-train-relationship-19-v1",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-19-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-19-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-20-v1",
+      "prompt_tokens": 105,
+      "answer_tokens": 43,
+      "padding_tokens": 108
+    },
+    {
+      "id": "v3-train-relationship-20-v2",
+      "prompt_tokens": 107,
+      "answer_tokens": 43,
+      "padding_tokens": 106
+    },
+    {
+      "id": "v3-train-relationship-20-v3",
+      "prompt_tokens": 107,
+      "answer_tokens": 43,
+      "padding_tokens": 106
+    }
+  ],
+  "source": "project_authored_ai_assisted",
+  "files": {
+    "configs/m2.json": "6e31b78ba9c4ab617852204f003a9b11e98b51adca1174d8ff35cc75043af368",
+    "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+    "data/m2/raw_cards.jsonl": "0c0583133fc59af24b08fb2d495908ed6fabca93e7bef9fda47c25b246a85eaa",
+    "data/m2/train.jsonl": "79f9214bc52c485440b8138c1801cc021d655a6f469a3011077c74573c16a6cc",
+    "data/m2/dev_scenarios.jsonl": "e737b3e92bbb4107a094288be2cb0ebb317a0b1e176b1715091b2099ec0b120d",
+    "data/test_scenarios.jsonl": "e99b81ff1ca0622fc6b67f1bb9208e868155090819cf1ec25a649c382a6fdfa2",
+    "configs/m2_rubric.json": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+    "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27",
+    "prepare_data.py": "29026c34a415cfbaa88d17688d1c9e495cc6ae8511136f291074c4c5c85f10cc",
+    "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+    "scripts/m2.py": "fcde79bb97f67939b906e5ef8178557ddf5ae13a7d9761bf665659865dbd0080"
+  },
+  "human_review": "sample_review_incomplete",
+  "sample_review": {
+    "review_scope": "sampled training targets, not full-corpus review",
+    "sample_size": 30,
+    "reviewed": 18,
+    "pass": 18,
+    "revise": 0,
+    "reject": 0,
+    "pending": 12,
+    "revisions_applied": 12,
+    "previous_version_reviewed": 30,
+    "status": "sample_review_incomplete",
+    "corpus_review": "not_verified",
+    "dataset_version": "m2-tsundere-v3",
+    "csv_sha256": "d588cc60616cb4440176f9862570332ca087fbe4c513ce4f680f51dadf3729b3",
+    "source": "current CSV; previous verdicts retained separately from rewritten replies",
+    "rewrite_applied": true,
+    "revised_families": 50,
+    "revision_report_sha256": "f3888a5c39c0e1c05ff5074069c4b5ddf66a28906588cd00ae3396ea09b810d1"
+  }
+}

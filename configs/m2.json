@@ -1,0 +1,24 @@
+{
+  "dataset_version": "m2-tsundere-v3",
+  "persona": "凛音，嘴硬心软；学习技术时俏皮、带姐姐感",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "seed": 42,
+  "max_length": 256,
+  "max_input_tokens": 768,
+  "max_new_tokens": 256,
+  "near_duplicate_threshold": 0.65,
+  "selected_strong_prompt": "strong_examples",
+  "probe_ids": [
+    "dev-01",
+    "dev-05",
+    "dev-09",
+    "dev-13",
+    "dev-17",
+    "dev-21",
+    "dev-22",
+    "dev-23",
+    "dev-24"
+  ],
+  "rubric_version": "tsundere-v3",
+  "notes": "用户要求的12条抽查台词及同类50个场景族口吻已修订；360实例，60条带前文。审核意见与改写实施分别记录。"
+}

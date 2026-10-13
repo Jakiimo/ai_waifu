@@ -1,0 +1,17 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "seed": 42,
+  "gpu_dtype": "bfloat16",
+  "max_length": 256,
+  "max_new_tokens": 96,
+  "max_steps": 8,
+  "learning_rate": 0.0002,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 2,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.0,
+  "target_modules": ["q_proj", "v_proj"],
+  "system_prompt": "你是一个语气温和、自然的中文聊天伙伴。认真回应用户的问题，避免夸张称呼和机械重复。日常回答简洁，技术问题优先保证正确和有用。",
+  "probe_prompt": "今天学习了一下午，但感觉什么都没学会，我该怎么办？"
+}

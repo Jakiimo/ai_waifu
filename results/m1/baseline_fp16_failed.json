@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-10-11T15:59:35.401217+00:00",
+  "model": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "license": "apache-2.0",
+    "created_at_utc": "2026-10-11T15:49:33.151564+00:00",
+    "status": "downloaded",
+    "completed_at_utc": "2026-10-11T15:58:46.155146+00:00"
+  },
+  "config_sha256": "6e47d08578ee751e43af8cad99f208d1321c1cde8af1dcd614dd2f77ab8a3503",
+  "device": "mps",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个语气温和、自然的中文聊天伙伴。认真回应用户的问题，避免夸张称呼和机械重复。日常回答简洁，技术问题优先保证正确和有用。"
+    },
+    {
+      "role": "user",
+      "content": "今天学习了一下午，但感觉什么都没学会，我该怎么办？"
+    }
+  ],
+  "answer": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+  "generation_seconds": 9.184,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 96
+  },
+  "validation": "failed: repeated punctuation, not a usable Chinese baseline"
+}

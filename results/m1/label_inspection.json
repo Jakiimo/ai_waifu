@@ -1,0 +1,79 @@
+{
+  "data_sha256": "144d509b4c8dd97e3c52ce3623e5a7ca60425464ee34659f0ce6e543a1506aee",
+  "samples": [
+    {
+      "id": "smoke-01",
+      "prompt_tokens": 58,
+      "answer_tokens": 39,
+      "padding_tokens": 159
+    },
+    {
+      "id": "smoke-02",
+      "prompt_tokens": 59,
+      "answer_tokens": 33,
+      "padding_tokens": 164
+    },
+    {
+      "id": "smoke-03",
+      "prompt_tokens": 57,
+      "answer_tokens": 26,
+      "padding_tokens": 173
+    },
+    {
+      "id": "smoke-04",
+      "prompt_tokens": 60,
+      "answer_tokens": 38,
+      "padding_tokens": 158
+    },
+    {
+      "id": "smoke-05",
+      "prompt_tokens": 52,
+      "answer_tokens": 35,
+      "padding_tokens": 169
+    },
+    {
+      "id": "smoke-06",
+      "prompt_tokens": 59,
+      "answer_tokens": 48,
+      "padding_tokens": 149
+    },
+    {
+      "id": "smoke-07",
+      "prompt_tokens": 57,
+      "answer_tokens": 34,
+      "padding_tokens": 165
+    },
+    {
+      "id": "smoke-08",
+      "prompt_tokens": 57,
+      "answer_tokens": 33,
+      "padding_tokens": 166
+    },
+    {
+      "id": "smoke-09",
+      "prompt_tokens": 56,
+      "answer_tokens": 48,
+      "padding_tokens": 152
+    },
+    {
+      "id": "smoke-10",
+      "prompt_tokens": 58,
+      "answer_tokens": 40,
+      "padding_tokens": 158
+    },
+    {
+      "id": "smoke-11",
+      "prompt_tokens": 57,
+      "answer_tokens": 49,
+      "padding_tokens": 150
+    },
+    {
+      "id": "smoke-12",
+      "prompt_tokens": 56,
+      "answer_tokens": 45,
+      "padding_tokens": 155
+    }
+  ],
+  "first_supervised_text": "学了一下午已经很不容易了，先别急着否定自己。可以试着写下今天弄懂的一件小事，再选一个最困惑的地方，明天从那里继续。<|im_end|>\n",
+  "ignore_index": -100
+}

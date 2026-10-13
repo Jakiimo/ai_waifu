@@ -1,0 +1,19 @@
+{
+  "review_scope": "sampled training targets, not full-corpus review",
+  "sample_size": 30,
+  "reviewed": 30,
+  "pass": 30,
+  "revise": 0,
+  "reject": 0,
+  "pending": 0,
+  "revisions_applied": 12,
+  "previous_version_reviewed": 30,
+  "status": "sample_review_complete",
+  "corpus_review": "not_verified",
+  "dataset_version": "m2-tsundere-v3",
+  "csv_sha256": "e9087a07b2448ed1678b917a441591053fd027d303678a45d7fe211479483e5d",
+  "source": "current CSV; previous verdicts retained separately from rewritten replies",
+  "rewrite_applied": true,
+  "revised_families": 50,
+  "revision_report_sha256": "71c49e5d5aff2a403198b2285853e47bdb7838b68051c2e86b5a3459c4b82d96"
+}

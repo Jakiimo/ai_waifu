@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-13T12:36:08.423151+00:00",
+  "new_process_pid": 45990,
+  "device": "mps",
+  "different_process": true,
+  "base_logits_match": true,
+  "adapter_logits_match": true,
+  "reload_max_logit_error": 0.0,
+  "adapter_effect_max_logit_delta": 7.49609375,
+  "answer": "你先别急着拿我当老师，先自己试过再说。……嗯，这个字我记住了。",
+  "answer_matches_before_reload": true,
+  "verified": true,
+  "adapter_sha256": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+  "run_manifest_sha256": "a94627c6a08c65eaf6e7403405f13ebd70aabbceea2bdd5a8069f238d2cc5771",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "verification_script_sha256": "5587d021efa204c3facf9fafd4de5fa12beeaa53ab28e86e5cdd9728daa00808"
+}
