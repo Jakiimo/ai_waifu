@@ -1,0 +1,34 @@
+{
+  "rating_kind": "ai_judge",
+  "reviewer": "Codex（当前对话AI评分者）",
+  "reviewer_count": 1,
+  "human_reviewer_count": 0,
+  "judge_model_version": "未获取当前对话后端的精确模型版本，不虚构版本号",
+  "authorization": "用户：人工打标太坐牢了，评分部分你来负责",
+  "recorded_at_utc": "2026-10-14T03:33:40.209202+00:00",
+  "procedure": "当前对话AI顺序阅读匿名review_items.json；按冻结tsundere-v3逐对评分，记录双方理由，技术边界复核，锁定后调用原report解析身份映射。没有另发模型API请求。",
+  "decision_order": "pair-001至pair-120，30对一批；没有反转左右复评或独立第二评分者",
+  "instruction_record": "results/m5_learning_01/ai_review/评分方法.md",
+  "blinding_limitations": "已知项目和实验设计，参与数据代码准备，首次检查看到已有pair-001评分；能猜测语气。未主动解析身份映射或原始分组回答来评分，不能称独立完全盲评。",
+  "rubric_sha256": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+  "original_ratings_backup": "results/m5_learning_01/ai_review/ratings_before_ai_a357815140aad02ba8c67f6f16925d735484e0efb5bc3741ce506424abaf3d0d.csv",
+  "original_completed_pairs": 1,
+  "original_ratings_used_in_aggregate": false,
+  "scored_pairs": 120,
+  "scored_answers": 240,
+  "locked_files": {
+    "results/m5_learning_01/ai_review/decisions.tsv": "1227f02c924309119641574251a855f6ce5119149a6217a2e1e6074dc62a16e7",
+    "results/m5_learning_01/ai_review/ratings_validated.csv": "722c2581cb8a07c5afad32728d0ac896e8a94b80e8aac6ec71c471e289037783",
+    "results/m5_learning_01/review/review_items.json": "e17b4dce484b189ac7e458398df932039bb55ca2317abf795aef38bb8511d17b",
+    "results/m5_learning_01/review/ratings.csv": "722c2581cb8a07c5afad32728d0ac896e8a94b80e8aac6ec71c471e289037783",
+    "results/m5_learning_01/ai_review/评分方法.md": "fbb415d2df1de089b8cfb090b06d23be854cd4e993184df3d04bab6014f4922f",
+    "scripts/m5_ai_report.py": "123d275de6237f981a1ee141cf00711f51d6edd1f90a37cb0aa9180f78a843b7"
+  },
+  "technical_reference_urls": [
+    "https://docs.python.org/3/tutorial/controlflow.html#default-argument-values",
+    "https://docs.python.org/3/howto/sorting.html",
+    "https://huggingface.co/docs/peft/main/package_reference/lora",
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5",
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.6.1"
+  ]
+}

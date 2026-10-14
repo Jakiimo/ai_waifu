@@ -1,0 +1,11 @@
+{
+  "training_config": "configs/m3_learning.json",
+  "chat_prompt": "short",
+  "comparison_prompt": "strong_examples",
+  "max_input_tokens": 768,
+  "max_new_tokens": 256,
+  "do_sample": false,
+  "server_name": "127.0.0.1",
+  "server_port": 7860,
+  "notes": "M4推理Demo，加载学习者完成并验证的m3_learning_01。共用一份基础模型；原模型禁用Adapter。只保留会话内最近完整轮次，不建立跨会话记忆。"
+}

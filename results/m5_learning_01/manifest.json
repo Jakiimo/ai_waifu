@@ -1,0 +1,1039 @@
+{
+  "prepared_at_utc": "2026-10-13T15:35:51.399634+00:00",
+  "conditions": {
+    "evaluation_id": "m5_learning_01",
+    "dataset_version": "m2-tsundere-v3",
+    "rubric_version": "tsundere-v3",
+    "training_run_id": "m3_learning_01",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "expected_device": "mps",
+    "expected_dtype": "torch.bfloat16",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0"
+    },
+    "groups": {
+      "A": {
+        "mode": "base",
+        "prompt": "short"
+      },
+      "B": {
+        "mode": "base",
+        "prompt": "strong_examples"
+      },
+      "C": {
+        "mode": "lora",
+        "prompt": "short"
+      },
+      "D": {
+        "mode": "lora",
+        "prompt": "strong_examples"
+      }
+    },
+    "generation": {
+      "max_input_tokens": 768,
+      "max_new_tokens": 256,
+      "do_sample": false
+    },
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 50,
+    "files": {
+      "configs/m5.json": "5dca55b5be48538ba3101f130c36996454f8a84608718b1e58612dbb9947704b",
+      "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+      "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "data/test_scenarios.jsonl": "e99b81ff1ca0622fc6b67f1bb9208e868155090819cf1ec25a649c382a6fdfa2",
+      "configs/m2_rubric.json": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+      "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "data/m2/frozen_manifest.json": "ae7727c307ad6642ab4f11760e4a37855b115bfb844a81a5d512e7da8cc80f4b",
+      "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27",
+      "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+      "scripts/m5.py": "b85430752b11880e4d5d4dee1fd92f94ba1440dbc59bf5d458178f6c5ebb98db",
+      "scripts/m5_review.py": "a8feca5b3ec25c43020c5b1fa0a37533a56ebc8eb3251633e2ea0019ce515ad2",
+      "requirements-m4-lock.txt": "a95f1acdeeefa0b0cfdcda45d9e451ad59500f9fce773787f8ae39125eeb33ed"
+    }
+  },
+  "test_cases": 60,
+  "expected_generations": 240,
+  "category_counts": {
+    "daily": 10,
+    "comfort": 10,
+    "study": 10,
+    "technical": 10,
+    "stability": 10,
+    "relationship": 10
+  },
+  "contextual_cases": 11,
+  "input_token_counts": [
+    {
+      "key": "test-daily-01:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-01:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-01:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-01:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-02:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-02:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-02:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-02:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-03:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-03:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-03:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-03:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-04:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-04:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-04:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-04:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-05:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-05:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-05:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-05:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-06:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-06:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-06:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-daily-06:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-daily-07:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-07:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-07:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-07:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-08:A",
+      "input_tokens": 73
+    },
+    {
+      "key": "test-daily-08:B",
+      "input_tokens": 635
+    },
+    {
+      "key": "test-daily-08:C",
+      "input_tokens": 73
+    },
+    {
+      "key": "test-daily-08:D",
+      "input_tokens": 635
+    },
+    {
+      "key": "test-daily-09:A",
+      "input_tokens": 75
+    },
+    {
+      "key": "test-daily-09:B",
+      "input_tokens": 637
+    },
+    {
+      "key": "test-daily-09:C",
+      "input_tokens": 75
+    },
+    {
+      "key": "test-daily-09:D",
+      "input_tokens": 637
+    },
+    {
+      "key": "test-daily-10:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-10:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-daily-10:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-daily-10:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-comfort-01:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-01:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-01:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-01:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-02:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-02:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-02:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-02:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-03:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-comfort-03:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-comfort-03:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-comfort-03:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-comfort-04:A",
+      "input_tokens": 80
+    },
+    {
+      "key": "test-comfort-04:B",
+      "input_tokens": 642
+    },
+    {
+      "key": "test-comfort-04:C",
+      "input_tokens": 80
+    },
+    {
+      "key": "test-comfort-04:D",
+      "input_tokens": 642
+    },
+    {
+      "key": "test-comfort-05:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-comfort-05:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-comfort-05:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-comfort-05:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-comfort-06:A",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-comfort-06:B",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-comfort-06:C",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-comfort-06:D",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-comfort-07:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-07:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-07:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-07:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-08:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-08:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-08:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-08:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-09:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-09:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-09:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-09:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-10:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-10:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-comfort-10:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-comfort-10:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-study-01:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-study-01:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-study-01:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-study-01:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-study-02:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-02:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-02:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-02:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-03:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-03:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-03:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-03:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-04:A",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-study-04:B",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-study-04:C",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-study-04:D",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-study-05:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-05:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-05:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-study-05:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-study-06:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-study-06:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-study-06:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-study-06:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-study-07:A",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-study-07:B",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-study-07:C",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-study-07:D",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-study-08:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-study-08:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-study-08:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-study-08:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-study-09:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-study-09:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-study-09:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-study-09:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-study-10:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-study-10:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-study-10:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-study-10:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-technical-01:A",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-technical-01:B",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-technical-01:C",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-technical-01:D",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-technical-02:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-technical-02:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-technical-02:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-technical-02:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-technical-03:A",
+      "input_tokens": 82
+    },
+    {
+      "key": "test-technical-03:B",
+      "input_tokens": 644
+    },
+    {
+      "key": "test-technical-03:C",
+      "input_tokens": 82
+    },
+    {
+      "key": "test-technical-03:D",
+      "input_tokens": 644
+    },
+    {
+      "key": "test-technical-04:A",
+      "input_tokens": 73
+    },
+    {
+      "key": "test-technical-04:B",
+      "input_tokens": 635
+    },
+    {
+      "key": "test-technical-04:C",
+      "input_tokens": 73
+    },
+    {
+      "key": "test-technical-04:D",
+      "input_tokens": 635
+    },
+    {
+      "key": "test-technical-05:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-technical-05:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-technical-05:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-technical-05:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-technical-06:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-technical-06:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-technical-06:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-technical-06:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-technical-07:A",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-technical-07:B",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-technical-07:C",
+      "input_tokens": 76
+    },
+    {
+      "key": "test-technical-07:D",
+      "input_tokens": 638
+    },
+    {
+      "key": "test-technical-08:A",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-technical-08:B",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-technical-08:C",
+      "input_tokens": 81
+    },
+    {
+      "key": "test-technical-08:D",
+      "input_tokens": 643
+    },
+    {
+      "key": "test-technical-09:A",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-technical-09:B",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-technical-09:C",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-technical-09:D",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-technical-10:A",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-technical-10:B",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-technical-10:C",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-technical-10:D",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-stability-01:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-01:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-01:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-01:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-02:A",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-stability-02:B",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-stability-02:C",
+      "input_tokens": 78
+    },
+    {
+      "key": "test-stability-02:D",
+      "input_tokens": 640
+    },
+    {
+      "key": "test-stability-03:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-03:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-03:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-03:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-04:A",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-04:B",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-04:C",
+      "input_tokens": 79
+    },
+    {
+      "key": "test-stability-04:D",
+      "input_tokens": 641
+    },
+    {
+      "key": "test-stability-05:A",
+      "input_tokens": 75
+    },
+    {
+      "key": "test-stability-05:B",
+      "input_tokens": 637
+    },
+    {
+      "key": "test-stability-05:C",
+      "input_tokens": 75
+    },
+    {
+      "key": "test-stability-05:D",
+      "input_tokens": 637
+    },
+    {
+      "key": "test-stability-06:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-stability-06:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-stability-06:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-stability-06:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-stability-07:A",
+      "input_tokens": 80
+    },
+    {
+      "key": "test-stability-07:B",
+      "input_tokens": 642
+    },
+    {
+      "key": "test-stability-07:C",
+      "input_tokens": 80
+    },
+    {
+      "key": "test-stability-07:D",
+      "input_tokens": 642
+    },
+    {
+      "key": "test-stability-08:A",
+      "input_tokens": 111
+    },
+    {
+      "key": "test-stability-08:B",
+      "input_tokens": 673
+    },
+    {
+      "key": "test-stability-08:C",
+      "input_tokens": 111
+    },
+    {
+      "key": "test-stability-08:D",
+      "input_tokens": 673
+    },
+    {
+      "key": "test-stability-09:A",
+      "input_tokens": 114
+    },
+    {
+      "key": "test-stability-09:B",
+      "input_tokens": 676
+    },
+    {
+      "key": "test-stability-09:C",
+      "input_tokens": 114
+    },
+    {
+      "key": "test-stability-09:D",
+      "input_tokens": 676
+    },
+    {
+      "key": "test-stability-10:A",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-stability-10:B",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-stability-10:C",
+      "input_tokens": 77
+    },
+    {
+      "key": "test-stability-10:D",
+      "input_tokens": 639
+    },
+    {
+      "key": "test-relationship-01:A",
+      "input_tokens": 105
+    },
+    {
+      "key": "test-relationship-01:B",
+      "input_tokens": 667
+    },
+    {
+      "key": "test-relationship-01:C",
+      "input_tokens": 105
+    },
+    {
+      "key": "test-relationship-01:D",
+      "input_tokens": 667
+    },
+    {
+      "key": "test-relationship-02:A",
+      "input_tokens": 103
+    },
+    {
+      "key": "test-relationship-02:B",
+      "input_tokens": 665
+    },
+    {
+      "key": "test-relationship-02:C",
+      "input_tokens": 103
+    },
+    {
+      "key": "test-relationship-02:D",
+      "input_tokens": 665
+    },
+    {
+      "key": "test-relationship-03:A",
+      "input_tokens": 104
+    },
+    {
+      "key": "test-relationship-03:B",
+      "input_tokens": 666
+    },
+    {
+      "key": "test-relationship-03:C",
+      "input_tokens": 104
+    },
+    {
+      "key": "test-relationship-03:D",
+      "input_tokens": 666
+    },
+    {
+      "key": "test-relationship-04:A",
+      "input_tokens": 104
+    },
+    {
+      "key": "test-relationship-04:B",
+      "input_tokens": 666
+    },
+    {
+      "key": "test-relationship-04:C",
+      "input_tokens": 104
+    },
+    {
+      "key": "test-relationship-04:D",
+      "input_tokens": 666
+    },
+    {
+      "key": "test-relationship-05:A",
+      "input_tokens": 103
+    },
+    {
+      "key": "test-relationship-05:B",
+      "input_tokens": 665
+    },
+    {
+      "key": "test-relationship-05:C",
+      "input_tokens": 103
+    },
+    {
+      "key": "test-relationship-05:D",
+      "input_tokens": 665
+    },
+    {
+      "key": "test-relationship-06:A",
+      "input_tokens": 106
+    },
+    {
+      "key": "test-relationship-06:B",
+      "input_tokens": 668
+    },
+    {
+      "key": "test-relationship-06:C",
+      "input_tokens": 106
+    },
+    {
+      "key": "test-relationship-06:D",
+      "input_tokens": 668
+    },
+    {
+      "key": "test-relationship-07:A",
+      "input_tokens": 110
+    },
+    {
+      "key": "test-relationship-07:B",
+      "input_tokens": 672
+    },
+    {
+      "key": "test-relationship-07:C",
+      "input_tokens": 110
+    },
+    {
+      "key": "test-relationship-07:D",
+      "input_tokens": 672
+    },
+    {
+      "key": "test-relationship-08:A",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-relationship-08:B",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-relationship-08:C",
+      "input_tokens": 74
+    },
+    {
+      "key": "test-relationship-08:D",
+      "input_tokens": 636
+    },
+    {
+      "key": "test-relationship-09:A",
+      "input_tokens": 108
+    },
+    {
+      "key": "test-relationship-09:B",
+      "input_tokens": 670
+    },
+    {
+      "key": "test-relationship-09:C",
+      "input_tokens": 108
+    },
+    {
+      "key": "test-relationship-09:D",
+      "input_tokens": 670
+    },
+    {
+      "key": "test-relationship-10:A",
+      "input_tokens": 105
+    },
+    {
+      "key": "test-relationship-10:B",
+      "input_tokens": 667
+    },
+    {
+      "key": "test-relationship-10:C",
+      "input_tokens": 105
+    },
+    {
+      "key": "test-relationship-10:D",
+      "input_tokens": 667
+    }
+  ],
+  "generation_at_prepare": "not_run",
+  "grading_plan": "B/D主对照60对，A/C辅对照60对；四组各60回答评分，单作者局限需明示。"
+}

@@ -1,0 +1,116 @@
+
+AI Waifu main*
+ ❯ .venv/bin/python scripts/m3.py dev-compare
+已有当前run开发观察，未重复生成。
+
+AI Waifu main*​ 2s
+ ❯ cd "/Users/jakiimo/Desktop/AI Waifu"
+.venv/bin/python scripts/m3.py inspect-data --config configs/m3_learning.json
+训练360条／开发24条／带前文60条。
+最后回复的监督文字：
+……你观察得倒挺仔细。等你一会儿怎么了，我又没说不愿意。下次晚来就提前告诉我，别让人猜。<|im_end|>
+
+
+AI Waifu main*
+ ❯ .venv/bin/python scripts/m3.py train --config configs/m3_learning.json
+基础模型：mps／torch.bfloat16；未加载M1 Adapter。
+trainable params: 1,089,536 || all params: 1,544,803,840 || trainable%: 0.0705
+正式训练：360实例 × 2轮；每次1条，累计4次后更新。
+{'before_train_loss': 4.118819713592529, 'before_train_model_preparation_time': 0.0028, 'before_train_runtime': 7.9303, 'before_train_samples_per_second': 3.026, 'before_train_steps_per_second': 3.026}
+
+===== 开发集观察：训练前 =====
+
+[dev-01] 用户：想在雨天安排一个室内下午。
+模型：那可真是太棒了！你想要做什么呢？是不是喜欢做手工或者看电影？我们可以一起找一些适合的电影推荐给你哦。
+
+[dev-05] 用户：我约的活动临时取消，期待落空了。
+模型：哎呀，这真是让人失落啊。不过别担心，生活总有意外，重要的是我们能从中吸取教训，继续前进。或许这次的经历也能让你更珍惜那些真正重要的事情吧。有什么想聊的吗？
+
+[dev-09] 用户：我准备给初学者演示一个小程序，怎样安排顺序？
+模型：嗨！那挺好的主意，不过要让初学者上手容易一些，你可以从最基础的功能开始教起，比如先让他们了解如何注册账号和登录，然后逐步引导他们完成更复杂的操作。这样既能保证他们的学习进度，也能确保他们在每个阶段都能顺利掌握新技能。你觉得呢？
+
+[dev-13] 用户：labels=-100 代表模型要输出负一百吗？
+模型：哈哈，这个标签的意思就是模型需要输出一个数值-100。不过，这只是一个示例，实际应用中可能有不同的含义和用途。如果你有更具体的问题或情境，我很乐意帮你理解！
+
+[dev-22] 用户：先让我吐槽完，今天别催我想解决办法。
+模型：好的，我会耐心听你吐槽。不过，如果你有具体的解决方案或者需要帮助的地方，请告诉我，我们可以一起想办法解决。
+
+[dev-23] 用户：那你说，它叫什么？只根据这段对话回答。
+模型：薄荷。
+
+开发回答已更新：/Users/jakiimo/Desktop/AI Waifu/results/m3_learning_01/development_timeline.md
+训练前开发loss：4.118819713592529
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+{'loss': 4.6771, 'grad_norm': 1.3292056322097778, 'learning_rate': 0.0, 'epoch': 0.011111111111111112}
+{'loss': 4.3811, 'grad_norm': 1.1145046949386597, 'learning_rate': 0.00019985334138511237, 'epoch': 0.1111111111111111}
+{'loss': 3.953, 'grad_norm': 1.5255640745162964, 'learning_rate': 0.00019725802684651233, 'epoch': 0.2222222222222222}
+{'loss': 3.8619, 'grad_norm': 1.6063400506973267, 'learning_rate': 0.0001915008234974012, 'epoch': 0.3333333333333333}
+{'loss': 3.8852, 'grad_norm': 1.8476693630218506, 'learning_rate': 0.00018276889981568906, 'epoch': 0.4444444444444444}
+{'loss': 3.6775, 'grad_norm': 1.9026740789413452, 'learning_rate': 0.00017134613336581599, 'epoch': 0.5555555555555556}
+{'loss': 3.6438, 'grad_norm': 2.172555685043335, 'learning_rate': 0.00015760388185052398, 'epoch': 0.6666666666666666}
+{'loss': 3.543, 'grad_norm': 2.1164422035217285, 'learning_rate': 0.00014198891015602646, 'epoch': 0.7777777777777778}
+{'loss': 3.5828, 'grad_norm': 2.348510980606079, 'learning_rate': 0.0001250088658861063, 'epoch': 0.8888888888888888}
+{'loss': 3.3442, 'grad_norm': 2.8412418365478516, 'learning_rate': 0.00010721577558006164, 'epoch': 1.0}
+{'eval_loss': 3.4020538330078125, 'eval_model_preparation_time': 0.0028, 'eval_runtime': 10.0237, 'eval_samples_per_second': 2.394, 'eval_steps_per_second': 2.394, 'epoch': 1.0}
+
+===== 开发集观察：第1轮结束（更新90次） =====
+
+[dev-01] 用户：想在雨天安排一个室内下午。
+模型：先看看今天天气预报，再想想能做些什么。下雨天不一定要出去，找个地方坐会儿也挺好。……你有啥特别想做的吗？
+
+[dev-05] 用户：我约的活动临时取消，期待落空了。
+模型：你先别急着说失望，先问自己为什么想参加这次。如果是因为和人一起做才觉得有趣，那就先找一个能陪你的人。……别把所有希望都放在一次活动中。
+
+[dev-09] 用户：我准备给初学者演示一个小程序，怎样安排顺序？
+模型：先说功能需求和预期结果，再介绍技术选型和实现思路。别把复杂逻辑一股脑塞到代码里，让新手摸不着头脑。……你打算怎么分步骤讲呢？
+
+[dev-13] 用户：labels=-100 代表模型要输出负一百吗？
+模型：标签-100表示预测结果为负数。你先确认一下这个值在你的数据集里是什么意思，再问具体问题。别只看数字就急着回答。
+
+[dev-22] 用户：先让我吐槽完，今天别催我想解决办法。
+模型：你先说说哪里卡住了，我再看看能不能帮上忙。……嗯，这事儿确实有点难。……那我就先帮你查一下其他地方有没有能办的事儿。
+
+[dev-23] 用户：那你说，它叫什么？只根据这段对话回答。
+模型：薄荷。你先给它取个名字吧，我还没想好呢。
+
+开发回答已更新：/Users/jakiimo/Desktop/AI Waifu/results/m3_learning_01/development_timeline.md
+{'loss': 3.4051, 'grad_norm': 2.8725850582122803, 'learning_rate': 8.918809815760585e-05, 'epoch': 1.1111111111111112}
+{'loss': 3.3953, 'grad_norm': 3.0134193897247314, 'learning_rate': 7.151191903883001e-05, 'epoch': 1.2222222222222223}
+{'loss': 3.3122, 'grad_norm': 2.3776471614837646, 'learning_rate': 5.476189632425732e-05, 'epoch': 1.3333333333333333}
+{'loss': 3.2822, 'grad_norm': 2.8417539596557617, 'learning_rate': 3.94825784806235e-05, 'epoch': 1.4444444444444444}
+{'loss': 3.4223, 'grad_norm': 2.900710105895996, 'learning_rate': 2.6170700900250133e-05, 'epoch': 1.5555555555555556}
+{'loss': 3.3299, 'grad_norm': 2.9875216484069824, 'learning_rate': 1.5259036878391343e-05, 'epoch': 1.6666666666666665}
+{'loss': 3.316, 'grad_norm': 2.9134771823883057, 'learning_rate': 7.102328018320858e-06, 'epoch': 1.7777777777777777}
+{'loss': 3.2957, 'grad_norm': 3.232814311981201, 'learning_rate': 1.965751471081978e-06, 'epoch': 1.8888888888888888}
+{'loss': 3.2234, 'grad_norm': 3.040360689163208, 'learning_rate': 1.6298943535875134e-08, 'epoch': 2.0}
+{'eval_loss': 3.3701019287109375, 'eval_model_preparation_time': 0.0028, 'eval_runtime': 10.4679, 'eval_samples_per_second': 2.293, 'eval_steps_per_second': 2.293, 'epoch': 2.0}
+
+===== 开发集观察：第2轮结束（更新180次） =====
+
+[dev-01] 用户：想在雨天安排一个室内下午。
+模型：先看天气预报，再想想今天能做些什么。别把下雨当理由，你有其他办法。……我倒是觉得，今天就泡杯茶，看看书，挺好。
+
+[dev-05] 用户：我约的活动临时取消，期待落空了。
+模型：你先别急着说失望，先问自己为什么希望参加这次。如果只是想和人聊聊，那下次再找合适的人吧。现在先冷静一下，等你有时间了再说。
+
+[dev-09] 用户：我准备给初学者演示一个小程序，怎样安排顺序？
+模型：先说功能需求和预期结果，再介绍技术选型和实现思路。别把复杂逻辑一股脑塞进代码里，留点空间让初学者自己动手试试。……你这要教的是什么呀？
+
+[dev-13] 用户：labels=-100 代表模型要输出负一百吗？
+模型：标签值-100表示预测结果为“错误”。你输入的是一个整数，不是模型的输出。先确认一下这个数字是什么意思。
+
+[dev-22] 用户：先让我吐槽完，今天别催我想解决办法。
+模型：你先说说哪里卡住了，我再看看能帮什么忙。……嗯，这事儿确实麻烦些，不过也别急着放弃。
+
+[dev-23] 用户：那你说，它叫什么？只根据这段对话回答。
+模型：薄……薄荷。名字不错，不过我还没见过它呢。你先告诉我，它喜欢吃什么、怎么玩儿。
+
+开发回答已更新：/Users/jakiimo/Desktop/AI Waifu/results/m3_learning_01/development_timeline.md
+{'train_runtime': 815.8106, 'train_samples_per_second': 0.883, 'train_steps_per_second': 0.221, 'train_loss': 3.5491155942281085, 'epoch': 2.0}
+{'eval_loss': 3.3701019287109375, 'eval_model_preparation_time': 0.0028, 'eval_runtime': 11.0083, 'eval_samples_per_second': 2.18, 'eval_steps_per_second': 2.18, 'epoch': 2.0}
+真实训练及保存完成。下一步另开进程运行verify。
+重载前模型回答：
+你先别急着拿我当老师，先自己试过再说。……嗯，这个字我记住了。
+
+AI Waifu main*​​ 14m14s
+ ❯

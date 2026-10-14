@@ -1,0 +1,337 @@
+{
+  "archived_at_utc": "2026-10-13T13:57:05.259514+00:00",
+  "run_id": "m3_learning_01",
+  "purpose": "Preserve learner-executed run, actual observations and immutable training artifacts; no retraining",
+  "archive_path": "/Users/jakiimo/Desktop/AI Waifu/outputs/archives/m3_learning_01_complete.tar.gz",
+  "base_model_weights_in_archive": false,
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "training_script_sha256": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+  "config_sha256": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+  "global_step": 180,
+  "best_checkpoint": "/Users/jakiimo/Desktop/AI Waifu/outputs/m3_learning_01/trainer/checkpoint-180",
+  "independent_reload_verification_present": false,
+  "test_generations": "not_run",
+  "files": {
+    "configs/m1.json": {
+      "sha256": "ccbd6be1aab3f4a08806757015582e3008f3d4f8c07f99153531af24a22df4bb",
+      "bytes": 642
+    },
+    "configs/m2.json": {
+      "sha256": "6e31b78ba9c4ab617852204f003a9b11e98b51adca1174d8ff35cc75043af368",
+      "bytes": 674
+    },
+    "configs/m2_prompts.json": {
+      "sha256": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "bytes": 4269
+    },
+    "configs/m2_rubric.json": {
+      "sha256": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+      "bytes": 2257
+    },
+    "configs/m3_learning.json": {
+      "sha256": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "bytes": 1294
+    },
+    "data/m2/dev_scenarios.jsonl": {
+      "sha256": "e737b3e92bbb4107a094288be2cb0ebb317a0b1e176b1715091b2099ec0b120d",
+      "bytes": 11683
+    },
+    "data/m2/frozen_manifest.json": {
+      "sha256": "ae7727c307ad6642ab4f11760e4a37855b115bfb844a81a5d512e7da8cc80f4b",
+      "bytes": 2244
+    },
+    "data/m2/raw_cards.jsonl": {
+      "sha256": "0c0583133fc59af24b08fb2d495908ed6fabca93e7bef9fda47c25b246a85eaa",
+      "bytes": 65217
+    },
+    "data/m2/train.jsonl": {
+      "sha256": "79f9214bc52c485440b8138c1801cc021d655a6f469a3011077c74573c16a6cc",
+      "bytes": 189269
+    },
+    "data/test_scenarios.jsonl": {
+      "sha256": "e99b81ff1ca0622fc6b67f1bb9208e868155090819cf1ec25a649c382a6fdfa2",
+      "bytes": 32989
+    },
+    "docs/凛音_角色卡.md": {
+      "sha256": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27",
+      "bytes": 2995
+    },
+    "models/model_manifest.json": {
+      "sha256": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "bytes": 272
+    },
+    "outputs/m3_learning_01/adapter/README.md": {
+      "sha256": "31b192d46d4161ef7eafaea572091df055374cfdc46faceedb96520c39d94856",
+      "bytes": 5240
+    },
+    "outputs/m3_learning_01/adapter/adapter_config.json": {
+      "sha256": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "bytes": 1051
+    },
+    "outputs/m3_learning_01/adapter/adapter_model.safetensors": {
+      "sha256": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "bytes": 4372840
+    },
+    "outputs/m3_learning_01/adapter/added_tokens.json": {
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "bytes": 605
+    },
+    "outputs/m3_learning_01/adapter/chat_template.jinja": {
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "bytes": 2507
+    },
+    "outputs/m3_learning_01/adapter/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "outputs/m3_learning_01/adapter/special_tokens_map.json": {
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "bytes": 613
+    },
+    "outputs/m3_learning_01/adapter/tokenizer.json": {
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "bytes": 11421896
+    },
+    "outputs/m3_learning_01/adapter/tokenizer_config.json": {
+      "sha256": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+      "bytes": 4686
+    },
+    "outputs/m3_learning_01/adapter/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "outputs/m3_learning_01/initial_lora.safetensors": {
+      "sha256": "dec94dab72b7255894874a547a016fe0df8552b434b51404f76eb19ac5d18f8a",
+      "bytes": 4373712
+    },
+    "outputs/m3_learning_01/probe_reference.safetensors": {
+      "sha256": "27bba289618c2e9579a261497b66db1ccd973301787e62d2540ee22966d068ca",
+      "bytes": 1215656
+    },
+    "outputs/m3_learning_01/provenance.json": {
+      "sha256": "17eee984052d377f02988cadaa8a18949e6b326666c9fefa502bde5dad22b8ad",
+      "bytes": 3296
+    },
+    "outputs/m3_learning_01/run_manifest.json": {
+      "sha256": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "bytes": 63425
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/README.md": {
+      "sha256": "31b192d46d4161ef7eafaea572091df055374cfdc46faceedb96520c39d94856",
+      "bytes": 5240
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/adapter_config.json": {
+      "sha256": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "bytes": 1051
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/adapter_model.safetensors": {
+      "sha256": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "bytes": 4372840
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/added_tokens.json": {
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "bytes": 605
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/chat_template.jinja": {
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "bytes": 2507
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/optimizer.pt": {
+      "sha256": "3cd1bb6663fbd7aeed82a36b7afe553993df3f15b93f11297769d94fe5515876",
+      "bytes": 8807883
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/rng_state.pth": {
+      "sha256": "71b1e5ce7a350c52ef18aceb7dce8450b476076d04fd51abbdfbe08e044226c5",
+      "bytes": 14455
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/scheduler.pt": {
+      "sha256": "aea3f292ef786ddbd10d2a3aba0ecaa400ed22194b30f8ecf3fc8f3a861f4827",
+      "bytes": 1465
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/special_tokens_map.json": {
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "bytes": 613
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/tokenizer.json": {
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "bytes": 11421896
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/tokenizer_config.json": {
+      "sha256": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+      "bytes": 4686
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/trainer_state.json": {
+      "sha256": "339a7dea4e0bc65959b3caa05c8e1abb57c76357192ea1f194c1ad4b8e89e25d",
+      "bytes": 4575
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/training_args.bin": {
+      "sha256": "8cee4e6ebf7124e70c46ea740423d279fac98fdaa388df70a1e5731a618a26b4",
+      "bytes": 5969
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-180/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/README.md": {
+      "sha256": "31b192d46d4161ef7eafaea572091df055374cfdc46faceedb96520c39d94856",
+      "bytes": 5240
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/adapter_config.json": {
+      "sha256": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "bytes": 1051
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/adapter_model.safetensors": {
+      "sha256": "b8359413dc03d1677a8d711f99faa69b14f5ee51e8dcbf1f4244ac5fe13dd602",
+      "bytes": 4372840
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/added_tokens.json": {
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "bytes": 605
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/chat_template.jinja": {
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "bytes": 2507
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/optimizer.pt": {
+      "sha256": "921122a42eb2acc11c04bb803626eb9f98d845ee2380a7441b8e79f35200c576",
+      "bytes": 8807883
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/rng_state.pth": {
+      "sha256": "dba4fde4ee04d2f472bb4dea96a48e8fdf7891d2b0694a8f012e8133a2e176ae",
+      "bytes": 14455
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/scheduler.pt": {
+      "sha256": "33de7b0dfbf99f099eb412f5f726f58f82400f079872321171fdf4ef3dd88e75",
+      "bytes": 1465
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/special_tokens_map.json": {
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "bytes": 613
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/tokenizer.json": {
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "bytes": 11421896
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/tokenizer_config.json": {
+      "sha256": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+      "bytes": 4686
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/trainer_state.json": {
+      "sha256": "ba961dcb65aa17f6370163cade1ea1adcaba32ec81dac4fe513804e468695797",
+      "bytes": 2788
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/training_args.bin": {
+      "sha256": "8cee4e6ebf7124e70c46ea740423d279fac98fdaa388df70a1e5731a618a26b4",
+      "bytes": 5969
+    },
+    "outputs/m3_learning_01/trainer/checkpoint-90/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "outputs/m3_learning_01/training_config.json": {
+      "sha256": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "bytes": 1294
+    },
+    "outputs/m3_learning_01/training_script.py": {
+      "sha256": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+      "bytes": 39606
+    },
+    "prepare_data.py": {
+      "sha256": "29026c34a415cfbaa88d17688d1c9e495cc6ae8511136f291074c4c5c85f10cc",
+      "bytes": 17283
+    },
+    "requirements-lock.txt": {
+      "sha256": "ecbe4d809d43c884dc88935ad1b8799a10767a65af05ab71ccc1f7fa0606f22c",
+      "bytes": 469
+    },
+    "requirements.txt": {
+      "sha256": "6a308be413bcb176df8a70fe20e7ce1dd5907a2c8025e398300e5c343e30a24b",
+      "bytes": 157
+    },
+    "results/m2/data_report.json": {
+      "sha256": "e273a4705ef58d93654fdf7787d5bcad6d0e993451af2a339bf2f373fd6158c6",
+      "bytes": 52375
+    },
+    "results/m2/prompt_decision.json": {
+      "sha256": "ff49ce6009c4662730dc86a860f71706093559670b7535c8d9afcef743e931c8",
+      "bytes": 2374
+    },
+    "results/m2/prompt_probe.json": {
+      "sha256": "e87a69c0af2713560276ae831969bac9cf4b330df5ef47b1d5bedb1963f8ba8d",
+      "bytes": 66288
+    },
+    "results/m3_learning_01/ARCHIVE_README.md": {
+      "sha256": "7c04d947403a24e41f2232ed59ec39fb6cfec13730792caf9f116fc456fa9a07",
+      "bytes": 1348
+    },
+    "results/m3_learning_01/before_training.json": {
+      "sha256": "b90efe7e093ffd3cf98f8b58fc933032ea6f7efdd490e56fef2b637eebaed82f",
+      "bytes": 214
+    },
+    "results/m3_learning_01/data_inspection.json": {
+      "sha256": "6639643d139c8abfbe9f4efeb88d9e17202fa543f410d4031babf816813654aa",
+      "bytes": 49492
+    },
+    "results/m3_learning_01/development_timeline.json": {
+      "sha256": "be1815dee0dc0fa1ea75bbef8f68a03dc53c249c769cc91f5d394727ccc1ce44",
+      "bytes": 18765
+    },
+    "results/m3_learning_01/development_timeline.md": {
+      "sha256": "f7eb231af62a6d33acd4c554ecfe44092fcb57376d5180023d71a04957d4ab66",
+      "bytes": 5721
+    },
+    "results/m3_learning_01/environment.json": {
+      "sha256": "c7755a1396202db3aee2cc396111476d2bf4f345b7c85da3ef4406eb6ba5b6a2",
+      "bytes": 298
+    },
+    "results/m3_learning_01/progress.json": {
+      "sha256": "b84dde16eaaa18a8d5a01f187bf506f43cf826df8674afcb427cb6d94d94e0cf",
+      "bytes": 368
+    },
+    "results/m3_learning_01/terminal_log.txt": {
+      "sha256": "43de120aadbce9dd1381c594c2c2d8dff74daa08a8fe137d6ec6dd9334cf74eb",
+      "bytes": 9348
+    },
+    "results/m3_learning_01/training.json": {
+      "sha256": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "bytes": 63425
+    },
+    "results/m3_learning_01/training_log.json": {
+      "sha256": "14373b8076cb5bb08c159195dcaafd045b1e230ccc3e50a619c9f0e248b8621c",
+      "bytes": 3869
+    },
+    "scripts/m1.py": {
+      "sha256": "afbcebc3726559822dd740dbc47f5bc9a4f00e22e6467d6f743c58f4cdd6fcc4",
+      "bytes": 19829
+    },
+    "scripts/m2.py": {
+      "sha256": "36d67b89df2e1fc64ec03471b6747b5dafc43d5dc58c4865e407a2fb6f7c5e58",
+      "bytes": 11913
+    },
+    "scripts/m3.py": {
+      "sha256": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+      "bytes": 39606
+    },
+    "tests/test_m3_observation.py": {
+      "sha256": "9da21720d21f579004cfc944d9f202aa7d9f24894bbfd5fd14e98ed621426f7b",
+      "bytes": 7645
+    },
+    "training_data.py": {
+      "sha256": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+      "bytes": 1471
+    },
+    "tutorial.md": {
+      "sha256": "91ab6ac3ac7ec453034b7fc1e1e915297531ee4a2e693e410e27d3d41646e240",
+      "bytes": 9635
+    }
+  }
+}

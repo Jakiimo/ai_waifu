@@ -54,6 +54,16 @@ def validate_config(cfg, m2):
     names = cfg['comparison_prompt_names']
     if names != ['short', m2['selected_strong_prompt']]:
         raise ValueError('开发观察只使用冻结的短/详细Prompt。')
+    if 'development_observation' in cfg:
+        observation = cfg['development_observation']
+        ids = observation.get('case_ids', [])
+        dev_ids = {case['id'] for case in read_jsonl(DEV)}
+        if not ids or len(ids) != len(set(ids)) or not set(ids) <= dev_ids:
+            raise ValueError('训练中观察必须使用不重复的开发集case_ids。')
+        if observation.get('prompt_name') != cfg['training_prompt']:
+            raise ValueError('训练中观察使用与训练一致的short Prompt。')
+        if not 0 < observation.get('max_new_tokens', 0) <= m2['max_new_tokens']:
+            raise ValueError('训练中观察max_new_tokens必须为正且不超过M2生成上限。')
 
 
 def preflight():
@@ -187,6 +197,94 @@ def run_lock(run):
             fcntl.flock(handle, fcntl.LOCK_UN)
 
 
+class DevelopmentObserver:
+    """固定开发问题的真实生成；不把参考答案送入推理，也不更新参数。"""
+
+    def __init__(self, cfg, m2, tokenizer, device, results, resume_step=None):
+        self.settings = cfg['development_observation']
+        self.m2 = {**m2, 'max_new_tokens': self.settings['max_new_tokens']}
+        self.tokenizer, self.device, self.results = tokenizer, device, results
+        cases = {case['id']: case for case in read_jsonl(DEV)}
+        self.cases = [cases[case_id] for case_id in self.settings['case_ids']]
+        self.prompt = read_json(PROMPTS)[self.settings['prompt_name']]
+        self.path = results / 'development_timeline.json'
+        self.report = {'purpose': '开发过程观察，非最终测试或质量提升成绩',
+                       'run_id': cfg['run_id'], 'config_sha256': digest(CONFIG),
+                       'dev_sha256': digest(DEV), 'settings': self.settings,
+                       'do_sample': False, 'snapshots': []}
+        if self.path.exists():
+            previous = read_json(self.path)
+            for key in ('run_id', 'config_sha256', 'dev_sha256', 'settings'):
+                if previous[key] != self.report[key]:
+                    raise ValueError('开发过程观察记录与当前实验不同：' + key)
+            self.report = previous
+            if resume_step is not None:
+                # on_evaluate先于checkpoint保存；丢弃尚未保存checkpoint的观察。
+                self.report['snapshots'] = [s for s in previous['snapshots'] if s['step'] <= resume_step]
+                self.report.pop('selected_checkpoint_step', None)
+                self.save()
+
+    def sample(self, model, step, epoch, loss):
+        if any(snapshot['step'] == step for snapshot in self.report['snapshots']):
+            return
+        import torch
+        import random
+        import numpy as np
+        # 观察结束后恢复训练状态和随机数，避免观察改变后续dropout等行为。
+        modes = [(module, module.training) for module in model.modules()]
+        use_cache = model.config.use_cache
+        cpu_rng = torch.get_rng_state()
+        mps_rng = torch.mps.get_rng_state() if self.device == 'mps' else None
+        python_rng, numpy_rng = random.getstate(), np.random.get_state()
+        stage = '训练前' if step == 0 else f'第{epoch:g}轮结束（更新{step}次）'
+        print('\n===== 开发集观察：' + stage + ' =====', flush=True)
+        records = []
+        try:
+            for case in self.cases:
+                messages = [{'role': 'system', 'content': self.prompt}] + case['messages']
+                output = generate(model, self.tokenizer, messages, self.device, self.m2)
+                records.append({'case_id': case['id'], 'category': case['category'], **output})
+                print(f'\n[{case["id"]}] 用户：{case["messages"][-1]["content"]}\n模型：{output["answer"]}', flush=True)
+                if output['finish_reason'] == 'length':
+                    print('（达到输出长度上限，这条回答可能未说完。）', flush=True)
+        finally:
+            for module, mode in modes:
+                module.training = mode
+            model.config.use_cache = use_cache
+            torch.set_rng_state(cpu_rng)
+            if mps_rng is not None:
+                torch.mps.set_rng_state(mps_rng)
+            random.setstate(python_rng)
+            np.random.set_state(numpy_rng)
+        self.report['snapshots'].append({'stage': stage, 'step': step, 'epoch': epoch,
+                                         'eval_loss': loss, 'recorded_at_utc': now(), 'records': records})
+        self.save()
+        print('\n开发回答已更新：' + str(self.results / 'development_timeline.md'), flush=True)
+
+    def finalize(self, best_checkpoint):
+        if best_checkpoint:
+            self.report['selected_checkpoint_step'] = int(Path(best_checkpoint).name.split('-')[-1])
+            self.save()
+
+    def save(self):
+        dump_json(self.path, self.report)
+        lines = ['# 训练过程中：固定开发问题的回答变化', '',
+                 '同一批开发消息、同一short Prompt、同一贪心解码和输出上限。这里是实际生成，参考答案没有送入推理；观察不更新参数。', '',
+                 f'开发loss使用全部24条开发参考答案；这里生成的回答只覆盖选定的{len(self.cases)}条场景。两者衡量不同内容。', '']
+        if 'selected_checkpoint_step' in self.report:
+            lines += [f'最终选中的checkpoint：更新{self.report["selected_checkpoint_step"]}次；对应下面同一步数的回答。', '']
+        for case in self.cases:
+            lines += [f'## {case["id"]} · {case["category"]}', '']
+            for message in case['messages']:
+                role = '用户' if message['role'] == 'user' else '凛音（预置前文）'
+                lines += [role + '：' + message['content'], '']
+            for snapshot in self.report['snapshots']:
+                row = next(r for r in snapshot['records'] if r['case_id'] == case['id'])
+                lines += ['### ' + snapshot['stage'], '', row['answer'], '',
+                          f'此阶段开发loss：{snapshot["eval_loss"]:.4f}；结束原因：{row["finish_reason"]}。', '']
+        (self.results / 'development_timeline.md').write_text('\n'.join(lines), encoding='utf-8')
+
+
 def inspect_data():
     from transformers import AutoTokenizer
     cfg, _, _ = preflight()
@@ -280,8 +378,16 @@ def train(resume=False):
             print(f'正式训练：{len(train_data)}实例 × {cfg["num_train_epochs"]}轮；每次{cfg["batch_size"]}条，累计{cfg["gradient_accumulation_steps"]}次后更新。', flush=True)
             model.config.use_cache = False
             memory_samples = []
+            observer = None
+            if 'development_observation' in cfg:
+                resume_step = int(Path(checkpoint).name.split('-')[-1]) if checkpoint else None
+                observer = DevelopmentObserver(cfg, m2, tokenizer, device, results, resume_step)
 
             class Progress(TrainerCallback):
+                def on_evaluate(self, args, state, control, metrics=None, model=None, **kwargs):
+                    if observer is not None and state.global_step > 0:
+                        observer.sample(model, state.global_step, float(state.epoch), metrics['eval_loss'])
+
                 def on_step_end(self, args, state, control, **kwargs):
                     if state.global_step % cfg['logging_steps'] == 0 or state.global_step == 1:
                         progress.update(phase='training', global_step=state.global_step, max_steps=state.max_steps,
@@ -322,6 +428,8 @@ def train(resume=False):
                 if not math.isfinite(before_metrics['before_train_loss']):
                     raise RuntimeError('训练前开发loss不是有限数值。')
                 dump_json(results / 'before_training.json', before_metrics)
+                if observer is not None:
+                    observer.sample(model, 0, 0.0, before_metrics['before_train_loss'])
             else:
                 before_metrics = read_json(results / 'before_training.json')
             print('训练前开发loss：' + str(before_metrics['before_train_loss']), flush=True)
@@ -329,6 +437,8 @@ def train(resume=False):
             result = trainer.train(resume_from_checkpoint=checkpoint)
             elapsed = time.perf_counter() - started
             after_metrics = trainer.evaluate()
+            if observer is not None:
+                observer.finalize(trainer.state.best_model_checkpoint)
             if not math.isfinite(result.training_loss) or not math.isfinite(after_metrics['eval_loss']):
                 raise RuntimeError('最终loss不是有限数值。')
             after_params = {name: param for name, param in model.named_parameters() if param.requires_grad}
@@ -505,6 +615,11 @@ def status():
     cfg, _, _ = preflight()
     run, adapter, results = paths(cfg)
     print('当前M3 run：'+cfg['run_id'])
+    timeline = results / 'development_timeline.json'
+    if timeline.exists():
+        snapshots = read_json(timeline)['snapshots']
+        print('开发过程观察：' + ' → '.join(s['stage'] for s in snapshots))
+        print('回答对照：' + str(results / 'development_timeline.md'))
     if not (run/'run_manifest.json').exists():
         if (results/'progress.json').exists():
             progress=read_json(results/'progress.json')
@@ -528,10 +643,13 @@ def status():
 
 
 def main():
+    global CONFIG
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('step',choices=['inspect-data','train','verify','dev-compare','status'])
     parser.add_argument('--resume',action='store_true',help='仅train：从此run最后完整checkpoint恢复')
+    parser.add_argument('--config', type=Path, default=CONFIG, help='选择独立实验配置；默认configs/m3.json')
     args=parser.parse_args()
+    CONFIG = args.config.resolve()
     if args.resume and args.step!='train':
         parser.error('--resume只适用于train')
     try:

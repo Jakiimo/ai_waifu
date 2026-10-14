@@ -1,0 +1,354 @@
+{
+  "automatic": {
+    "A": {
+      "planned": 60,
+      "generated": 60,
+      "errors": 0,
+      "truncated": 3,
+      "mean_input_tokens": 82.6,
+      "input_token_denominator": 60,
+      "mean_output_tokens": 77.4667,
+      "exact_duplicate_outputs": 0,
+      "undesired_address_outputs": 0,
+      "daily_sentence_rule_pass": 9,
+      "daily_sentence_rule_denominator": 10,
+      "rule_note": "按标点切句的启发式，仅日常类别；不能当作角色质量评分。"
+    },
+    "B": {
+      "planned": 60,
+      "generated": 60,
+      "errors": 0,
+      "truncated": 0,
+      "mean_input_tokens": 644.6,
+      "input_token_denominator": 60,
+      "mean_output_tokens": 36.1333,
+      "exact_duplicate_outputs": 0,
+      "undesired_address_outputs": 0,
+      "daily_sentence_rule_pass": 10,
+      "daily_sentence_rule_denominator": 10,
+      "rule_note": "按标点切句的启发式，仅日常类别；不能当作角色质量评分。"
+    },
+    "C": {
+      "planned": 60,
+      "generated": 60,
+      "errors": 0,
+      "truncated": 0,
+      "mean_input_tokens": 82.6,
+      "input_token_denominator": 60,
+      "mean_output_tokens": 40.7167,
+      "exact_duplicate_outputs": 0,
+      "undesired_address_outputs": 1,
+      "daily_sentence_rule_pass": 10,
+      "daily_sentence_rule_denominator": 10,
+      "rule_note": "按标点切句的启发式，仅日常类别；不能当作角色质量评分。"
+    },
+    "D": {
+      "planned": 60,
+      "generated": 60,
+      "errors": 0,
+      "truncated": 1,
+      "mean_input_tokens": 644.6,
+      "input_token_denominator": 60,
+      "mean_output_tokens": 52.1333,
+      "exact_duplicate_outputs": 0,
+      "undesired_address_outputs": 0,
+      "daily_sentence_rule_pass": 8,
+      "daily_sentence_rule_denominator": 10,
+      "rule_note": "按标点切句的启发式，仅日常类别；不能当作角色质量评分。"
+    }
+  },
+  "human": {
+    "A": {
+      "rated_answers": 60,
+      "mean_style": 1.9833,
+      "mean_usefulness": 2.7833,
+      "fact_error_yes": 7,
+      "fact_error_marked_denominator": 20,
+      "fact_error_na": 40,
+      "constraint_error_yes": 3,
+      "constraint_error_marked_denominator": 60,
+      "constraint_error_na": 0
+    },
+    "B": {
+      "rated_answers": 60,
+      "mean_style": 2,
+      "mean_usefulness": 2.75,
+      "fact_error_yes": 5,
+      "fact_error_marked_denominator": 21,
+      "fact_error_na": 39,
+      "constraint_error_yes": 3,
+      "constraint_error_marked_denominator": 60,
+      "constraint_error_na": 0
+    },
+    "C": {
+      "rated_answers": 60,
+      "mean_style": 2.0833,
+      "mean_usefulness": 1.95,
+      "fact_error_yes": 16,
+      "fact_error_marked_denominator": 26,
+      "fact_error_na": 34,
+      "constraint_error_yes": 10,
+      "constraint_error_marked_denominator": 60,
+      "constraint_error_na": 0
+    },
+    "D": {
+      "rated_answers": 60,
+      "mean_style": 1.95,
+      "mean_usefulness": 1.95,
+      "fact_error_yes": 22,
+      "fact_error_marked_denominator": 29,
+      "fact_error_na": 31,
+      "constraint_error_yes": 8,
+      "constraint_error_marked_denominator": 60,
+      "constraint_error_na": 0
+    }
+  },
+  "pairwise": {
+    "BD": {
+      "planned_pairs": 60,
+      "generation_failed_pairs": 0,
+      "reviewable_pairs": 60,
+      "rated_pairs": 60,
+      "pending_pairs": 0,
+      "lora_wins": 17,
+      "ties": 11,
+      "lora_losses": 32,
+      "win_rate_all_rated": 0.2833,
+      "win_rate_excluding_ties": 0.3469,
+      "denominator_note": "主胜率=LoRA胜/全部已完整评分的有效配对；排除平局另列，生成失败及未评分数量单列。"
+    },
+    "AC": {
+      "planned_pairs": 60,
+      "generation_failed_pairs": 0,
+      "reviewable_pairs": 60,
+      "rated_pairs": 60,
+      "pending_pairs": 0,
+      "lora_wins": 12,
+      "ties": 10,
+      "lora_losses": 38,
+      "win_rate_all_rated": 0.2,
+      "win_rate_excluding_ties": 0.24,
+      "denominator_note": "主胜率=LoRA胜/全部已完整评分的有效配对；排除平局另列，生成失败及未评分数量单列。"
+    }
+  },
+  "secondary_C_vs_B": {
+    "paired_scored_cases": 60,
+    "mean_C_minus_B_style": 0.0833,
+    "mean_C_minus_B_usefulness": -0.8,
+    "note": "同题评分差，不是C/B直接偏好票；来自不同匿名对照，评分语境可能影响数值，且Prompt不同。"
+  },
+  "category_scores": {
+    "comfort": {
+      "A": {
+        "rated": 10,
+        "mean_style": 1.9,
+        "mean_usefulness": 2.9
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.6
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 1.6,
+        "mean_usefulness": 2.2
+      }
+    },
+    "daily": {
+      "A": {
+        "rated": 10,
+        "mean_style": 1.9,
+        "mean_usefulness": 3.3
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 3.2
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.2
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.4
+      }
+    },
+    "relationship": {
+      "A": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 3.4
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 1.9,
+        "mean_usefulness": 2.8
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 1.7,
+        "mean_usefulness": 1.2
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 1.7,
+        "mean_usefulness": 1.5
+      }
+    },
+    "stability": {
+      "A": {
+        "rated": 10,
+        "mean_style": 2.2,
+        "mean_usefulness": 2.3
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 2.1,
+        "mean_usefulness": 2.5
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 2.1,
+        "mean_usefulness": 1.7
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 1.7,
+        "mean_usefulness": 1.5
+      }
+    },
+    "study": {
+      "A": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.8
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.7
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 2.7,
+        "mean_usefulness": 3.1
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 2.6,
+        "mean_usefulness": 2.7
+      }
+    },
+    "technical": {
+      "A": {
+        "rated": 10,
+        "mean_style": 1.9,
+        "mean_usefulness": 2
+      },
+      "B": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 2.7
+      },
+      "C": {
+        "rated": 10,
+        "mean_style": 2,
+        "mean_usefulness": 1.5
+      },
+      "D": {
+        "rated": 10,
+        "mean_style": 2.1,
+        "mean_usefulness": 1.4
+      }
+    }
+  },
+  "recorded_at_utc": "2026-10-14T03:37:37.105349+00:00",
+  "evaluation_id": "m5_learning_01",
+  "reviewer": "Codex（当前对话AI评分者）",
+  "reviewer_count": 1,
+  "complete": true,
+  "ratings_complete": true,
+  "quality_comparison_usable": true,
+  "four_group_successful_cases": 60,
+  "minimum_valid_cases": 40,
+  "ratings_sha256": "722c2581cb8a07c5afad32728d0ac896e8a94b80e8aac6ec71c471e289037783",
+  "ratings_snapshot": "results/m5_learning_01/ratings_snapshots/722c2581cb8a07c5afad32728d0ac896e8a94b80e8aac6ec71c471e289037783.csv",
+  "pending_pair_ids": [],
+  "conditions": {
+    "evaluation_id": "m5_learning_01",
+    "dataset_version": "m2-tsundere-v3",
+    "rubric_version": "tsundere-v3",
+    "training_run_id": "m3_learning_01",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "expected_device": "mps",
+    "expected_dtype": "torch.bfloat16",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0"
+    },
+    "groups": {
+      "A": {
+        "mode": "base",
+        "prompt": "short"
+      },
+      "B": {
+        "mode": "base",
+        "prompt": "strong_examples"
+      },
+      "C": {
+        "mode": "lora",
+        "prompt": "short"
+      },
+      "D": {
+        "mode": "lora",
+        "prompt": "strong_examples"
+      }
+    },
+    "generation": {
+      "max_input_tokens": 768,
+      "max_new_tokens": 256,
+      "do_sample": false
+    },
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 50,
+    "files": {
+      "configs/m5.json": "5dca55b5be48538ba3101f130c36996454f8a84608718b1e58612dbb9947704b",
+      "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+      "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "data/test_scenarios.jsonl": "e99b81ff1ca0622fc6b67f1bb9208e868155090819cf1ec25a649c382a6fdfa2",
+      "configs/m2_rubric.json": "c282d4c62356d676632539da246f54e69ba9c83d6295ba68d69a52ab1ec10ba9",
+      "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "data/m2/frozen_manifest.json": "ae7727c307ad6642ab4f11760e4a37855b115bfb844a81a5d512e7da8cc80f4b",
+      "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27",
+      "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+      "scripts/m5.py": "b85430752b11880e4d5d4dee1fd92f94ba1440dbc59bf5d458178f6c5ebb98db",
+      "scripts/m5_review.py": "a8feca5b3ec25c43020c5b1fa0a37533a56ebc8eb3251633e2ea0019ce515ad2",
+      "requirements-m4-lock.txt": "a95f1acdeeefa0b0cfdcda45d9e451ad59500f9fce773787f8ae39125eeb33ed"
+    }
+  },
+  "limitations": [
+    "只有一位评分者；可能熟悉数据或从语气猜出模型身份。",
+    "小型合成测试集，主题与训练集可能相近；不是全量语义泄漏证明。",
+    "一次贪心生成与描述性人工评分，不宣称统计显著或普遍改善。",
+    "测试已用于这次评测，后续改模型/Prompt应另建最终测试集。",
+    "四组人设分数均值只是1–5主观评分摘要，输入token只表示输入长度，不自动等于费用或速度收益。"
+  ]
+}

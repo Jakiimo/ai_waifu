@@ -1,0 +1,44 @@
+{
+  "run_id": "m3_learning_01",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dataset_version": "m2-tsundere-v3",
+  "seed": 42,
+  "gpu_dtype": "bfloat16",
+  "max_length": 256,
+  "num_train_epochs": 2,
+  "learning_rate": 0.0002,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "lr_scheduler_type": "cosine",
+  "warmup_ratio": 0.03,
+  "weight_decay": 0.0,
+  "max_grad_norm": 1.0,
+  "logging_steps": 10,
+  "training_prompt": "short",
+  "checkpoint_selection": "lowest Trainer eval_loss on the 24 frozen development references",
+  "verification_case_id": "dev-21",
+  "comparison_prompt_names": [
+    "short",
+    "strong_examples"
+  ],
+  "notes": "常规LoRA，非QLoRA；训练360条实例，仅监督最后回复。每轮检查开发loss并保存checkpoint，测试集留给M5。M1与冻结M2文件不变。 学习用独立实验：训练前与每轮结束后生成固定6条开发回答，保持同一提示词和贪心解码；由学习者亲手启动。",
+  "development_observation": {
+    "case_ids": [
+      "dev-01",
+      "dev-05",
+      "dev-09",
+      "dev-13",
+      "dev-22",
+      "dev-23"
+    ],
+    "prompt_name": "short",
+    "max_new_tokens": 128
+  }
+}

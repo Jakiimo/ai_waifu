@@ -1,0 +1,9 @@
+{
+  "completed_at_utc": "2026-10-14T03:19:23.130007+00:00",
+  "records": 240,
+  "success": 240,
+  "errors": 0,
+  "generations_sha256": "dc83b821df32a8038388c19e850e2447adf2c0d4bcb4c4d4c890c9c9991e242c",
+  "manifest_sha256": "eaf72fceb5f1da5626cb8c10ccb4f298f6d3000a10b6aa992a2d12e8c1d51256",
+  "training_executed": false
+}

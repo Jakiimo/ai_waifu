@@ -1,6 +1,6 @@
 {
-  "recorded_at_utc": "2026-10-13T12:36:08.423151+00:00",
-  "new_process_pid": 45990,
+  "recorded_at_utc": "2026-10-13T13:03:35.528329+00:00",
+  "new_process_pid": 61450,
   "device": "mps",
   "different_process": true,
   "base_logits_match": true,
@@ -13,5 +13,5 @@
   "adapter_sha256": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
   "run_manifest_sha256": "a94627c6a08c65eaf6e7403405f13ebd70aabbceea2bdd5a8069f238d2cc5771",
   "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
-  "verification_script_sha256": "5587d021efa204c3facf9fafd4de5fa12beeaa53ab28e86e5cdd9728daa00808"
+  "verification_script_sha256": "3d6d14a3048c12a3f7a46fea14f5f638aa29e08c69c7207984f4a7b234f5b3d7"
 }

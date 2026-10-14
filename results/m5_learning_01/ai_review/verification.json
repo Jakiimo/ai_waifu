@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-14T03:38:06.682699+00:00",
+  "scored_pairs": 120,
+  "scored_answers": 240,
+  "raw_generations_unchanged": true,
+  "frozen_conditions_unchanged": true,
+  "blind_package_unchanged": true,
+  "original_ratings_backed_up": true,
+  "summary_recomputed_matches": true,
+  "test_suite": "tests.test_m5_evaluation",
+  "tests_passed": 15,
+  "grading_kind": "ai_judge",
+  "human_reviewer_count": 0,
+  "artifact_sha256": {
+    "results/m5_learning_01/summary.json": "043bf378c8610a5af65d9a906249309a8a2c315983fe718b28b2207bdd6d320f",
+    "results/m5_learning_01/report.md": "c722c201415d0f3e107e87b4951b8e106c3c8c3dcd0c3b126ff8987f64fe7d9c",
+    "results/m5_learning_01/结果解读.md": "03a37cade96e5952e88bccac984eeeb97487b3ac7bd2044cf11b59cc5f7910a5",
+    "results/m5_learning_01/review/ratings.csv": "722c2581cb8a07c5afad32728d0ac896e8a94b80e8aac6ec71c471e289037783",
+    "results/m5_learning_01/ai_review/metadata.json": "40fdb1cadee1ab3a7ff2ec2ad489f5fe6a2e1125f74b6159127694d2fc1c0c41"
+  }
+}

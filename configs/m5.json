@@ -1,0 +1,21 @@
+{
+  "evaluation_id": "m5_learning_01",
+  "demo_config": "configs/m4.json",
+  "test_file": "data/test_scenarios.jsonl",
+  "rubric_file": "configs/m2_rubric.json",
+  "dataset_version": "m2-tsundere-v3",
+  "rubric_version": "tsundere-v3",
+  "expected_cases": 60,
+  "max_input_tokens": 768,
+  "max_new_tokens": 256,
+  "do_sample": false,
+  "blind_seed": 20261013,
+  "pairs_per_batch": 20,
+  "groups": {
+    "A": {"mode": "base", "prompt": "short"},
+    "B": {"mode": "base", "prompt": "strong_examples"},
+    "C": {"mode": "lora", "prompt": "short"},
+    "D": {"mode": "lora", "prompt": "strong_examples"}
+  },
+  "notes": "学习者亲手生成60题×4组。主对照B/D，辅对照A/C；匿名评分全部240回答。C/B用同题评分与输入token对照，不能将两种Prompt差异归因为纯Adapter贡献。单作者一次贪心生成，报告描述性结果与局限，不宣称普遍或显著改善。"
+}

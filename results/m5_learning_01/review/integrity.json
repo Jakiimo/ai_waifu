@@ -1,0 +1,18 @@
+{
+  "generations_sha256": "dc83b821df32a8038388c19e850e2447adf2c0d4bcb4c4d4c890c9c9991e242c",
+  "manifest_sha256": "eaf72fceb5f1da5626cb8c10ccb4f298f6d3000a10b6aa992a2d12e8c1d51256",
+  "pairs": 120,
+  "files": {
+    "outputs/m5_learning_01/blind_key.json": "8e24af5e9694ed753e8698f7377469140cff26ce00d4d3bc981747b1375c99c9",
+    "results/m5_learning_01/review/ratings_template.csv": "b46972a04e4b9d1432744109c518c6f0dba7a64a27e1e77fde2ec933bc3a4115",
+    "results/m5_learning_01/review/评分说明.md": "3bffcf53c9177567cba299ecf0f9923338f7ee13787dca9a3d8864449f2b3ee2",
+    "results/m5_learning_01/review/review_items.json": "e17b4dce484b189ac7e458398df932039bb55ca2317abf795aef38bb8511d17b",
+    "results/m5_learning_01/review/batch_01.md": "69e1dc2c99b8f43c55bd79d948036bf8d148a1ddcda101f1b93564c077a45e0e",
+    "results/m5_learning_01/review/batch_02.md": "fa1270b9be6986174e9833e417a96cc699882ed8834e5e7518e4a00c551a94c9",
+    "results/m5_learning_01/review/batch_03.md": "492920121e2a787d0c72d56310c3e8333e245b5397cf88a49708c8f4f4e8fd58",
+    "results/m5_learning_01/review/batch_04.md": "04f27df5808db7dfff2561bde82b7a6c504be0d9577563eec35bf112eef5bcd9",
+    "results/m5_learning_01/review/batch_05.md": "16b7e0f1c9c461ff02cc825729f32f6de09af1796af1a3d27f971a721d1f7a89",
+    "results/m5_learning_01/review/batch_06.md": "91d079ffc464e1c0d3aad87ab13c884156bb8eb2e5b7efd8753a02043d387e5d"
+  },
+  "editable_file": "results/m5_learning_01/review/ratings.csv"
+}

@@ -1,0 +1,32 @@
+{
+  "recorded_at_utc": "2026-10-13T14:45:30.606001+00:00",
+  "purpose": "developer browser QA with real local model, not learner acceptance",
+  "test_url": "http://127.0.0.1:7861/",
+  "source_sha256": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+  "checks": {
+    "page_loaded": true,
+    "generation_status_and_disabled_controls": true,
+    "two_turn_chat_generated": true,
+    "toolbar_clear_reset_visible_chat": true,
+    "overlong_message_error_and_control_recovery": true,
+    "new_session_reset": true,
+    "base_mode_actual_reply": true,
+    "mode_change_clears_visible_chat": true,
+    "same_question_comparison_completed": true,
+    "experiment_record_tab_visible": true
+  },
+  "two_turn_question": "刚才提到的小猫叫什么？",
+  "two_turn_answer": "松饼啊，就是那个刚刚来我家的小猫。你今天为什么这么高兴呢？",
+  "base_mode_answer": "晚安！整理书桌是个不错的选择，这样工作起来会更方便吧？",
+  "comparison": {
+    "question": "今天把书桌整理好了，想听一句鼓励。",
+    "base_answer": "那就说一句吧：“收拾得真干净，继续加油哦！”",
+    "lora_answer": "收拾一下心情也挺好。你今天做的小改变，比什么都重要。……嗯，现在还行，以后继续加油。"
+  },
+  "screenshots": [
+    "results/m4/chat_preview.jpg",
+    "results/m4/comparison_preview.jpg"
+  ],
+  "learner_acceptance": "pending",
+  "final_test_executed": false
+}

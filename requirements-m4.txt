@@ -1,0 +1,5 @@
+# 加界面依赖，保留M1-M3实测训练环境的全部版本。
+-c requirements-lock.txt
+-c requirements-m4-lock.txt
+-r requirements.txt
+gradio==6.0.2

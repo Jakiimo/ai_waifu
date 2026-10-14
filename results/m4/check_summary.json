@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-10-13T14:44:28.952555+00:00",
+  "test_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "tests_passed": 44,
+  "m4_tests_passed": 11,
+  "test_failures": 0,
+  "pip_check_passed": true,
+  "all_original_dependency_versions_unchanged": true,
+  "source_sha256": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+  "config_sha256": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+  "training_run_id": "m3_learning_01",
+  "learner_web_acceptance": "pending",
+  "official_model_training_executed": false,
+  "final_test_executed": false,
+  "runtime": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.12.0",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0"
+  },
+  "gradio": "6.0.2"
+}

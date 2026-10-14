@@ -1,0 +1,27 @@
+{
+  "recorded_at_utc": "2026-10-13T15:42:17.908145+00:00",
+  "test_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "tests_passed": 59,
+  "m5_tests_passed": 15,
+  "test_failures": 0,
+  "formal_test_generations": 0,
+  "formal_human_ratings_started": false,
+  "official_model_training_executed": false,
+  "runtime_model_generations_for_m5": false,
+  "cases": 60,
+  "planned_generations": 240,
+  "planned_blind_pairs": 120,
+  "maximum_input_tokens": 676,
+  "manifest_sha256": "eaf72fceb5f1da5626cb8c10ccb4f298f6d3000a10b6aa992a2d12e8c1d51256",
+  "source_sha256": "b85430752b11880e4d5d4dee1fd92f94ba1440dbc59bf5d458178f6c5ebb98db",
+  "review_source_sha256": "a8feca5b3ec25c43020c5b1fa0a37533a56ebc8eb3251633e2ea0019ce515ad2",
+  "qa_browser_checks": {
+    "all_scores_initially_unselected": true,
+    "empty_score_not_saved": true,
+    "temporary_qa_save_and_next": true,
+    "refresh_resumes_first_pending": true,
+    "temporary_qa_ratings_not_in_formal_results": true
+  },
+  "screenshot": "results/m5_setup/review_ui_qa.jpg",
+  "screenshot_is_temporary_qa_not_formal_evaluation": true
+}

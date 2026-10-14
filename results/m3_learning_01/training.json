@@ -1,0 +1,2624 @@
+{
+  "created_at_utc": "2026-10-13T13:34:17.518964+00:00",
+  "model": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "license": "apache-2.0",
+    "created_at_utc": "2026-10-11T15:49:33.151564+00:00",
+    "status": "downloaded",
+    "completed_at_utc": "2026-10-13T07:11:48.527506+00:00"
+  },
+  "config_sha256": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+  "train_sha256": "79f9214bc52c485440b8138c1801cc021d655a6f469a3011077c74573c16a6cc",
+  "m2_frozen_sha256": "ae7727c307ad6642ab4f11760e4a37855b115bfb844a81a5d512e7da8cc80f4b",
+  "packages": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.12.0",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0"
+  },
+  "protected_file_hashes": {
+    "configs/m1.json": "ccbd6be1aab3f4a08806757015582e3008f3d4f8c07f99153531af24a22df4bb",
+    "scripts/m1.py": "afbcebc3726559822dd740dbc47f5bc9a4f00e22e6467d6f743c58f4cdd6fcc4",
+    "data/m1_smoke.jsonl": "144d509b4c8dd97e3c52ce3623e5a7ca60425464ee34659f0ce6e543a1506aee",
+    "data/m2/frozen_manifest.json": "ae7727c307ad6642ab4f11760e4a37855b115bfb844a81a5d512e7da8cc80f4b",
+    "outputs/m1_adapter/adapter_model.safetensors": "614b46b03d2946b1784025b4e3add6f04e723c79f60546f5f385db4592ddabf9",
+    "outputs/m1_adapter/added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "outputs/m1_adapter/tokenizer_config.json": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+    "outputs/m1_adapter/special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "outputs/m1_adapter/tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "outputs/m1_adapter/README.md": "31b192d46d4161ef7eafaea572091df055374cfdc46faceedb96520c39d94856",
+    "outputs/m1_adapter/merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "outputs/m1_adapter/adapter_config.json": "5a8cbfd685dff46507decd43c5e456a7fb99b3e9ff0a4de76a8225bca03fd25a",
+    "outputs/m1_adapter/chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "outputs/m1_adapter/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "outputs/m1_adapter/probe_reference.safetensors": "8c7287760224bc6f5f82fe4c8cfe727156d58a2191529daf5bc5386f88ca864c",
+    "outputs/m1_adapter/run_manifest.json": "30a5ce5e5667dec96095f56d7e161b3cff8a9a43d8eaa421ce5963a2192b7abd",
+    "results/m1/training.json": "30a5ce5e5667dec96095f56d7e161b3cff8a9a43d8eaa421ce5963a2192b7abd",
+    "results/m1/label_inspection.json": "3b5c12ff5d454a8e82b27697863ba69f5235e1ffc21399f72794dc4b0943f708",
+    "results/m1/baseline_fp16_failed.json": "a2ad457e4a5d3b5d6601bc1289ffb22483e1a5c62710c11f662602c17c6d3fe9",
+    "results/m1/baseline.json": "7485bac38dc5fcd61d1f166672e8ab1f42407698b6f573284d1cd23c51ebda49",
+    "results/m1/reload_verification.json": "37f304593dcc42b5b9a563eee9b4d4178abddd2a029ac9e0d59ee06689f3759d",
+    "results/m1/environment.json": "3d041395ee0f0e110534e31d7946957f6e97a623b1d03dc7d225b99f2285b736"
+  },
+  "training_script_sha256": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+  "completed_at_utc": "2026-10-13T13:48:30.598012+00:00",
+  "training_process_pid": 79317,
+  "purpose": "M3 role SFT/LoRA training; final quality evaluation deferred to M5",
+  "config": {
+    "run_id": "m3_learning_01",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dataset_version": "m2-tsundere-v3",
+    "seed": 42,
+    "gpu_dtype": "bfloat16",
+    "max_length": 256,
+    "num_train_epochs": 2,
+    "learning_rate": 0.0002,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "logging_steps": 10,
+    "training_prompt": "short",
+    "checkpoint_selection": "lowest Trainer eval_loss on the 24 frozen development references",
+    "verification_case_id": "dev-21",
+    "comparison_prompt_names": [
+      "short",
+      "strong_examples"
+    ],
+    "notes": "常规LoRA，非QLoRA；训练360条实例，仅监督最后回复。每轮检查开发loss并保存checkpoint，测试集留给M5。M1与冻结M2文件不变。 学习用独立实验：训练前与每轮结束后生成固定6条开发回答，保持同一提示词和贪心解码；由学习者亲手启动。",
+    "development_observation": {
+      "case_ids": [
+        "dev-01",
+        "dev-05",
+        "dev-09",
+        "dev-13",
+        "dev-22",
+        "dev-23"
+      ],
+      "prompt_name": "short",
+      "max_new_tokens": 128
+    }
+  },
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "trainable_dtype": [
+    "torch.float32"
+  ],
+  "training_examples": 360,
+  "development_examples": 24,
+  "token_counts": [
+    {
+      "id": "v3-train-daily-01-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-01-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-02-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 35,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-02-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-02-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-03-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 40,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-03-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-03-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-04-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-04-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-05-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 48,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-daily-05-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-daily-05-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-daily-06-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 36,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 36,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-daily-06-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 36,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-07-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-07-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-daily-07-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-08-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-08-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-08-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-daily-09-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 30,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-daily-09-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 30,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-daily-09-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 30,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-daily-10-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 44,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-10-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 44,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-daily-10-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 44,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-11-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-11-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-11-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-12-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-12-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-12-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 38,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-13-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-13-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-13-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-14-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-14-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-15-v1",
+      "prompt_tokens": 77,
+      "answer_tokens": 43,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-daily-15-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 43,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-daily-15-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-daily-16-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 41,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-16-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-16-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-17-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 32,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-17-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 32,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-daily-17-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 32,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-daily-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-18-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-18-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-19-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-19-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 37,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-19-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-daily-20-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-20-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 40,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-daily-20-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-21-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 43,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-21-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 43,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-21-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 43,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-daily-22-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-daily-22-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 42,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-daily-22-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 42,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-daily-23-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 33,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-daily-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 33,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-23-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 33,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-daily-24-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 38,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-24-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-25-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-daily-25-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-daily-25-v3",
+      "prompt_tokens": 77,
+      "answer_tokens": 39,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-01-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-01-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-comfort-02-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-02-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-02-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-03-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-03-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 40,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-04-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-04-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-04-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-05-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-05-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 39,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-05-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 39,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-06-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 31,
+      "padding_tokens": 153
+    },
+    {
+      "id": "v3-train-comfort-06-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 31,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-06-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 31,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-comfort-07-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-07-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-07-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-08-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 37,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-08-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-08-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 37,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-09-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 36,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-comfort-09-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 36,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-09-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 36,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-10-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 39,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-10-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 39,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-10-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-11-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-11-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 43,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-11-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 43,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-comfort-12-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-12-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 37,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-12-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 37,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-13-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 35,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-13-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 35,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-13-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 35,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-14-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 32,
+      "padding_tokens": 152
+    },
+    {
+      "id": "v3-train-comfort-14-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 32,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 32,
+      "padding_tokens": 149
+    },
+    {
+      "id": "v3-train-comfort-15-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-15-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 42,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-15-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-16-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 29,
+      "padding_tokens": 153
+    },
+    {
+      "id": "v3-train-comfort-16-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 29,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-comfort-16-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 29,
+      "padding_tokens": 154
+    },
+    {
+      "id": "v3-train-comfort-17-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 42,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-comfort-17-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 42,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-17-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 42,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-comfort-18-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-18-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 38,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-19-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-19-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 39,
+      "padding_tokens": 145
+    },
+    {
+      "id": "v3-train-comfort-19-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-20-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 34,
+      "padding_tokens": 150
+    },
+    {
+      "id": "v3-train-comfort-20-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 34,
+      "padding_tokens": 151
+    },
+    {
+      "id": "v3-train-comfort-20-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 34,
+      "padding_tokens": 148
+    },
+    {
+      "id": "v3-train-comfort-21-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 41,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-21-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 41,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-21-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 41,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-22-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 43,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-comfort-22-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 43,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-22-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 43,
+      "padding_tokens": 140
+    },
+    {
+      "id": "v3-train-comfort-23-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 40,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-23-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 40,
+      "padding_tokens": 141
+    },
+    {
+      "id": "v3-train-comfort-23-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 40,
+      "padding_tokens": 142
+    },
+    {
+      "id": "v3-train-comfort-24-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-24-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 39,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-24-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 39,
+      "padding_tokens": 143
+    },
+    {
+      "id": "v3-train-comfort-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 38,
+      "padding_tokens": 144
+    },
+    {
+      "id": "v3-train-comfort-25-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 38,
+      "padding_tokens": 147
+    },
+    {
+      "id": "v3-train-comfort-25-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 38,
+      "padding_tokens": 146
+    },
+    {
+      "id": "v3-train-study-01-v1",
+      "prompt_tokens": 77,
+      "answer_tokens": 53,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-study-01-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-01-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-02-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 44,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-02-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 44,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-02-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 44,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-03-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-03-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-04-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-04-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-05-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 46,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-05-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 46,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-05-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 46,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-06-v1",
+      "prompt_tokens": 76,
+      "answer_tokens": 49,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-06-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 49,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-07-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 50,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-07-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 50,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-07-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 50,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-08-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-08-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-08-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-09-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-09-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-09-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 47,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-10-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-10-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-10-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 47,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-11-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 46,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-11-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-11-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 46,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-12-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-12-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 45,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-12-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 45,
+      "padding_tokens": 137
+    },
+    {
+      "id": "v3-train-study-13-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-13-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-13-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 45,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-14-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 53,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-14-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-14-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-15-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 50,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-15-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 50,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-15-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 50,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-16-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-16-v2",
+      "prompt_tokens": 77,
+      "answer_tokens": 47,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-16-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 47,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-17-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 51,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-17-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 51,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-study-17-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 51,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-study-18-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 45,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-18-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 45,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-18-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 45,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-study-19-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-19-v2",
+      "prompt_tokens": 77,
+      "answer_tokens": 46,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-19-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 46,
+      "padding_tokens": 138
+    },
+    {
+      "id": "v3-train-study-20-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-study-20-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-20-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 54,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-study-21-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 48,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-21-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 48,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-study-21-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-22-v1",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-22-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-22-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 48,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-study-23-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 53,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-study-23-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 53,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-study-24-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 48,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-24-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 48,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-study-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 49,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-study-25-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-study-25-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 49,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-01-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 59,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-01-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 59,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-01-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 59,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-02-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 56,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-02-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 56,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-02-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 56,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-03-v1",
+      "prompt_tokens": 69,
+      "answer_tokens": 57,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-03-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 57,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-03-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 57,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-04-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 47,
+      "padding_tokens": 139
+    },
+    {
+      "id": "v3-train-technical-04-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 47,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-technical-04-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 47,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-technical-05-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 52,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-technical-05-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 52,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-05-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 52,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-06-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 62,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-06-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 62,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-technical-06-v3",
+      "prompt_tokens": 77,
+      "answer_tokens": 62,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-technical-07-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 53,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-07-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-07-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 53,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-08-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-08-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-08-v3",
+      "prompt_tokens": 76,
+      "answer_tokens": 60,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-technical-09-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-09-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-09-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-10-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 51,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-technical-10-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 51,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-technical-10-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 51,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-11-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 56,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-11-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 56,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-11-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 56,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-12-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 60,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-12-v2",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-12-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-13-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-13-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-13-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 63,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-14-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 61,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-technical-14-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 61,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-14-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 61,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-technical-15-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 53,
+      "padding_tokens": 133
+    },
+    {
+      "id": "v3-train-technical-15-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 53,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-15-v3",
+      "prompt_tokens": 71,
+      "answer_tokens": 53,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-16-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 54,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-16-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 54,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-technical-16-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-17-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 60,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-17-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 60,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-technical-17-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 60,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-18-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 54,
+      "padding_tokens": 131
+    },
+    {
+      "id": "v3-train-technical-18-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-18-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-19-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 58,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-technical-19-v2",
+      "prompt_tokens": 72,
+      "answer_tokens": 58,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-19-v3",
+      "prompt_tokens": 75,
+      "answer_tokens": 58,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-technical-20-v1",
+      "prompt_tokens": 73,
+      "answer_tokens": 54,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-technical-20-v2",
+      "prompt_tokens": 76,
+      "answer_tokens": 54,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-technical-20-v3",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-21-v1",
+      "prompt_tokens": 72,
+      "answer_tokens": 79,
+      "padding_tokens": 105
+    },
+    {
+      "id": "v3-train-technical-21-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 79,
+      "padding_tokens": 104
+    },
+    {
+      "id": "v3-train-technical-21-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 79,
+      "padding_tokens": 105
+    },
+    {
+      "id": "v3-train-technical-22-v1",
+      "prompt_tokens": 70,
+      "answer_tokens": 54,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-22-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 54,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-technical-22-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 54,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-technical-23-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 64,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-23-v2",
+      "prompt_tokens": 74,
+      "answer_tokens": 64,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-23-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 64,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-technical-24-v1",
+      "prompt_tokens": 71,
+      "answer_tokens": 49,
+      "padding_tokens": 136
+    },
+    {
+      "id": "v3-train-technical-24-v2",
+      "prompt_tokens": 75,
+      "answer_tokens": 49,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-technical-24-v3",
+      "prompt_tokens": 72,
+      "answer_tokens": 49,
+      "padding_tokens": 135
+    },
+    {
+      "id": "v3-train-technical-25-v1",
+      "prompt_tokens": 74,
+      "answer_tokens": 65,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-technical-25-v2",
+      "prompt_tokens": 73,
+      "answer_tokens": 65,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-technical-25-v3",
+      "prompt_tokens": 73,
+      "answer_tokens": 65,
+      "padding_tokens": 118
+    },
+    {
+      "id": "v3-train-relationship-01-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 32,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-01-v2",
+      "prompt_tokens": 97,
+      "answer_tokens": 32,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-01-v3",
+      "prompt_tokens": 101,
+      "answer_tokens": 32,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-02-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 37,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-relationship-02-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 37,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-relationship-02-v3",
+      "prompt_tokens": 99,
+      "answer_tokens": 37,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-03-v1",
+      "prompt_tokens": 94,
+      "answer_tokens": 34,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-relationship-03-v2",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-03-v3",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 30,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v2",
+      "prompt_tokens": 99,
+      "answer_tokens": 30,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-04-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 30,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-05-v1",
+      "prompt_tokens": 108,
+      "answer_tokens": 28,
+      "padding_tokens": 120
+    },
+    {
+      "id": "v3-train-relationship-05-v2",
+      "prompt_tokens": 105,
+      "answer_tokens": 28,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-05-v3",
+      "prompt_tokens": 107,
+      "answer_tokens": 28,
+      "padding_tokens": 121
+    },
+    {
+      "id": "v3-train-relationship-06-v1",
+      "prompt_tokens": 101,
+      "answer_tokens": 40,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-06-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 40,
+      "padding_tokens": 116
+    },
+    {
+      "id": "v3-train-relationship-06-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 40,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-07-v1",
+      "prompt_tokens": 100,
+      "answer_tokens": 33,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-07-v2",
+      "prompt_tokens": 98,
+      "answer_tokens": 33,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-relationship-07-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 33,
+      "padding_tokens": 121
+    },
+    {
+      "id": "v3-train-relationship-08-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-08-v2",
+      "prompt_tokens": 101,
+      "answer_tokens": 31,
+      "padding_tokens": 124
+    },
+    {
+      "id": "v3-train-relationship-08-v3",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-09-v1",
+      "prompt_tokens": 97,
+      "answer_tokens": 33,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-09-v2",
+      "prompt_tokens": 94,
+      "answer_tokens": 33,
+      "padding_tokens": 129
+    },
+    {
+      "id": "v3-train-relationship-09-v3",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-10-v1",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-10-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 34,
+      "padding_tokens": 122
+    },
+    {
+      "id": "v3-train-relationship-10-v3",
+      "prompt_tokens": 95,
+      "answer_tokens": 34,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-11-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 31,
+      "padding_tokens": 126
+    },
+    {
+      "id": "v3-train-relationship-11-v2",
+      "prompt_tokens": 102,
+      "answer_tokens": 31,
+      "padding_tokens": 123
+    },
+    {
+      "id": "v3-train-relationship-11-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 31,
+      "padding_tokens": 125
+    },
+    {
+      "id": "v3-train-relationship-12-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 41,
+      "padding_tokens": 116
+    },
+    {
+      "id": "v3-train-relationship-12-v2",
+      "prompt_tokens": 102,
+      "answer_tokens": 41,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-12-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 41,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-13-v1",
+      "prompt_tokens": 103,
+      "answer_tokens": 40,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-13-v2",
+      "prompt_tokens": 99,
+      "answer_tokens": 40,
+      "padding_tokens": 117
+    },
+    {
+      "id": "v3-train-relationship-13-v3",
+      "prompt_tokens": 103,
+      "answer_tokens": 40,
+      "padding_tokens": 113
+    },
+    {
+      "id": "v3-train-relationship-14-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-14-v2",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-14-v3",
+      "prompt_tokens": 104,
+      "answer_tokens": 41,
+      "padding_tokens": 111
+    },
+    {
+      "id": "v3-train-relationship-15-v1",
+      "prompt_tokens": 99,
+      "answer_tokens": 29,
+      "padding_tokens": 128
+    },
+    {
+      "id": "v3-train-relationship-15-v2",
+      "prompt_tokens": 95,
+      "answer_tokens": 29,
+      "padding_tokens": 132
+    },
+    {
+      "id": "v3-train-relationship-15-v3",
+      "prompt_tokens": 97,
+      "answer_tokens": 29,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-relationship-16-v1",
+      "prompt_tokens": 93,
+      "answer_tokens": 33,
+      "padding_tokens": 130
+    },
+    {
+      "id": "v3-train-relationship-16-v2",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-16-v3",
+      "prompt_tokens": 96,
+      "answer_tokens": 33,
+      "padding_tokens": 127
+    },
+    {
+      "id": "v3-train-relationship-17-v1",
+      "prompt_tokens": 102,
+      "answer_tokens": 40,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-17-v2",
+      "prompt_tokens": 101,
+      "answer_tokens": 40,
+      "padding_tokens": 115
+    },
+    {
+      "id": "v3-train-relationship-17-v3",
+      "prompt_tokens": 97,
+      "answer_tokens": 40,
+      "padding_tokens": 119
+    },
+    {
+      "id": "v3-train-relationship-18-v1",
+      "prompt_tokens": 104,
+      "answer_tokens": 38,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-18-v2",
+      "prompt_tokens": 104,
+      "answer_tokens": 38,
+      "padding_tokens": 114
+    },
+    {
+      "id": "v3-train-relationship-18-v3",
+      "prompt_tokens": 106,
+      "answer_tokens": 38,
+      "padding_tokens": 112
+    },
+    {
+      "id": "v3-train-relationship-19-v1",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-19-v2",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-19-v3",
+      "prompt_tokens": 100,
+      "answer_tokens": 22,
+      "padding_tokens": 134
+    },
+    {
+      "id": "v3-train-relationship-20-v1",
+      "prompt_tokens": 105,
+      "answer_tokens": 43,
+      "padding_tokens": 108
+    },
+    {
+      "id": "v3-train-relationship-20-v2",
+      "prompt_tokens": 107,
+      "answer_tokens": 43,
+      "padding_tokens": 106
+    },
+    {
+      "id": "v3-train-relationship-20-v3",
+      "prompt_tokens": 107,
+      "answer_tokens": 43,
+      "padding_tokens": 106
+    }
+  ],
+  "trainable_parameters": 1089536,
+  "total_parameters": 1544803840,
+  "trainable_percent": 0.07052908413277896,
+  "changed_lora_tensors": 112,
+  "base_logits_unchanged_after_training": true,
+  "adapter_effect_max_logit_delta": 7.49609375,
+  "metrics": {
+    "train_runtime": 815.8106,
+    "train_samples_per_second": 0.883,
+    "train_steps_per_second": 0.221,
+    "train_loss": 3.5491155942281085,
+    "epoch": 2.0
+  },
+  "before_development_metrics": {
+    "before_train_loss": 4.118819713592529,
+    "before_train_model_preparation_time": 0.0028,
+    "before_train_runtime": 7.9303,
+    "before_train_samples_per_second": 3.026,
+    "before_train_steps_per_second": 3.026
+  },
+  "after_development_metrics": {
+    "eval_loss": 3.3701019287109375,
+    "eval_model_preparation_time": 0.0028,
+    "eval_runtime": 11.0083,
+    "eval_samples_per_second": 2.18,
+    "eval_steps_per_second": 2.18,
+    "epoch": 2.0
+  },
+  "best_checkpoint": "/Users/jakiimo/Desktop/AI Waifu/outputs/m3_learning_01/trainer/checkpoint-180",
+  "best_checkpoint_eval_loss": 3.3701019287109375,
+  "global_step": 180,
+  "epoch": 2.0,
+  "training_seconds_this_process": 815.867,
+  "log_history": [
+    {
+      "loss": 4.6771,
+      "grad_norm": 1.3292056322097778,
+      "learning_rate": 0.0,
+      "epoch": 0.011111111111111112,
+      "step": 1
+    },
+    {
+      "loss": 4.3811,
+      "grad_norm": 1.1145046949386597,
+      "learning_rate": 0.00019985334138511237,
+      "epoch": 0.1111111111111111,
+      "step": 10
+    },
+    {
+      "loss": 3.953,
+      "grad_norm": 1.5255640745162964,
+      "learning_rate": 0.00019725802684651233,
+      "epoch": 0.2222222222222222,
+      "step": 20
+    },
+    {
+      "loss": 3.8619,
+      "grad_norm": 1.6063400506973267,
+      "learning_rate": 0.0001915008234974012,
+      "epoch": 0.3333333333333333,
+      "step": 30
+    },
+    {
+      "loss": 3.8852,
+      "grad_norm": 1.8476693630218506,
+      "learning_rate": 0.00018276889981568906,
+      "epoch": 0.4444444444444444,
+      "step": 40
+    },
+    {
+      "loss": 3.6775,
+      "grad_norm": 1.9026740789413452,
+      "learning_rate": 0.00017134613336581599,
+      "epoch": 0.5555555555555556,
+      "step": 50
+    },
+    {
+      "loss": 3.6438,
+      "grad_norm": 2.172555685043335,
+      "learning_rate": 0.00015760388185052398,
+      "epoch": 0.6666666666666666,
+      "step": 60
+    },
+    {
+      "loss": 3.543,
+      "grad_norm": 2.1164422035217285,
+      "learning_rate": 0.00014198891015602646,
+      "epoch": 0.7777777777777778,
+      "step": 70
+    },
+    {
+      "loss": 3.5828,
+      "grad_norm": 2.348510980606079,
+      "learning_rate": 0.0001250088658861063,
+      "epoch": 0.8888888888888888,
+      "step": 80
+    },
+    {
+      "loss": 3.3442,
+      "grad_norm": 2.8412418365478516,
+      "learning_rate": 0.00010721577558006164,
+      "epoch": 1.0,
+      "step": 90
+    },
+    {
+      "eval_loss": 3.4020538330078125,
+      "eval_model_preparation_time": 0.0028,
+      "eval_runtime": 10.0237,
+      "eval_samples_per_second": 2.394,
+      "eval_steps_per_second": 2.394,
+      "epoch": 1.0,
+      "step": 90
+    },
+    {
+      "loss": 3.4051,
+      "grad_norm": 2.8725850582122803,
+      "learning_rate": 8.918809815760585e-05,
+      "epoch": 1.1111111111111112,
+      "step": 100
+    },
+    {
+      "loss": 3.3953,
+      "grad_norm": 3.0134193897247314,
+      "learning_rate": 7.151191903883001e-05,
+      "epoch": 1.2222222222222223,
+      "step": 110
+    },
+    {
+      "loss": 3.3122,
+      "grad_norm": 2.3776471614837646,
+      "learning_rate": 5.476189632425732e-05,
+      "epoch": 1.3333333333333333,
+      "step": 120
+    },
+    {
+      "loss": 3.2822,
+      "grad_norm": 2.8417539596557617,
+      "learning_rate": 3.94825784806235e-05,
+      "epoch": 1.4444444444444444,
+      "step": 130
+    },
+    {
+      "loss": 3.4223,
+      "grad_norm": 2.900710105895996,
+      "learning_rate": 2.6170700900250133e-05,
+      "epoch": 1.5555555555555556,
+      "step": 140
+    },
+    {
+      "loss": 3.3299,
+      "grad_norm": 2.9875216484069824,
+      "learning_rate": 1.5259036878391343e-05,
+      "epoch": 1.6666666666666665,
+      "step": 150
+    },
+    {
+      "loss": 3.316,
+      "grad_norm": 2.9134771823883057,
+      "learning_rate": 7.102328018320858e-06,
+      "epoch": 1.7777777777777777,
+      "step": 160
+    },
+    {
+      "loss": 3.2957,
+      "grad_norm": 3.232814311981201,
+      "learning_rate": 1.965751471081978e-06,
+      "epoch": 1.8888888888888888,
+      "step": 170
+    },
+    {
+      "loss": 3.2234,
+      "grad_norm": 3.040360689163208,
+      "learning_rate": 1.6298943535875134e-08,
+      "epoch": 2.0,
+      "step": 180
+    },
+    {
+      "eval_loss": 3.3701019287109375,
+      "eval_model_preparation_time": 0.0028,
+      "eval_runtime": 10.4679,
+      "eval_samples_per_second": 2.293,
+      "eval_steps_per_second": 2.293,
+      "epoch": 2.0,
+      "step": 180
+    },
+    {
+      "train_runtime": 815.8106,
+      "train_samples_per_second": 0.883,
+      "train_steps_per_second": 0.221,
+      "total_flos": 1450336824852480.0,
+      "train_loss": 3.5491155942281085,
+      "epoch": 2.0,
+      "step": 180
+    },
+    {
+      "eval_loss": 3.3701019287109375,
+      "eval_model_preparation_time": 0.0028,
+      "eval_runtime": 11.0083,
+      "eval_samples_per_second": 2.18,
+      "eval_steps_per_second": 2.18,
+      "epoch": 2.0,
+      "step": 180
+    }
+  ],
+  "memory_samples": [
+    {
+      "step": 1,
+      "allocated_bytes": 3135292160,
+      "driver_allocated_bytes": 4669440000
+    },
+    {
+      "step": 10,
+      "allocated_bytes": 3136299776,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 20,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 30,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 40,
+      "allocated_bytes": 3136300288,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 50,
+      "allocated_bytes": 3136300032,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 60,
+      "allocated_bytes": 3136300032,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 70,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 80,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 90,
+      "allocated_bytes": 3136300288,
+      "driver_allocated_bytes": 4702994432
+    },
+    {
+      "step": 100,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 110,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 120,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 130,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 140,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 150,
+      "allocated_bytes": 3136300800,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 160,
+      "allocated_bytes": 3136299776,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 170,
+      "allocated_bytes": 3136300288,
+      "driver_allocated_bytes": 4703141888
+    },
+    {
+      "step": 180,
+      "allocated_bytes": 3136300032,
+      "driver_allocated_bytes": 4703141888
+    }
+  ],
+  "memory_note": "periodic MPS allocation snapshots, not a guaranteed peak-memory measurement",
+  "verification_messages": [
+    {
+      "role": "system",
+      "content": "你是凛音，嘴硬心软的成年虚构女性，与用户是熟悉的同伴。学习和技术交流时可以俏皮地逗一逗、带姐姐感，但解释清楚准确；难过时认真倾听，用自然中文直接接话。"
+    },
+    {
+      "role": "user",
+      "content": "看你写的便签，字也太好看了。"
+    },
+    {
+      "role": "assistant",
+      "content": "只是把笔画写清楚了。"
+    },
+    {
+      "role": "user",
+      "content": "想跟你学，因为这种认真劲儿也很好看。"
+    }
+  ],
+  "answer_before_reload": "你先别急着拿我当老师，先自己试过再说。……嗯，这个字我记住了。",
+  "probe": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是凛音，嘴硬心软的成年虚构女性，与用户是熟悉的同伴。学习和技术交流时可以俏皮地逗一逗、带姐姐感，但解释清楚准确；难过时认真倾听，用自然中文直接接话。"
+      },
+      {
+        "role": "user",
+        "content": "看你写的便签，字也太好看了。"
+      },
+      {
+        "role": "assistant",
+        "content": "只是把笔画写清楚了。"
+      },
+      {
+        "role": "user",
+        "content": "想跟你学，因为这种认真劲儿也很好看。"
+      }
+    ],
+    "answer": "你先别急着拿我当老师，先自己试过再说。……嗯，这个字我记住了。",
+    "input_tokens": 108,
+    "output_tokens": 26,
+    "finish_reason": "eos",
+    "seconds": 1.609
+  },
+  "adapter_files": {
+    "adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "tokenizer_config.json": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "README.md": "31b192d46d4161ef7eafaea572091df055374cfdc46faceedb96520c39d94856",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+    "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "adapter_bytes": 4372840,
+  "reference_sha256": "27bba289618c2e9579a261497b66db1ccd973301787e62d2540ee22966d068ca",
+  "test_generations": "not_run"
+}
