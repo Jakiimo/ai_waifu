@@ -1,10 +1,10 @@
-# AI Waifu：M3–M5 逐步学习
+# AI Waifu：M3–M6 逐步学习
 
 用途：用原创角色对话对 Qwen2.5-1.5B-Instruct 做 LoRA 微调，观察角色语气与实际回答质量。
 
-源码基准：本地 commit `5c457ce`；本地增加了独立配置选择和训练中开发回答观察。原始 `configs/m3.json` 和已有训练结果保留。课程03准备了新的实验配置，但正式训练由学习者亲手启动。
+源码基准：M3历史commit `5c457ce`，M3开发观察、M4/M5交付commit `a502b7f`；M6源码与实测记录随本阶段提交保存。原始`configs/m3.json`和已有训练结果保留，正式实验由学习者亲手启动。
 
-前置基础：能看懂 Python 函数调用、字典取值；已经了解 loss、labels 和 LoRA 的基本含义。当前覆盖M3训练主链、学习者独立实验、M4推理入口与M5评测流程；M5正式生成及评分由学习者亲手执行。
+前置基础：能看懂Python函数调用、字典取值；已经了解loss、labels和LoRA。当前覆盖M3、M4、M5及M6候选、小样本DPO、全量审核与同起点对照入口。M6的420条候选与210题审核完成，现行179组train/6组dev已冻结；旧小样本5次更新及重载完成。正式DPO已由学习者完成45次更新与新进程重载，开发观察未支持明确整体改善；chosen-only SFT、最终评测与M7尚未完成。
 
 ## 01：训练配置（已讲解）
 
@@ -174,6 +174,8 @@ M3学习者实验已完成训练、独立进程重载和18条开发对照。现�
 
 ## 05：四组对照与匿名人工评测（已展开）
 
+进度更新：原人工路线保留作课程说明；用户后续将评分委托给助手，240条正式回答及120对AI评分已完成，报告见results/m5_learning_01/。不冒充人工盲评，原文“0/240”指当时准备阶段。
+
 读完能回答：如何区分LoRA的额外贡献与详细Prompt的帮助，如何保存同题条件，如何把人工偏好汇总为有明确分母的结果。
 
 主链：`configs/m5.json` → `scripts/m5.py:preflight/prepare/build_tasks` → `generate/generate_records` → `build_pairs/blind` → `scripts/m5_review.py:save_rating` → `parse_ratings/summarize/report`。
@@ -187,3 +189,63 @@ M3学习者实验已完成训练、独立进程重载和18条开发对照。现�
 具体亲手命令与评分规则见[M5教程](docs/M5_入门教程.md)。准备包与代码已检查；当前正式回答0/240、人工评分未开始。选读证据：tests/test_m5_evaluation.py、docs/M5_验证记录.md，测试仅用临时QA数据，不是正式效果结论。
 
 回顾任务：解释D/B为何能隔离Adapter影响，而C/B不能；拿一个假设的胜平负数量，计算含平局与排除平局两种胜率，并写清分母。评分完成后根据真实结果讨论技术取舍，不为微调预设胜利。
+
+## 06：为DPO准备同题候选（已展开）
+
+读完能回答：为什么要两条答案，为什么生成候选还不是训练，谁决定chosen/rejected。
+
+主链：终端collect → scripts/m6.py:main/prepare → preference_data.py:build_candidate_tasks → CandidateEngine.ensure_loaded/generate → generate_candidates保存 → review_pack → 助手实际审核 → export_pairs。
+
+必读顺序：configs/m6.json（同一short、两条采样、独立seed）→ build_candidate_tasks（messages不含expectation）→ CandidateEngine.ensure_loaded（加载旧SFT并冻结）→ generate（实际推理）→ generate_candidates（中断与缓存）→ validate_decision/export_pairs（审核门槛与来源绑定）。每步的输入、下一调用、结果与失败恢复见[M6入门教程](docs/M6_入门教程.md)。
+
+本课亲手操作只到前20题的40条候选与审核包，不要求学习者打标。双方都差不能自动选一个当好答案；由助手核查或记录修订。拒绝使用test作候选集，生成失败和同文回复保留，不悄悄补成功记录。
+
+选读tests/test_m6_preference.py：临时CPU微型TRL实验不是正式Qwen DPO。当前40条候选已完成，20组实际偏好已审核导出，继续第07课；PPO暂缓。
+
+回顾任务：复述这40条回复由哪个模型生成，collect是否更新A/B，以及chosen/rejected与M3单个示例回答的区别。
+
+## 07：从偏好对到DPO参数更新（已展开，学习者已训练并重载）
+
+目标：解释DPO同时比较两条已知答案的概率、相对冻结SFT的偏好变化，以及为什么只有policy LoRA更新。实际操作见[M6第二步教程](docs/M6_第二步_DPO小样本教程.md)。
+
+输入是20组固定prompt/chosen/rejected，2组直接选择原候选、18组chosen由助手修订；输出是更新5次的完整policy LoRA、训练日志、6条开发题前后对照和重载记录。全部偏好为AI反馈，修订来源不得隐去。
+
+主链：inspect核对真实数据 → train/preflight验证来源 → encoded_rows/encode_preference确定回答与EOS边界 → make_model复制policy/reference → make_trainer建立TRL训练器 → observe生成6题训练前回答 → 固定参考概率 → trainer.train计算loss/反向/更新 → observe生成训练后回答 → 保存policy → 新进程verify。
+
+必读顺序：configs/m6_dpo_smoke.json（20对、batch1、累积4、5次更新）→ preflight（审核与候选来源绑定）→ encode_preference（只对最后回答计目标概率）→ make_model/copy_reference_from_policy（原SFT精确复制、reference冻结）→ trainer_class/make_trainer（TRL DPO与参考上下文）→ train/observe（训练与开发生成分开）→ verify（重载探针）。每个环节的输入、结果与错误保留见第二步教程。
+
+概率通过teacher forcing计算：喂入保存的真实答案，并读出每个目标token的概率，不在训练中重新生成chosen。目标提升policy的chosen/rejected差值相对reference的变化；起点margin0、loss约0.693不表示两答案等概率。DPO日志的reward是隐式概率比，不是额外奖励模型。
+
+开发检查：17项相关测试通过；真实Qwen/MPS上两对前向与最长样本一次反向通过，optimizer更新0次。学习者随后完成实际5次更新，112个policy LoRA张量改变，reference不变，新进程重载logit探针差0。6题开发观察未显示明确整体改善。该入口不支持中断checkpoint恢复；失败保存记录后另开run，不静默重做。
+
+回顾：指出哪一步第一次改A/B；解释为何不能关闭LoRA作reference；说明rejected在loss中的作用；读6题前后回答并列出改善与退化，不能用loss下降代替最终评测。
+
+chosen-only SFT、完整数据训练、新最终测试与M7 PPO仍待后续步骤实施。
+
+## 08：扩展并审核训练/开发偏好（已展开，采样与审核完成）
+
+目标：区分场景数、候选数与审核后偏好数；理解续采如何保留已生成结果，以及开发区为什么不能靠改写凑量。完整操作与原理见[M6第三步](docs/M6_第三步_扩展偏好数据.md)。
+
+输入仍为原M3 SFT＋同一short＋预先划分场景，不用小样本DPO模型。180题训练目标需360条候选，已有40条，所以train --limit180 --resume新增320条；30题开发另生成60条。最终test60题不采样。
+
+主链与必读：collect → prepare（冻结条件）→ build_candidate_tasks（split和前N题）→ generate_candidates（known key验证、跳过已保存项）→ CandidateEngine.generate（参数冻结采样）→ 逐条保存 → review_pack（新哈希包）→ 助手实际审核 → export_pairs（保留旧快照、导出新快照）。恢复与错误保留说明在第三步教程中；选读原恢复/泄漏测试，暂缓正式训练器和PPO。
+
+新train包会重复展示前20题，原审核按case_id保留，不重复决策。训练chosen修订记录AI来源，开发两边都差则拒收，不改写开发chosen凑30组。记录纠错对/风格对、类别与长度分布；候选数420不等于可用偏好210。数据不足时如实说明，再定扩展版本。
+
+回顾：解释新增320而不是360的原因；描述中断后已保存的候选和生成错误分别怎样处理；说明为什么chosen-only SFT与正式DPO都从原M3 SFT开始。实际210题审核后179组train/6组dev，训练拒收1、开发拒收24，原20组保留。新快照与冻结记录见data/m6/FORMAL_FREEZE.json，继续09。
+
+## 09：同起点chosen-only SFT与DPO（DPO已完成，SFT对照待运行）
+
+目标：区分新示范的收益与偏好目标的收益；亲手完成两条独立训练/重载，并观察第0、15、30、45步的开发变化。操作见[M6第四步](docs/M6_第四步_同起点训练对照.md)。
+
+输入179组训练偏好：26条chosen原选、153条AI修订；6组开发偏好均原选，覆盖有限，不做试参。6条生成探针在开发区，与这6组偏好不重叠。两条路线从原M3 SFT复制，固定1轮最后checkpoint，不从小样本DPO继续。预期45步，DPO两回答与参考计算，不是等算力。
+
+主链与必读：scripts/m6_train.py:main → preflight/validate_rows（冻结SHA、实际审核、split与候选绑定）→ sft_rows（只监督chosen＋EOS）或make_trainer的DPO分支（两答案相对原SFT）→ m6_dpo.make_model（精确复制policy/reference）→ train/observe(step0) → Trainer.train → Progress.on_step_end（15步生成并恢复状态）→ 保存完整policy → 新进程verify。
+
+SFT保留prompt的上下文但labels=-100，rejected不进入其输入；DPO仍用冻结SFT参考。评价loss定义不同，不按数值大小判哪条路线更好。选择固定一轮终点，最终60题尚未生成；生成探针已看过，只叫开发回归。
+
+选读tests/test_m6_formal.py：覆盖开发修订拒绝、偏好来源篡改拒绝、全量SFT目标mask、临时真实Trainer的末组梯度累积、参考/基础不更新及policy保存重载。暂缓最终评分与PPO。真实Qwen反向开发检查不更新参数；实际正式训练由学习者启动。
+
+失败分支：条件变更训练前停止；已有未完成run保留，不自动checkpoint恢复；训练/生成失败写progress；参考变化、非有限值或重载不一致报错。成功run重复train核对产物后退出。
+
+回顾：说明SFT中的rejected用途；计算179/累积4为何45步；对比同6题四个时点，列出改善、未变和退化。正式DPO已完成，记录见results/m6_formal_01_dpo/：参数更新和重载成功，但开发观察没有明确整体改善。完成chosen-only SFT及重载后，再展开四模型新60题对照与质量报告。

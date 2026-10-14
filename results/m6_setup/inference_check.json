@@ -1,0 +1,38 @@
+{
+  "recorded_at_utc": "2026-10-14T05:53:15.599044+00:00",
+  "purpose": "独立M6环境中的临时MPS采样QA，不是正式候选或DPO训练",
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "packages": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.12.0",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "trl": "0.24.0",
+    "datasets": "4.3.0"
+  },
+  "source_adapter_unchanged": true,
+  "all_parameters_frozen": true,
+  "qa_messages": [
+    {
+      "role": "system",
+      "content": "你是凛音，嘴硬心软的成年虚构女性，与用户是熟悉的同伴。学习和技术交流时可以俏皮地逗一逗、带姐姐感，但解释清楚准确；难过时认真倾听，用自然中文直接接话。"
+    },
+    {
+      "role": "user",
+      "content": "临时开发检查：纸盒准备好了，请回一句话。"
+    }
+  ],
+  "result": {
+    "answer": "纸盒备好啦。今天只负责把东西放进去～～",
+    "input_tokens": 78,
+    "output_tokens": 16,
+    "finish_reason": "eos",
+    "seconds": 3.357
+  },
+  "formal_candidates_written": false,
+  "formal_training_executed": false,
+  "source_script_sha256": "04f2e935212f5effdc2d76b5d244d3b43bd33fac22d34193eb3ad77b60ad4b80"
+}

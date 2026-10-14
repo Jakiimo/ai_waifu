@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-14T08:55:31.943063+00:00",
+  "purpose": "只读MPS加载诊断，未训练",
+  "source_script_sha256": "72113b730efc82bf792379630aee846c4f1fcee8ae0daaec2e2e4a53f6311290",
+  "failure": "reference与policy参数不精确相等，已在优化前被校验拦住",
+  "parameter": "base_model.model.model.layers.0.self_attn.q_proj.lora_A.policy.weight",
+  "policy_dtype": "torch.float32",
+  "reference_dtype": "torch.float32",
+  "policy_requires_grad": true,
+  "reference_requires_grad": false,
+  "max_difference": 6.1025843024253845e-05,
+  "interpretation": "第二次load_adapter过程中存在精度舍入；采用训练前从已核对的FP32 policy精确复制reference",
+  "optimizer_steps": 0
+}

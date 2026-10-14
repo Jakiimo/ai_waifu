@@ -1,0 +1,17 @@
+{
+  "data_version": "m6-preference-v1",
+  "rubric_version": "m6-three-axis-v1",
+  "source_demo_config": "configs/m4.json",
+  "source_training_config": "configs/m3_learning.json",
+  "scenario_file": "data/m6/scenarios.jsonl",
+  "rubric_file": "configs/m6_rubric.json",
+  "prompt_name": "short",
+  "seed": 20261014,
+  "planned_counts": {"train": 180, "dev": 30, "test": 60},
+  "candidates_per_case": 2,
+  "sampling": {"max_new_tokens": 128, "do_sample": true, "temperature": 0.8, "top_p": 0.9, "top_k": 50},
+  "max_prompt_tokens": 160,
+  "max_pair_sequence_tokens": 320,
+  "near_duplicate_threshold": 0.6,
+  "notes": "M6先收集SFT模型候选，由当前对话助手审核，尚无正式chosen/rejected。测试题不允许收集候选或入训。180/30为目标规模，实际接受数量另行冻结；不覆盖M1-M5。"
+}

@@ -1,0 +1,1446 @@
+{
+  "method": "dpo",
+  "conditions": {
+    "files": {
+      "data/m6/pairs/38b37f1586fd7306/train.jsonl": "11b1da2817ad8657ddc243f0f4e02f438ef94cf84f23017add2c1149dc2ac25f",
+      "data/m6/pairs/38b37f1586fd7306/dev.jsonl": "177e3a9d32d6a1aa796b51213db02c85fa1d3c81e5baf30abec76c75df86943d",
+      "data/m6/pairs/38b37f1586fd7306/manifest.json": "8ccdc9991411da1a3020394ff7aa5cb36e0fa7be7fd73ea1e6e0e18998dd503d",
+      "results/m6_preparation/reviews/expansion_all_decisions.jsonl": "6e97e0137deb7e045d21988e08d07074ddef7461d151512af1cc51f5472c9668",
+      "results/m6_preparation/reviews/expansion_candidates.jsonl": "76eb461916841f374daca63e3aa3dad28f0ef6dc9479a0cf48a444567a509b4e",
+      "results/m6_preparation/reviews/expansion_receipt.json": "4cf4e1809bbbf9670f218c730a2f5dfaaf19fdb073e8e83fca70b11354ad6c6d",
+      "results/m6_preparation/reviews/expansion_fact_checks.json": "ee8aec84efd9bb9944613d91bbcd4da97de089ff87e4b23a52db92834acfcc58",
+      "results/m6_preparation/reviews/batch_01_receipt.json": "1230ee5b63ae21ff71f848b0b5952cb8356b99b7b48552d4046dd2c2b292af8e",
+      "results/m6_preparation/reviews/batch_01_decisions.jsonl": "fd7a43fc0f77548df00c21c8540abfacf14972bb26df8298c5cb803e83dcd40f",
+      "results/m6_preparation/review/train_37eddc845e62f8e3.json": "0e5be1f045faa56e292ec4852077cbc6d0084b5d4c7cb08a4d1dce7682fdfdc3",
+      "results/m6_preparation/review/train_2c502572871d3a6b.json": "4b9a359da886188433bd442713778af367b5c13e4f4dd1ff87e8b40f5ef6f500",
+      "results/m6_preparation/review/dev_9fb390767512ca1d.json": "2ada79dc03ef277a8748ac89991cec1ccad08de71353d54e7b8427fb30b52fb7",
+      "configs/m6_formal.json": "106569866eacecc6a401e02b82c33eb5f8e4b5447a11132580c58313241096ec",
+      "data/m6/FORMAL_FREEZE.json": "9ecaed6e3ba7132f7694a7144995f705f5d23b7a1149c39df3552bc144419c5c",
+      "scripts/m6_train.py": "0e608a21e99e785c92b6d984f6ab8a1a878a031a28632dcab93d39114e6a5cc0",
+      "scripts/m6_dpo.py": "b802c1847176b6b7762a0da12d06a490812827c85feaffd484f9ebc30d85bfd0",
+      "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a"
+    },
+    "source_conditions": {
+      "data_version": "m6-preference-v1",
+      "rubric_version": "m6-three-axis-v1",
+      "source_run": "m3_learning_01",
+      "packages": {
+        "torch": "2.8.0",
+        "transformers": "4.57.6",
+        "peft": "0.18.0",
+        "accelerate": "1.12.0",
+        "huggingface-hub": "0.36.2",
+        "safetensors": "0.8.0",
+        "trl": "0.24.0",
+        "datasets": "4.3.0"
+      },
+      "source_device": "mps",
+      "source_dtype": "torch.bfloat16",
+      "files": {
+        "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+        "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+        "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+        "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+        "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+        "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+        "outputs/m3_learning_01/adapter/adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+        "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+        "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+        "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+        "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+        "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+        "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+        "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+        "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+        "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+        "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+        "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+        "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+      }
+    },
+    "config": {
+      "run_prefix": "m6_formal_01",
+      "data_freeze": "data/m6/FORMAL_FREEZE.json",
+      "training_examples": 179,
+      "development_pairs": 6,
+      "num_train_epochs": 1,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 4,
+      "learning_rate": 1e-05,
+      "beta": 0.1,
+      "max_length": 320,
+      "seed": 42,
+      "observation_steps": 15,
+      "development_case_ids": [
+        "m6-dev-daily-01",
+        "m6-dev-comfort-01",
+        "m6-dev-study-01",
+        "m6-dev-technical-01",
+        "m6-dev-stability-01",
+        "m6-dev-relationship-01"
+      ],
+      "development_max_new_tokens": 128,
+      "notes": "chosen-only SFT与DPO均从原M3 SFT复制，固定1轮最终checkpoint，不用小样本DPO作起点。开发偏好仅6组且覆盖不足，不做参数搜索；6条生成探针与这6组开发偏好不重叠。相同样本/步数不等于相同计算量，DPO每组处理两条回答并计算参考概率。"
+    },
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "trl": "0.24.0",
+      "datasets": "4.3.0"
+    },
+    "selection": "固定1轮最终checkpoint，不使用最终测试或6组偏好选参"
+  },
+  "completed_at_utc": "2026-10-14T14:07:24.431758+00:00",
+  "training_process_pid": 45548,
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "global_step": 45,
+  "training_examples": 179,
+  "development_pairs": 6,
+  "training_seconds": 301.267,
+  "metrics": {
+    "train_runtime": 301.195,
+    "train_samples_per_second": 0.594,
+    "train_steps_per_second": 0.149,
+    "train_loss": 0.5838961945639716,
+    "epoch": 1.0
+  },
+  "changed_policy_lora_tensors": 112,
+  "reference_unchanged": true,
+  "base_probe_unchanged": true,
+  "source_sft_unchanged": true,
+  "data_token_counts": [
+    {
+      "id": "m6-train-daily-01",
+      "prompt": 86,
+      "chosen": 43,
+      "rejected": 37
+    },
+    {
+      "id": "m6-train-comfort-01",
+      "prompt": 85,
+      "chosen": 33,
+      "rejected": 55
+    },
+    {
+      "id": "m6-train-study-01",
+      "prompt": 79,
+      "chosen": 50,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-technical-01",
+      "prompt": 81,
+      "chosen": 71,
+      "rejected": 67
+    },
+    {
+      "id": "m6-train-stability-01",
+      "prompt": 77,
+      "chosen": 2,
+      "rejected": 23
+    },
+    {
+      "id": "m6-train-relationship-01",
+      "prompt": 81,
+      "chosen": 30,
+      "rejected": 32
+    },
+    {
+      "id": "m6-train-daily-02",
+      "prompt": 84,
+      "chosen": 36,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-comfort-02",
+      "prompt": 83,
+      "chosen": 38,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-study-02",
+      "prompt": 81,
+      "chosen": 52,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-technical-02",
+      "prompt": 79,
+      "chosen": 62,
+      "rejected": 45
+    },
+    {
+      "id": "m6-train-stability-02",
+      "prompt": 83,
+      "chosen": 9,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-relationship-02",
+      "prompt": 76,
+      "chosen": 37,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-daily-03",
+      "prompt": 80,
+      "chosen": 53,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-comfort-03",
+      "prompt": 82,
+      "chosen": 40,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-study-03",
+      "prompt": 78,
+      "chosen": 49,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-technical-03",
+      "prompt": 85,
+      "chosen": 60,
+      "rejected": 92
+    },
+    {
+      "id": "m6-train-stability-03",
+      "prompt": 81,
+      "chosen": 5,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-relationship-03",
+      "prompt": 76,
+      "chosen": 40,
+      "rejected": 23
+    },
+    {
+      "id": "m6-train-daily-04",
+      "prompt": 80,
+      "chosen": 54,
+      "rejected": 52
+    },
+    {
+      "id": "m6-train-comfort-04",
+      "prompt": 81,
+      "chosen": 39,
+      "rejected": 30
+    },
+    {
+      "id": "m6-train-study-04",
+      "prompt": 80,
+      "chosen": 43,
+      "rejected": 59
+    },
+    {
+      "id": "m6-train-technical-04",
+      "prompt": 80,
+      "chosen": 71,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-stability-04",
+      "prompt": 80,
+      "chosen": 24,
+      "rejected": 43
+    },
+    {
+      "id": "m6-train-relationship-04",
+      "prompt": 76,
+      "chosen": 42,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-daily-05",
+      "prompt": 80,
+      "chosen": 38,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-comfort-05",
+      "prompt": 79,
+      "chosen": 37,
+      "rejected": 34
+    },
+    {
+      "id": "m6-train-study-05",
+      "prompt": 77,
+      "chosen": 46,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-technical-05",
+      "prompt": 82,
+      "chosen": 52,
+      "rejected": 59
+    },
+    {
+      "id": "m6-train-stability-05",
+      "prompt": 79,
+      "chosen": 25,
+      "rejected": 38
+    },
+    {
+      "id": "m6-train-relationship-05",
+      "prompt": 80,
+      "chosen": 42,
+      "rejected": 67
+    },
+    {
+      "id": "m6-train-daily-06",
+      "prompt": 81,
+      "chosen": 40,
+      "rejected": 38
+    },
+    {
+      "id": "m6-train-comfort-06",
+      "prompt": 79,
+      "chosen": 44,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-study-06",
+      "prompt": 79,
+      "chosen": 52,
+      "rejected": 48
+    },
+    {
+      "id": "m6-train-technical-06",
+      "prompt": 81,
+      "chosen": 51,
+      "rejected": 58
+    },
+    {
+      "id": "m6-train-stability-06",
+      "prompt": 78,
+      "chosen": 20,
+      "rejected": 129
+    },
+    {
+      "id": "m6-train-relationship-06",
+      "prompt": 76,
+      "chosen": 17,
+      "rejected": 61
+    },
+    {
+      "id": "m6-train-daily-07",
+      "prompt": 83,
+      "chosen": 38,
+      "rejected": 33
+    },
+    {
+      "id": "m6-train-comfort-07",
+      "prompt": 76,
+      "chosen": 35,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-study-07",
+      "prompt": 83,
+      "chosen": 46,
+      "rejected": 43
+    },
+    {
+      "id": "m6-train-technical-07",
+      "prompt": 81,
+      "chosen": 54,
+      "rejected": 101
+    },
+    {
+      "id": "m6-train-stability-07",
+      "prompt": 80,
+      "chosen": 8,
+      "rejected": 32
+    },
+    {
+      "id": "m6-train-relationship-07",
+      "prompt": 80,
+      "chosen": 35,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-daily-08",
+      "prompt": 78,
+      "chosen": 47,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-comfort-08",
+      "prompt": 79,
+      "chosen": 49,
+      "rejected": 53
+    },
+    {
+      "id": "m6-train-study-08",
+      "prompt": 81,
+      "chosen": 52,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-technical-08",
+      "prompt": 76,
+      "chosen": 72,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-stability-08",
+      "prompt": 78,
+      "chosen": 27,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-relationship-08",
+      "prompt": 84,
+      "chosen": 28,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-daily-09",
+      "prompt": 79,
+      "chosen": 35,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-comfort-09",
+      "prompt": 84,
+      "chosen": 49,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-study-09",
+      "prompt": 80,
+      "chosen": 39,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-technical-09",
+      "prompt": 79,
+      "chosen": 50,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-stability-09",
+      "prompt": 78,
+      "chosen": 17,
+      "rejected": 19
+    },
+    {
+      "id": "m6-train-relationship-09",
+      "prompt": 78,
+      "chosen": 30,
+      "rejected": 30
+    },
+    {
+      "id": "m6-train-daily-10",
+      "prompt": 78,
+      "chosen": 39,
+      "rejected": 42
+    },
+    {
+      "id": "m6-train-comfort-10",
+      "prompt": 79,
+      "chosen": 42,
+      "rejected": 47
+    },
+    {
+      "id": "m6-train-study-10",
+      "prompt": 81,
+      "chosen": 42,
+      "rejected": 58
+    },
+    {
+      "id": "m6-train-technical-10",
+      "prompt": 82,
+      "chosen": 57,
+      "rejected": 55
+    },
+    {
+      "id": "m6-train-stability-10",
+      "prompt": 79,
+      "chosen": 25,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-relationship-10",
+      "prompt": 77,
+      "chosen": 37,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-daily-11",
+      "prompt": 81,
+      "chosen": 42,
+      "rejected": 45
+    },
+    {
+      "id": "m6-train-comfort-11",
+      "prompt": 78,
+      "chosen": 32,
+      "rejected": 22
+    },
+    {
+      "id": "m6-train-study-11",
+      "prompt": 81,
+      "chosen": 31,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-technical-11",
+      "prompt": 76,
+      "chosen": 36,
+      "rejected": 56
+    },
+    {
+      "id": "m6-train-stability-11",
+      "prompt": 82,
+      "chosen": 25,
+      "rejected": 128
+    },
+    {
+      "id": "m6-train-relationship-11",
+      "prompt": 75,
+      "chosen": 35,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-daily-12",
+      "prompt": 80,
+      "chosen": 50,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-comfort-12",
+      "prompt": 77,
+      "chosen": 43,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-study-12",
+      "prompt": 83,
+      "chosen": 56,
+      "rejected": 58
+    },
+    {
+      "id": "m6-train-technical-12",
+      "prompt": 78,
+      "chosen": 55,
+      "rejected": 58
+    },
+    {
+      "id": "m6-train-stability-12",
+      "prompt": 78,
+      "chosen": 30,
+      "rejected": 47
+    },
+    {
+      "id": "m6-train-relationship-12",
+      "prompt": 79,
+      "chosen": 38,
+      "rejected": 38
+    },
+    {
+      "id": "m6-train-daily-13",
+      "prompt": 80,
+      "chosen": 28,
+      "rejected": 32
+    },
+    {
+      "id": "m6-train-comfort-13",
+      "prompt": 76,
+      "chosen": 48,
+      "rejected": 42
+    },
+    {
+      "id": "m6-train-study-13",
+      "prompt": 79,
+      "chosen": 54,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-technical-13",
+      "prompt": 81,
+      "chosen": 60,
+      "rejected": 62
+    },
+    {
+      "id": "m6-train-stability-13",
+      "prompt": 80,
+      "chosen": 17,
+      "rejected": 34
+    },
+    {
+      "id": "m6-train-relationship-13",
+      "prompt": 78,
+      "chosen": 36,
+      "rejected": 25
+    },
+    {
+      "id": "m6-train-daily-14",
+      "prompt": 79,
+      "chosen": 36,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-comfort-14",
+      "prompt": 79,
+      "chosen": 42,
+      "rejected": 33
+    },
+    {
+      "id": "m6-train-study-14",
+      "prompt": 81,
+      "chosen": 54,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-technical-14",
+      "prompt": 78,
+      "chosen": 71,
+      "rejected": 56
+    },
+    {
+      "id": "m6-train-stability-14",
+      "prompt": 80,
+      "chosen": 44,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-relationship-14",
+      "prompt": 80,
+      "chosen": 30,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-daily-15",
+      "prompt": 79,
+      "chosen": 46,
+      "rejected": 57
+    },
+    {
+      "id": "m6-train-comfort-15",
+      "prompt": 78,
+      "chosen": 28,
+      "rejected": 28
+    },
+    {
+      "id": "m6-train-study-15",
+      "prompt": 78,
+      "chosen": 49,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-technical-15",
+      "prompt": 81,
+      "chosen": 76,
+      "rejected": 59
+    },
+    {
+      "id": "m6-train-stability-15",
+      "prompt": 82,
+      "chosen": 9,
+      "rejected": 26
+    },
+    {
+      "id": "m6-train-relationship-15",
+      "prompt": 78,
+      "chosen": 32,
+      "rejected": 48
+    },
+    {
+      "id": "m6-train-daily-16",
+      "prompt": 78,
+      "chosen": 64,
+      "rejected": 45
+    },
+    {
+      "id": "m6-train-comfort-16",
+      "prompt": 79,
+      "chosen": 48,
+      "rejected": 30
+    },
+    {
+      "id": "m6-train-study-16",
+      "prompt": 80,
+      "chosen": 47,
+      "rejected": 47
+    },
+    {
+      "id": "m6-train-technical-16",
+      "prompt": 86,
+      "chosen": 51,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-stability-16",
+      "prompt": 86,
+      "chosen": 9,
+      "rejected": 34
+    },
+    {
+      "id": "m6-train-relationship-16",
+      "prompt": 75,
+      "chosen": 36,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-daily-17",
+      "prompt": 80,
+      "chosen": 26,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-comfort-17",
+      "prompt": 78,
+      "chosen": 41,
+      "rejected": 33
+    },
+    {
+      "id": "m6-train-study-17",
+      "prompt": 81,
+      "chosen": 43,
+      "rejected": 59
+    },
+    {
+      "id": "m6-train-technical-17",
+      "prompt": 84,
+      "chosen": 49,
+      "rejected": 64
+    },
+    {
+      "id": "m6-train-relationship-17",
+      "prompt": 77,
+      "chosen": 37,
+      "rejected": 43
+    },
+    {
+      "id": "m6-train-daily-18",
+      "prompt": 78,
+      "chosen": 55,
+      "rejected": 57
+    },
+    {
+      "id": "m6-train-comfort-18",
+      "prompt": 76,
+      "chosen": 38,
+      "rejected": 33
+    },
+    {
+      "id": "m6-train-study-18",
+      "prompt": 82,
+      "chosen": 52,
+      "rejected": 53
+    },
+    {
+      "id": "m6-train-technical-18",
+      "prompt": 81,
+      "chosen": 59,
+      "rejected": 67
+    },
+    {
+      "id": "m6-train-stability-18",
+      "prompt": 82,
+      "chosen": 21,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-relationship-18",
+      "prompt": 75,
+      "chosen": 41,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-daily-19",
+      "prompt": 79,
+      "chosen": 39,
+      "rejected": 50
+    },
+    {
+      "id": "m6-train-comfort-19",
+      "prompt": 79,
+      "chosen": 47,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-study-19",
+      "prompt": 81,
+      "chosen": 48,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-technical-19",
+      "prompt": 81,
+      "chosen": 60,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-stability-19",
+      "prompt": 79,
+      "chosen": 20,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-relationship-19",
+      "prompt": 79,
+      "chosen": 31,
+      "rejected": 34
+    },
+    {
+      "id": "m6-train-daily-20",
+      "prompt": 78,
+      "chosen": 43,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-comfort-20",
+      "prompt": 78,
+      "chosen": 47,
+      "rejected": 47
+    },
+    {
+      "id": "m6-train-study-20",
+      "prompt": 77,
+      "chosen": 53,
+      "rejected": 52
+    },
+    {
+      "id": "m6-train-technical-20",
+      "prompt": 79,
+      "chosen": 64,
+      "rejected": 129
+    },
+    {
+      "id": "m6-train-stability-20",
+      "prompt": 80,
+      "chosen": 22,
+      "rejected": 28
+    },
+    {
+      "id": "m6-train-relationship-20",
+      "prompt": 80,
+      "chosen": 42,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-daily-21",
+      "prompt": 80,
+      "chosen": 49,
+      "rejected": 20
+    },
+    {
+      "id": "m6-train-comfort-21",
+      "prompt": 76,
+      "chosen": 35,
+      "rejected": 37
+    },
+    {
+      "id": "m6-train-study-21",
+      "prompt": 78,
+      "chosen": 44,
+      "rejected": 54
+    },
+    {
+      "id": "m6-train-technical-21",
+      "prompt": 76,
+      "chosen": 75,
+      "rejected": 129
+    },
+    {
+      "id": "m6-train-stability-21",
+      "prompt": 81,
+      "chosen": 12,
+      "rejected": 16
+    },
+    {
+      "id": "m6-train-relationship-21",
+      "prompt": 79,
+      "chosen": 36,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-daily-22",
+      "prompt": 84,
+      "chosen": 38,
+      "rejected": 54
+    },
+    {
+      "id": "m6-train-comfort-22",
+      "prompt": 77,
+      "chosen": 38,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-study-22",
+      "prompt": 78,
+      "chosen": 53,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-technical-22",
+      "prompt": 78,
+      "chosen": 49,
+      "rejected": 67
+    },
+    {
+      "id": "m6-train-stability-22",
+      "prompt": 80,
+      "chosen": 12,
+      "rejected": 42
+    },
+    {
+      "id": "m6-train-relationship-22",
+      "prompt": 77,
+      "chosen": 29,
+      "rejected": 27
+    },
+    {
+      "id": "m6-train-daily-23",
+      "prompt": 80,
+      "chosen": 47,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-comfort-23",
+      "prompt": 77,
+      "chosen": 39,
+      "rejected": 43
+    },
+    {
+      "id": "m6-train-study-23",
+      "prompt": 77,
+      "chosen": 47,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-technical-23",
+      "prompt": 77,
+      "chosen": 34,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-stability-23",
+      "prompt": 78,
+      "chosen": 25,
+      "rejected": 38
+    },
+    {
+      "id": "m6-train-relationship-23",
+      "prompt": 81,
+      "chosen": 38,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-daily-24",
+      "prompt": 81,
+      "chosen": 55,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-comfort-24",
+      "prompt": 80,
+      "chosen": 24,
+      "rejected": 53
+    },
+    {
+      "id": "m6-train-study-24",
+      "prompt": 78,
+      "chosen": 47,
+      "rejected": 57
+    },
+    {
+      "id": "m6-train-technical-24",
+      "prompt": 79,
+      "chosen": 53,
+      "rejected": 65
+    },
+    {
+      "id": "m6-train-stability-24",
+      "prompt": 84,
+      "chosen": 30,
+      "rejected": 38
+    },
+    {
+      "id": "m6-train-relationship-24",
+      "prompt": 81,
+      "chosen": 52,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-daily-25",
+      "prompt": 76,
+      "chosen": 49,
+      "rejected": 60
+    },
+    {
+      "id": "m6-train-comfort-25",
+      "prompt": 79,
+      "chosen": 43,
+      "rejected": 42
+    },
+    {
+      "id": "m6-train-study-25",
+      "prompt": 79,
+      "chosen": 55,
+      "rejected": 41
+    },
+    {
+      "id": "m6-train-technical-25",
+      "prompt": 77,
+      "chosen": 62,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-stability-25",
+      "prompt": 82,
+      "chosen": 36,
+      "rejected": 43
+    },
+    {
+      "id": "m6-train-relationship-25",
+      "prompt": 77,
+      "chosen": 36,
+      "rejected": 37
+    },
+    {
+      "id": "m6-train-daily-26",
+      "prompt": 82,
+      "chosen": 43,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-comfort-26",
+      "prompt": 80,
+      "chosen": 41,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-study-26",
+      "prompt": 77,
+      "chosen": 49,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-technical-26",
+      "prompt": 81,
+      "chosen": 60,
+      "rejected": 70
+    },
+    {
+      "id": "m6-train-stability-26",
+      "prompt": 79,
+      "chosen": 22,
+      "rejected": 30
+    },
+    {
+      "id": "m6-train-relationship-26",
+      "prompt": 84,
+      "chosen": 45,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-daily-27",
+      "prompt": 81,
+      "chosen": 33,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-comfort-27",
+      "prompt": 79,
+      "chosen": 32,
+      "rejected": 28
+    },
+    {
+      "id": "m6-train-study-27",
+      "prompt": 84,
+      "chosen": 50,
+      "rejected": 60
+    },
+    {
+      "id": "m6-train-technical-27",
+      "prompt": 76,
+      "chosen": 65,
+      "rejected": 58
+    },
+    {
+      "id": "m6-train-stability-27",
+      "prompt": 78,
+      "chosen": 23,
+      "rejected": 48
+    },
+    {
+      "id": "m6-train-relationship-27",
+      "prompt": 82,
+      "chosen": 35,
+      "rejected": 33
+    },
+    {
+      "id": "m6-train-daily-28",
+      "prompt": 78,
+      "chosen": 41,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-comfort-28",
+      "prompt": 113,
+      "chosen": 35,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-study-28",
+      "prompt": 114,
+      "chosen": 29,
+      "rejected": 16
+    },
+    {
+      "id": "m6-train-technical-28",
+      "prompt": 81,
+      "chosen": 56,
+      "rejected": 46
+    },
+    {
+      "id": "m6-train-stability-28",
+      "prompt": 105,
+      "chosen": 7,
+      "rejected": 27
+    },
+    {
+      "id": "m6-train-relationship-28",
+      "prompt": 113,
+      "chosen": 24,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-daily-29",
+      "prompt": 115,
+      "chosen": 39,
+      "rejected": 28
+    },
+    {
+      "id": "m6-train-comfort-29",
+      "prompt": 110,
+      "chosen": 45,
+      "rejected": 50
+    },
+    {
+      "id": "m6-train-study-29",
+      "prompt": 115,
+      "chosen": 53,
+      "rejected": 40
+    },
+    {
+      "id": "m6-train-technical-29",
+      "prompt": 123,
+      "chosen": 81,
+      "rejected": 55
+    },
+    {
+      "id": "m6-train-stability-29",
+      "prompt": 106,
+      "chosen": 29,
+      "rejected": 29
+    },
+    {
+      "id": "m6-train-relationship-29",
+      "prompt": 109,
+      "chosen": 39,
+      "rejected": 18
+    },
+    {
+      "id": "m6-train-daily-30",
+      "prompt": 119,
+      "chosen": 49,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-comfort-30",
+      "prompt": 107,
+      "chosen": 39,
+      "rejected": 19
+    },
+    {
+      "id": "m6-train-study-30",
+      "prompt": 112,
+      "chosen": 40,
+      "rejected": 30
+    },
+    {
+      "id": "m6-train-technical-30",
+      "prompt": 118,
+      "chosen": 37,
+      "rejected": 42
+    },
+    {
+      "id": "m6-train-stability-30",
+      "prompt": 108,
+      "chosen": 36,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-relationship-30",
+      "prompt": 107,
+      "chosen": 24,
+      "rejected": 21
+    }
+  ],
+  "answer_token_exposure": 15308,
+  "budget_note": "1轮179组、45次更新；最后累积组3个样本。DPO两回答＋参考计算，不是等算力。",
+  "memory_samples": [
+    {
+      "step": 1,
+      "allocated_bytes": 3160979712,
+      "driver_allocated_bytes": 4672389120
+    },
+    {
+      "step": 2,
+      "allocated_bytes": 3161337088,
+      "driver_allocated_bytes": 4890492928
+    },
+    {
+      "step": 3,
+      "allocated_bytes": 3161128448,
+      "driver_allocated_bytes": 5221842944
+    },
+    {
+      "step": 4,
+      "allocated_bytes": 3161191936,
+      "driver_allocated_bytes": 4861132800
+    },
+    {
+      "step": 5,
+      "allocated_bytes": 3161274368,
+      "driver_allocated_bytes": 4743692288
+    },
+    {
+      "step": 6,
+      "allocated_bytes": 3161457664,
+      "driver_allocated_bytes": 5108596736
+    },
+    {
+      "step": 7,
+      "allocated_bytes": 3161274368,
+      "driver_allocated_bytes": 4945018880
+    },
+    {
+      "step": 8,
+      "allocated_bytes": 3161129472,
+      "driver_allocated_bytes": 5091819520
+    },
+    {
+      "step": 9,
+      "allocated_bytes": 3161273856,
+      "driver_allocated_bytes": 4831772672
+    },
+    {
+      "step": 10,
+      "allocated_bytes": 3161094912,
+      "driver_allocated_bytes": 4814995456
+    },
+    {
+      "step": 11,
+      "allocated_bytes": 3161637376,
+      "driver_allocated_bytes": 4978573312
+    },
+    {
+      "step": 12,
+      "allocated_bytes": 3161387008,
+      "driver_allocated_bytes": 4785635328
+    },
+    {
+      "step": 13,
+      "allocated_bytes": 3161225728,
+      "driver_allocated_bytes": 4785635328
+    },
+    {
+      "step": 14,
+      "allocated_bytes": 3161094656,
+      "driver_allocated_bytes": 4928241664
+    },
+    {
+      "step": 15,
+      "allocated_bytes": 3161637376,
+      "driver_allocated_bytes": 5129568256
+    },
+    {
+      "step": 16,
+      "allocated_bytes": 3161387264,
+      "driver_allocated_bytes": 6069092352
+    },
+    {
+      "step": 17,
+      "allocated_bytes": 3161929728,
+      "driver_allocated_bytes": 6039732224
+    },
+    {
+      "step": 18,
+      "allocated_bytes": 3161005312,
+      "driver_allocated_bytes": 6211698688
+    },
+    {
+      "step": 19,
+      "allocated_bytes": 3161460992,
+      "driver_allocated_bytes": 5876285440
+    },
+    {
+      "step": 20,
+      "allocated_bytes": 3161563136,
+      "driver_allocated_bytes": 6029377536
+    },
+    {
+      "step": 21,
+      "allocated_bytes": 3161459456,
+      "driver_allocated_bytes": 6209732608
+    },
+    {
+      "step": 22,
+      "allocated_bytes": 3161005312,
+      "driver_allocated_bytes": 5863702528
+    },
+    {
+      "step": 23,
+      "allocated_bytes": 3161726976,
+      "driver_allocated_bytes": 6195052544
+    },
+    {
+      "step": 24,
+      "allocated_bytes": 3161590016,
+      "driver_allocated_bytes": 5863702528
+    },
+    {
+      "step": 25,
+      "allocated_bytes": 3161169408,
+      "driver_allocated_bytes": 6002114560
+    },
+    {
+      "step": 26,
+      "allocated_bytes": 3161297152,
+      "driver_allocated_bytes": 6052446208
+    },
+    {
+      "step": 27,
+      "allocated_bytes": 3161435136,
+      "driver_allocated_bytes": 5937102848
+    },
+    {
+      "step": 28,
+      "allocated_bytes": 3161004544,
+      "driver_allocated_bytes": 5953880064
+    },
+    {
+      "step": 29,
+      "allocated_bytes": 3161315328,
+      "driver_allocated_bytes": 5901451264
+    },
+    {
+      "step": 30,
+      "allocated_bytes": 3161005056,
+      "driver_allocated_bytes": 5863702528
+    },
+    {
+      "step": 31,
+      "allocated_bytes": 3161726976,
+      "driver_allocated_bytes": 6077612032
+    },
+    {
+      "step": 32,
+      "allocated_bytes": 3161590016,
+      "driver_allocated_bytes": 5897256960
+    },
+    {
+      "step": 33,
+      "allocated_bytes": 3161168896,
+      "driver_allocated_bytes": 6270550016
+    },
+    {
+      "step": 34,
+      "allocated_bytes": 3161151744,
+      "driver_allocated_bytes": 5901451264
+    },
+    {
+      "step": 35,
+      "allocated_bytes": 3161580288,
+      "driver_allocated_bytes": 5939200000
+    },
+    {
+      "step": 36,
+      "allocated_bytes": 3161151744,
+      "driver_allocated_bytes": 6065029120
+    },
+    {
+      "step": 37,
+      "allocated_bytes": 3161580544,
+      "driver_allocated_bytes": 6065029120
+    },
+    {
+      "step": 38,
+      "allocated_bytes": 3161001728,
+      "driver_allocated_bytes": 6052446208
+    },
+    {
+      "step": 39,
+      "allocated_bytes": 3161318912,
+      "driver_allocated_bytes": 5884674048
+    },
+    {
+      "step": 40,
+      "allocated_bytes": 3161147648,
+      "driver_allocated_bytes": 6052446208
+    },
+    {
+      "step": 41,
+      "allocated_bytes": 3161172992,
+      "driver_allocated_bytes": 6161498112
+    },
+    {
+      "step": 42,
+      "allocated_bytes": 3161292032,
+      "driver_allocated_bytes": 6052446208
+    },
+    {
+      "step": 43,
+      "allocated_bytes": 3161438720,
+      "driver_allocated_bytes": 6018891776
+    },
+    {
+      "step": 44,
+      "allocated_bytes": 3161001728,
+      "driver_allocated_bytes": 6031474688
+    },
+    {
+      "step": 45,
+      "allocated_bytes": 3161072896,
+      "driver_allocated_bytes": 6039863296
+    }
+  ],
+  "memory_note": "周期采样，未声称峰值",
+  "verification_messages": [
+    {
+      "role": "system",
+      "content": "你是凛音，嘴硬心软的成年虚构女性，与用户是熟悉的同伴。学习和技术交流时可以俏皮地逗一逗、带姐姐感，但解释清楚准确；难过时认真倾听，用自然中文直接接话。"
+    },
+    {
+      "role": "user",
+      "content": "今天早餐的吐司烤焦了一角，想救一下，不想整片扔掉。"
+    }
+  ],
+  "adapter_files": {
+    "adapter_model.safetensors": "a0295d516fb5b843b279a4c19bd1a7cd5540a2cf74fda86f0c051db9dfeea435",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "tokenizer_config.json": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "adapter_config.json": "f4a04ed48f74ff62f72ce20e211e1602bf125e8f34a930a5b9dbfb5a2ef3164c",
+    "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "reload_probe_sha256": "3b662047c909ab729b4f1d09d3c38f2ed8fc65cf37d24f889eaca5cb7b0059c1",
+  "formal_quality_experiment_complete": false,
+  "reference_cache_sha256": "0bf307dac129ec48bb6ffe247d8c3246f859521d9729a5fc10a3b8ee04b5d8d0"
+}

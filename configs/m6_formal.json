@@ -1,0 +1,17 @@
+{
+  "run_prefix": "m6_formal_01",
+  "data_freeze": "data/m6/FORMAL_FREEZE.json",
+  "training_examples": 179,
+  "development_pairs": 6,
+  "num_train_epochs": 1,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.00001,
+  "beta": 0.1,
+  "max_length": 320,
+  "seed": 42,
+  "observation_steps": 15,
+  "development_case_ids": ["m6-dev-daily-01", "m6-dev-comfort-01", "m6-dev-study-01", "m6-dev-technical-01", "m6-dev-stability-01", "m6-dev-relationship-01"],
+  "development_max_new_tokens": 128,
+  "notes": "chosen-only SFT与DPO均从原M3 SFT复制，固定1轮最终checkpoint，不用小样本DPO作起点。开发偏好仅6组且覆盖不足，不做参数搜索；6条生成探针与这6组开发偏好不重叠。相同样本/步数不等于相同计算量，DPO每组处理两条回答并计算参考概率。"
+}

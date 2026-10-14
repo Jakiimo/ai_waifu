@@ -1,0 +1,55 @@
+{
+  "created_at_utc": "2026-10-14T08:38:27.703629+00:00",
+  "accepted_counts": {
+    "train": 20
+  },
+  "rejected": [],
+  "reviewed_cases": 20,
+  "planned_counts": {
+    "train": 180,
+    "dev": 30,
+    "test": 60
+  },
+  "all_planned_train_dev_reviewed": false,
+  "formal_training_ready": false,
+  "note": "审核后的偏好快照；仍需训练前数据/预算冻结与资源验证",
+  "conditions": {
+    "data_version": "m6-preference-v1",
+    "rubric_version": "m6-three-axis-v1",
+    "source_run": "m3_learning_01",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "trl": "0.24.0",
+      "datasets": "4.3.0"
+    },
+    "source_device": "mps",
+    "source_dtype": "torch.bfloat16",
+    "files": {
+      "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+      "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+      "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+      "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "outputs/m3_learning_01/adapter/adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+      "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+      "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+      "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+      "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+      "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+      "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+      "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+      "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+      "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+    }
+  },
+  "decisions_sha256": "fd7a43fc0f77548df00c21c8540abfacf14972bb26df8298c5cb803e83dcd40f"
+}

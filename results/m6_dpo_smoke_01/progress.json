@@ -1,0 +1,7 @@
+{
+  "phase": "trained_saved",
+  "step": 5,
+  "max_steps": 5,
+  "purpose": "20对真实Qwen DPO学习验证，非完整M6正式质量实验",
+  "updated_at_utc": "2026-10-14T09:46:58.378755+00:00"
+}

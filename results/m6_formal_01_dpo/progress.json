@@ -1,0 +1,6 @@
+{
+  "phase": "trained_saved",
+  "step": 45,
+  "method": "dpo",
+  "max_steps": 45
+}

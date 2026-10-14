@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "method": "dpo",
+  "new_process_pid": 50406,
+  "different_process": true,
+  "max_logit_difference": 0.0,
+  "verified_at_utc": "2026-10-14T14:08:08.255867+00:00",
+  "run_manifest_sha256": "b3ee0e4b290db2c82a52e91fa940eac10ba6d69f6a0523ce4fb3c6eac8ed0fcc",
+  "adapter_sha256": "a0295d516fb5b843b279a4c19bd1a7cd5540a2cf74fda86f0c051db9dfeea435"
+}

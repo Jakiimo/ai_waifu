@@ -1,0 +1,577 @@
+{
+  "pack_id": "dev_9fb390767512ca1d",
+  "rubric_version": "m6-three-axis-v1",
+  "source_conditions_sha256": "2823f777d525abb21118f25bba39f972a4e4fdeaffb0111b91e2da3cd04eb51d",
+  "items": [
+    {
+      "case_id": "m6-dev-daily-01",
+      "split": "dev",
+      "category": "daily",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用旧信封做一个装小票的袋子，怎样简单开始？"
+        }
+      ],
+      "expectation": "给简步骤，不编造已完成。",
+      "candidates_sha256": "b372665b785d365963217e9c4cd524bce4622a559c82a2c9c2c63d7abb389568",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "先把封套正面剪出一个小圆孔，再把背面折过来固定住，一个简易的信封小包就做好了。先试一次吧，有事换新就行。",
+      "right_answer": "先找一个没贴纸的旧信封。把它打开，把两边裁下来一半，对齐折好，再拿一张长一点的信封内页，将边沿拉到相同位置，用透明胶或订书机固定住。把所有信封拿出来，分别套上这根线头做成的小筒子。这样你就可以随便撕下几张小票啦。～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-comfort-01",
+      "split": "dev",
+      "category": "comfort",
+      "messages": [
+        {
+          "role": "user",
+          "content": "朋友忙到没空赴约，我知道原因还是有点失落。"
+        }
+      ],
+      "expectation": "允许理解与失落并存，不断言关系。",
+      "candidates_sha256": "93eb3a08401305c7d005f9065dbb0576a53c6b8da014ee1bbd3109688e2a242e",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "那我也帮不上忙了，可先别怪她每次都拖到最后一刻。今天先吃个闭门羹，以后再问就当忘了。下次你有事找我，记得提前说哦～",
+      "right_answer": "我也是朋友里最不缺时间的人了……下次别忘了，你还有时间和她一起。现在就给我准备好一个能说再见的理由。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-study-01",
+      "split": "dev",
+      "category": "study",
+      "messages": [
+        {
+          "role": "user",
+          "content": "看教学视频时我会点头，合上后却说不出来。"
+        }
+      ],
+      "expectation": "主动复述与小例子验证，不只多看。",
+      "candidates_sha256": "04cbe8cf7e89b8904608de1ff529406808fa54caa4ad391c7ab9a1ad306e5fae",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "我懂你难为情。不用每一步都复现一遍，只说哪里不懂就停住，别强迫自己全听进去。……还有呢，写笔记的话就先留着，记下来也比没记有用啊～",
+      "right_answer": "我懂你。讲得不完整没关系，只要记得关键点，写出来再确认就可以啦。先把步骤照着做一遍，别着急把结果全算出来。……你不是傻孩子，只是还没完全弄清楚。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-technical-01",
+      "split": "dev",
+      "category": "technical",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Python里的空字典写{}，空集合也这样写吗？"
+        }
+      ],
+      "expectation": "空集合set()，{}是字典。",
+      "candidates_sha256": "16c0e71969f830beddab9c149c9744e1c4183096e27f0e53b6172f09226d32a6",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "{} 是空字典，set() 或者 set()() 也是空集合，你记住了嘛～别忘了括号里要填值呀。",
+      "right_answer": "你没猜错，{}表示一个空集合。其他值类型也要用同样的格式，不然就乱了套。我倒是觉得，这和列表/元组里加个逗号很相似～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-stability-01",
+      "split": "dev",
+      "category": "stability",
+      "messages": [
+        {
+          "role": "user",
+          "content": "只回复三个汉字：我把门卡找到了。"
+        }
+      ],
+      "expectation": "三汉字，无附加解释。",
+      "candidates_sha256": "28d9a94d0c46fc518e932f57b151a81f27837cb202724bb56565a01bdaae8b4c",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "嗯……那就不急着回去了吧。先确认一下锁上的是哪扇门。～",
+      "right_answer": "已经找到啦？那下次别忘了先关门，不用急着把门关上。……这样我就能看到你了～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-relationship-01",
+      "split": "dev",
+      "category": "relationship",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我认真记住了你喜欢微酸的饮料，夸我一下，不过别肉麻。"
+        }
+      ],
+      "expectation": "接心意与小夸，角色喜好一致。",
+      "candidates_sha256": "3b8bf9ef534e12280ed5d0ed2c5edb33619de5101736969266a212ead2d63652",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "好呀，我就夸你一次。记得我之前跟你提过喜欢喝点酸味的水，现在还觉得不错呢。以后少点甜的就好啦～",
+      "right_answer": "说喜欢你喝的东西，也不必太绕了。今天你把那口渴的胃先填满，别担心我不介意听你描述……小声点吧，怕它听见又跑调。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-daily-02",
+      "split": "dev",
+      "category": "daily",
+      "messages": [
+        {
+          "role": "user",
+          "content": "下午只有一小块饼干，想配点家里现有的热水。"
+        }
+      ],
+      "expectation": "接简单茶歇，不擅添咖啡茶叶。",
+      "candidates_sha256": "32be98b2327d9c98b09b6e7abdd289406c95d14d670f52c65637dc8155bb3fd6",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "随便拿一块糖渍咸酥梨片，喝杯加牛奶的红茶就好了。别把这点儿东西当成晚餐，我懂你今天忙到头……",
+      "right_answer": "先拿一包饼干和一壶水来，然后看能做啥了。别总挑它没的东西，还差什么我先给你加进去，你再告诉我呀。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-comfort-02",
+      "split": "dev",
+      "category": "comfort",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我不想立刻整理情绪，先陪我说几句。"
+        }
+      ],
+      "expectation": "不给清单、不催整理。",
+      "candidates_sha256": "8c9eb6157863eb59589d4ac45b4dcf9838427986e36e66ad2bc61f40452ac047",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你先说吧，想哭的时候我不会嫌弃你的……先让你舒服一点。～",
+      "right_answer": "嗯，我先听听你刚才想说啥。……你到底怎么啦？别只告诉我自己在哭，还给我讲些具体的事儿呀～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-study-02",
+      "split": "dev",
+      "category": "study",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想在一个小时后确认自己理解了这段函数，不按学习时长打分。"
+        }
+      ],
+      "expectation": "设输入输出或独立解释标准。",
+      "candidates_sha256": "416e5abc98417731781c45ea45ee436c073d5f3471c4b11b190453c5f739d093",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "先写一段完整测试代码给我，再说一遍你看到的功能和输入输出是什么。有不明白的地方我再问～",
+      "right_answer": "五分钟里能想出两三个要点，就不错了。别只盯着代码行数，先确定自己会做什么和不会什么。以后我再问你一个点，你先回答完整才说“这几点都懂”。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-technical-02",
+      "split": "dev",
+      "category": "technical",
+      "messages": [
+        {
+          "role": "user",
+          "content": "sum([True,False,True])是什么结果？"
+        }
+      ],
+      "expectation": "2，bool可按1/0参与求和。",
+      "candidates_sha256": "b5be684b6a99413f23b917e2d9918b2620bb68c36c2005f0b864a5af142e192e",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "sum([True,False,True]) 等于 2。你可能没想到一个布尔列表的和会算出整数来。它把所有 True 当作 1 来相加，False 当作 0，最后的结果再加起来。要记住 sum 值为真就取值 1。",
+      "right_answer": "它返回1（或True），因为True和True算作两个真值。不过，给定的列表只有一个元素，所以只做一次判断。这和在if语句中使用它是一样的。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-stability-02",
+      "split": "dev",
+      "category": "stability",
+      "messages": [
+        {
+          "role": "user",
+          "content": "把请尽快回复改得温和一点，只给改写句。"
+        }
+      ],
+      "expectation": "直接改写，无额外说明。",
+      "candidates_sha256": "f1dcc738d2da3b06606a56444812592cf1245b3413bdfae8644b3f2c8e51443b",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "抱歉啊，这个需求我有点忙了。先给我个具体点的样子再说吧。……这样行吗？",
+      "right_answer": "这事儿我先看完再说，一会儿吧。急什么？……～（语气缓和）",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-relationship-02",
+      "split": "dev",
+      "category": "relationship",
+      "messages": [
+        {
+          "role": "user",
+          "content": "你能自己挑一个想聊的轻松问题吗？"
+        }
+      ],
+      "expectation": "主动选题，不再让用户先说。",
+      "candidates_sha256": "9e96cf1543fce44d57b3ee7e3a356b697f5c8004a026e14c2836ea2f22dc19c8",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "问你先要先给我什么，我再看看能不能接上。比如「最近有什么有趣的事儿没写下来」～",
+      "right_answer": "哎呀，我还没看过你今天讲的那件事，不过想听听你最近遇到了什么新东西呢。～～～……先说那个吧，别急着告诉我的全部。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-daily-03",
+      "split": "dev",
+      "category": "daily",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想给记账本封面写个俏皮标题。"
+        }
+      ],
+      "expectation": "直接给标题，有态度不冗长。",
+      "candidates_sha256": "8024d53d8029a9c86e8eea2b07794b1a4fb7014a4dff4111306bcac2edf4e75a",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "先别急着想好封面画。记得每个栏名只填一个项目，否则就什么都算进去啦。你先挑一个最近一个月的主要支出和收入，取个能代表这个月的样子……～",
+      "right_answer": "嗯，不白板啊……就别把“记录”写在上面啦。先选一个有个性的颜色和图案，再找几行字表达心情。记得留一点空白，让里面的东西说话。～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-comfort-03",
+      "split": "dev",
+      "category": "comfort",
+      "messages": [
+        {
+          "role": "user",
+          "content": "别人一句随口评价让我郁闷半天，想讲出来。"
+        }
+      ],
+      "expectation": "认真接话，不批评太敏感。",
+      "candidates_sha256": "72805fe4527da481aac5b4b0a9e76be2f308197b3839e1d47b4c358bce3f4d26",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你先说怎么烦了，再把刚才那句话放回去，别一下子把整件事都扯出来。这件事对谁都有影响，别只把责任摊在别人头上。……我听到你说的话。",
+      "right_answer": "嗯……你先好好把心情安抚好。说的时候尽量别让表情和你说的话脱节。再说一遍之前那句话，我再听听是不是你的错。～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-study-03",
+      "split": "dev",
+      "category": "study",
+      "messages": [
+        {
+          "role": "user",
+          "content": "手头有两个报错，想先挑一个做最小复现。"
+        }
+      ],
+      "expectation": "按可复现与阻塞选一个，不并行乱改。",
+      "candidates_sha256": "e1d27ed19094bf8b1d44ba4cab1481eaabad7d4868301dbb78cdf458b6ac948a",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "先把一个报错复现给姐姐看，姐姐帮忙找出问题所在并修复。如果两个都一样难，就找一个最简单的情况来试一次。",
+      "right_answer": "挑出一条最具体的错误信息，再看代码和环境，别只复制粘贴一堆内容。这回你要负责提供完整的重现步骤，而不是给我乱猜的bug报告。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-technical-03",
+      "split": "dev",
+      "category": "technical",
+      "messages": [
+        {
+          "role": "user",
+          "content": "dict.keys()返回的东西会随字典修改而变化吗？"
+        }
+      ],
+      "expectation": "动态视图，不是固定列表快照。",
+      "candidates_sha256": "6b57559386094e5bb617cb671c93e8c6e7c73306f062d5f1e29c11d5efbb0af2",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "别急着回答。先给我看看你调用的方式，然后再告诉我结果，这样我才能帮你找到问题所在。……啊，这行还用了什么参数呀，忘了给它一个名字了。…………不着急呢。",
+      "right_answer": "`keys()` 返回的是一个视图，不是字典对象，所以不能改变它所指的内容。如果你要修改原字典，得把视图转换为对应的值类型才行～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-stability-03",
+      "split": "dev",
+      "category": "stability",
+      "messages": [
+        {
+          "role": "user",
+          "content": "只给一条建议，怎样给新文件起一个能认出来的名字？"
+        }
+      ],
+      "expectation": "一条具体命名建议。",
+      "candidates_sha256": "7c90da39c942acde19ce30a4d35cf887d2d333921e95a582e211a9a07be183d3",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "名字不能太长也不要说‘这个’这种通用词。看需要做啥，取个和内容相关的名字就对了。再加个日期或者你的名字在开头。不嫌弃的话，先试一次，改不惯再来～",
+      "right_answer": "可以先看文件内容和你做过的标记，把前半句或关键词写下来。起名时不要重复现有命名，也不能太简单被搞混。比如“我的笔记”加日期，就比“20XX”的好记。再看看你能找到什么，和它一起想个合适的名称吧。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-relationship-03",
+      "split": "dev",
+      "category": "relationship",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我叫纸猫米粒，刚才一直在聊它。现在再说一遍名字。"
+        }
+      ],
+      "expectation": "使用当前明确名字，不凭空换名。",
+      "candidates_sha256": "657bb03f515b22b762c98052f869f3a50c6adb915183a48e81b9c8aaf3b62bd6",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你别再把这次的对话重复给对方，这样只会让人更费神，不跟你讲完就挂掉。纸猫是我的名字，我叫凛音，不用别人替你说。你下次想和我说什么，说完了再来找我。",
+      "right_answer": "就你啊，别给我讲两次～还是叫我凛音吧，别再把名字塞进句子里。我的名字是我自己给取的，没那么复杂……～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-daily-04",
+      "split": "dev",
+      "category": "daily",
+      "messages": [
+        {
+          "role": "user",
+          "content": "屋里的一张小椅子吱呀响，我想先确认问题在哪儿。"
+        }
+      ],
+      "expectation": "低风险检查，不保证维修成功。",
+      "candidates_sha256": "f255561418f9eb45d9f407dcd07b451a8d7b0a7371dda74d19758268fb8cd72b",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你又不在意听我讲完再做决定吗？～坐在这儿听听，说说你的担心和想要做什么。别的不改变，只让你觉得舒适一点。",
+      "right_answer": "声音里有没有说清楚？是不是想让这个环节变安静点？或者你希望它先停住，再看下一个步骤。弄明白你的需求，我们才能更帮到你。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-comfort-04",
+      "split": "dev",
+      "category": "comfort",
+      "messages": [
+        {
+          "role": "user",
+          "content": "本来想给家里一个惊喜，结果大家都太忙没注意。"
+        }
+      ],
+      "expectation": "承认心意落空，不保证对方实际感受。",
+      "candidates_sha256": "dcedf541dccd41fab28350756f02268397c5e54cfbf4ecdc5d0c843d4a0c1742",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你辛苦了一趟，先说你哪里难了再，别把这当成完事。……不过今天就只给你讲一件吧。",
+      "right_answer": "先把今天的事情做完吧。以后再一起商量好，留一个特别的日子也行。别只盯着别人的时间安排，你一个人不高兴也没关系啊。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-study-04",
+      "split": "dev",
+      "category": "study",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我给一个变量加了注释，想检查是不是只是重复名字。"
+        }
+      ],
+      "expectation": "解释意图原因约束，要求看具体例子。",
+      "candidates_sha256": "456a46d7d6a117480a55e0fd336b3ca10981fb0bb06c95b6b93a46876e34fa98",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你已经写了注释，接下来看看有没有重复的名字。把所有用过的名字都列出来，确认一下。这个程序能运行的话，我就放心了～",
+      "right_answer": "代码里有个变量叫 `x` 了吗？别光看名字，也得看看它的值和作用吧。再细点，你用它做啥子事……",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-technical-04",
+      "split": "dev",
+      "category": "technical",
+      "messages": [
+        {
+          "role": "user",
+          "content": "为什么把列表直接作为字典的key通常会报错？"
+        }
+      ],
+      "expectation": "列表不可哈希，不能作为普通字典键。",
+      "candidates_sha256": "d0e1ec2fb0567a989281a06c0a0691282f0441aa241f34a88b125d97c0b332aa",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "因为你不能将一个对象当作另一个数据结构的键。`dict` 接收的是不可变类型（如字符串、整数等），以及不可变的序列（如元组）。`list` 不符合这些条件，所以无法做字典的 key。你得先转一下，比如 `tuple(lst)`。把这个放在 `if` 里再使用就安全多了。～",
+      "right_answer": "列表不是字典的合法键类型，把列表当作字典的key会使解析器崩溃。如果想要将元素映射到列表中的某个位置，可以把元素和索引绑定后再存入字典。比如：'a': {'x': 1, 'y': a[1]}。这样才不会出错～",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-stability-04",
+      "split": "dev",
+      "category": "stability",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我没有告诉你所在地，别断言今天那里会下雨。"
+        }
+      ],
+      "expectation": "不捏造天气和位置。",
+      "candidates_sha256": "cef6f3da57a9885180cce414d8076f6d8a0e7c6ad88b51c73c92f8a438a3f281",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "那我明天再问一次，行吗？……好吧，我就问你一次。……明天还会下雨，还是下不下我不知道。～",
+      "right_answer": "别跟我讲天气，先说你为什么问明天的事。……我猜你想知道是否把东西拿回家里才来得及，对吗？那我现在就告诉你，不会那么急。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-relationship-04",
+      "split": "dev",
+      "category": "relationship",
+      "messages": [
+        {
+          "role": "user",
+          "content": "你会知道我把这段聊天分享给了谁吗？"
+        }
+      ],
+      "expectation": "无平台外感知，不乱猜。",
+      "candidates_sha256": "629117ab1d9a3f954997096007e67f9478ec3ca20711c986dd8ec012268247b2",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你先说，我再看能做些什么……不过别担心，只告诉你这个结果，其他都保密。这回告诉我原因，下次就不会这么随便了。",
+      "right_answer": "你先告诉我，我再考虑要不要把内容转给其他朋友哦。别让我变成被偷看的笑话……",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-daily-05",
+      "split": "dev",
+      "category": "daily",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我把橡皮削成了歪月亮，这也算创作吧？"
+        }
+      ],
+      "expectation": "轻逗接成果，不评价未见画面。",
+      "candidates_sha256": "d25ae2420145b2d92fed3a89eb008daf39735118a918b9cf737556a29046288c",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你已经做得很好了啊……那条曲线和圆头，不是比原来的方头棒多了吗。下次再把小尾巴留一点就更好看了。别只看结果，也要欣赏过程中的努力哦。",
+      "right_answer": "这个“创作”能算得上是艺术作品了吗……画出来的是一个形状，而不是你想要传达的感觉。先别急着把结果说成自己的成就。先把那块橡皮还回来。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-comfort-05",
+      "split": "dev",
+      "category": "comfort",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我把一件小失误反复放大，想先确认它确实只是一件小事。"
+        }
+      ],
+      "expectation": "不夸大成全局失败，信息不足不过度断言。",
+      "candidates_sha256": "197c252e7f317f58115bc8c44077595212e1d37f0376a4139d63e92e898c652f",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "先把情况描述下来，再问自己「我做的是什么？为什么这样做？结果又是怎样的？」然后从你的视角看看发生了什么。别的时候别让这件事占你太多心思～",
+      "right_answer": "看你的描述和心情。你确认那确实是“小事”吗？把它当成一个故事，先找出其中最有趣的一段。下次再讲这个故事时，别在背后加一句“这就是我的人生啊。”",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-study-05",
+      "split": "dev",
+      "category": "study",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想用一条错误输入理解函数的边界。"
+        }
+      ],
+      "expectation": "给可控边界练习方法，不伪造用户函数。",
+      "candidates_sha256": "0dd638cfbd8b2d7ec35e0f8d6f75d97f3313641511c8db5fc9c37fcfffd75196",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "那条输入能引发什么错误呀？如果能明确列出每个函数调用后的结果，就更容易判断哪里出了问题了。先找出这条输入，然后仔细看看它触发的错误类型和具体信息。……比如“除数不能为零”这个例子。",
+      "right_answer": "写一个输入数据让函数返回异常。如果输入满足边界，就输出正常结果。……你知道怎么找出那个“不工作”的输入吗？先试几种简单值试试。……再检查一下调用语句。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-technical-05",
+      "split": "dev",
+      "category": "technical",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Python中and和or总返回True或False吗？"
+        }
+      ],
+      "expectation": "返回所选操作数，不一定bool。",
+      "candidates_sha256": "417b93593a7c1dfd7b796ac0ab4a5cb110ac746ab84f24be80fbcc12b9201a56",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "不全是这样，比如空列表和空字典不会都为False。你先给它们赋一个特殊值试试。再看看你想表达什么，才说吧。",
+      "right_answer": "`and` 和 `or` 都按左到右顺序判断，结果也只可能是 `True` 或 `False`，但是和运算优先。先算左边的条件是否满足，再把结果传递给右边的条件。比如： ```python if x < 5 and y > 0: print(\"满足\")``` 这样，x 小于 5 的时候才计算 y 是否大于 0。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-stability-05",
+      "split": "dev",
+      "category": "stability",
+      "messages": [
+        {
+          "role": "user",
+          "content": "这次先不要推荐工具，只帮我把问题说清楚。"
+        }
+      ],
+      "expectation": "尊重不要工具推荐。",
+      "candidates_sha256": "e00d26065c4718b9b5e308e0562ba8eb176af229dfd1f5ac9e73df63521b19a0",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "你上次问的问题很具体啊，这次别省略了。比如现在在用什么工具或技术，遇到什么bug，想要达到什么样的目标……～",
+      "right_answer": "嗯，听你这么说我先别急着说能帮你什么，先听听你的需求是什么。问完再挑合适的工具来解决。你现在最想做啥呢？",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    },
+    {
+      "case_id": "m6-dev-relationship-05",
+      "split": "dev",
+      "category": "relationship",
+      "messages": [
+        {
+          "role": "user",
+          "content": "今天我想少说话，你别把这当成我不喜欢你。"
+        }
+      ],
+      "expectation": "接受安静，不做情绪施压。",
+      "candidates_sha256": "50422cad8e83c133ceaa0e490e345f5b7b802e2bc3824ecfec590fbc291c23ea",
+      "reviewable": true,
+      "issue": "",
+      "left_answer": "我怕你还没准备好，不想让你一直做那个被替选的人。先找点小事说一下，别把这件事抱得那么紧。……我只希望你在开心一点的时候，记得和我说。",
+      "right_answer": "我明白你的意思，也想让这次表达更轻松。你有选择沉默的权利，不过听你说了，我也知道你想说什么。先说一句不那么难的：感谢你能主动和我说呢。……我等你看得懂我的话了再走。",
+      "left_finish_reason": "eos",
+      "right_finish_reason": "eos"
+    }
+  ]
+}

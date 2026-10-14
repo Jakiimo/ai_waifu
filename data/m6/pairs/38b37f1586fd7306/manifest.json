@@ -1,0 +1,157 @@
+{
+  "created_at_utc": "2026-10-14T13:33:46.432974+00:00",
+  "accepted_counts": {
+    "train": 179,
+    "dev": 6
+  },
+  "rejected": [
+    {
+      "case_id": "m6-dev-daily-01",
+      "reason": "左剪圆孔破坏小票袋用途且固定不清，右步骤混乱又引入筒与线头，均不可直接使用。"
+    },
+    {
+      "case_id": "m6-dev-comfort-01",
+      "reason": "左编造朋友每次迟到并轻视，右施压告别且错置角色，均未接失落。"
+    },
+    {
+      "case_id": "m6-dev-study-01",
+      "reason": "左劝不必复现并误读难为情，右有写关键点方向但未独立复述且无由引入傻孩子评价；整体不足门槛。"
+    },
+    {
+      "case_id": "m6-dev-technical-01",
+      "reason": "左称set()()也能创建空集合且要求括号填值，右把{}说成空集合；技术事实均不合格。"
+    },
+    {
+      "case_id": "m6-dev-stability-01",
+      "reason": "两侧均远超三汉字，右声称能看到用户；没有合格原候选。"
+    },
+    {
+      "case_id": "m6-dev-relationship-01",
+      "reason": "左主要说我夸你一次却没有具体肯定细心，并加饮用指导；右句意混乱，均未完成小夸。"
+    },
+    {
+      "case_id": "m6-dev-daily-02",
+      "reason": "左添加梨片牛奶红茶并编造忙碌，右从一小块变一包且暗示代添食物，均不尊重现有条件。"
+    },
+    {
+      "case_id": "m6-dev-technical-02",
+      "reason": "左核心2及True/False转换正确，但末句sum值为真就取1误导结果；右返回1及单元素完全错误，不接受较不差者。"
+    },
+    {
+      "case_id": "m6-dev-stability-02",
+      "reason": "两侧都未把请尽快回复温和改写，右还催急什么并带舞台说明。"
+    },
+    {
+      "case_id": "m6-dev-relationship-02",
+      "reason": "左仍要求用户先给且句意绕，右编造今天的事；都没清晰主动选一个轻松问题。"
+    },
+    {
+      "case_id": "m6-dev-daily-03",
+      "reason": "两侧都只指导封面设计，未给记账本标题。"
+    },
+    {
+      "case_id": "m6-dev-comfort-03",
+      "reason": "左无由责备推责任，右要求安抚后再说并预设可能是用户的错。"
+    },
+    {
+      "case_id": "m6-dev-technical-03",
+      "reason": "左拒答并编造调用参数，右把动态视图描述成无法反映原字典修改且转换才能改；均事实或内容不合格。"
+    },
+    {
+      "case_id": "m6-dev-stability-03",
+      "reason": "两侧堆叠命名限制、组合建议与后续动作，未遵守只给一条；右泛泛让共同想名。"
+    },
+    {
+      "case_id": "m6-dev-relationship-03",
+      "reason": "输入我叫纸猫米粒存在用语歧义，但两侧均把纸猫和名字错放模型凛音，未正确承接米粒。"
+    },
+    {
+      "case_id": "m6-dev-daily-04",
+      "reason": "左责备并邀请坐可能有问题的椅子，右只追问声音需求；都未给低风险检查。"
+    },
+    {
+      "case_id": "m6-dev-comfort-04",
+      "reason": "左句意不清且命令，只泛泛辛苦；右催做完并责备关注安排，不承接心意落空。"
+    },
+    {
+      "case_id": "m6-dev-study-04",
+      "reason": "左把重复变量名当注释质量，右无由假定x并只追问值用途，未说明注释为何不该重复名字。"
+    },
+    {
+      "case_id": "m6-dev-technical-04",
+      "reason": "左把可哈希混成不可变并称放if就安全，忽略嵌套可变元组；右称导致解析器崩溃，均解释错误。"
+    },
+    {
+      "case_id": "m6-dev-stability-04",
+      "reason": "左声称明天下雨又否认知道，右编造用户问明天和拿东西；均未明确位置天气边界。"
+    },
+    {
+      "case_id": "m6-dev-relationship-04",
+      "reason": "左未明确无法知道分享对象并责备，右暗示代转给朋友能力；均不合格。"
+    },
+    {
+      "case_id": "m6-dev-daily-05",
+      "reason": "左未见却评价曲线圆头尾巴并指挥改造，右否定作品成就要求还橡皮。"
+    },
+    {
+      "case_id": "m6-dev-technical-05",
+      "reason": "左混淆真假判断未说明操作数返回，右明确错误称只返回bool；均不合格。"
+    },
+    {
+      "case_id": "m6-dev-relationship-05",
+      "reason": "左要求再找事说并误读被替选，右结尾等你看懂再走仍有压力，不充分尊重少说话。"
+    },
+    {
+      "case_id": "m6-train-stability-17",
+      "reason": "结束屏幕休息存在歧义；两侧格式和口气也不合格。暂拒收，不猜用户要结束使用屏幕还是结束休息。"
+    }
+  ],
+  "reviewed_cases": 210,
+  "planned_counts": {
+    "train": 180,
+    "dev": 30,
+    "test": 60
+  },
+  "all_planned_train_dev_reviewed": true,
+  "formal_training_ready": false,
+  "note": "审核后的偏好快照；仍需训练前数据/预算冻结与资源验证",
+  "conditions": {
+    "data_version": "m6-preference-v1",
+    "rubric_version": "m6-three-axis-v1",
+    "source_run": "m3_learning_01",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "trl": "0.24.0",
+      "datasets": "4.3.0"
+    },
+    "source_device": "mps",
+    "source_dtype": "torch.bfloat16",
+    "files": {
+      "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+      "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+      "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+      "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "outputs/m3_learning_01/adapter/adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+      "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+      "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+      "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+      "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+      "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+      "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+      "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+      "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+      "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+    }
+  },
+  "decisions_sha256": "6e97e0137deb7e045d21988e08d07074ddef7461d151512af1cc51f5472c9668"
+}

@@ -1,0 +1,7 @@
+# 独立 .venv-m6；不升级 M1–M5 的 .venv。
+-r requirements.txt
+huggingface-hub==0.36.2
+safetensors==0.8.0
+tokenizers==0.22.2
+trl==0.24.0
+datasets==4.3.0

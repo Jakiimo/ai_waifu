@@ -1,0 +1,288 @@
+{
+  "completed_at_utc": "2026-10-14T09:47:12.087088+00:00",
+  "training_process_pid": 31974,
+  "purpose": "20对真实Qwen DPO学习验证，非完整M6正式质量实验",
+  "conditions": {
+    "source_conditions": {
+      "data_version": "m6-preference-v1",
+      "rubric_version": "m6-three-axis-v1",
+      "source_run": "m3_learning_01",
+      "packages": {
+        "torch": "2.8.0",
+        "transformers": "4.57.6",
+        "peft": "0.18.0",
+        "accelerate": "1.12.0",
+        "huggingface-hub": "0.36.2",
+        "safetensors": "0.8.0",
+        "trl": "0.24.0",
+        "datasets": "4.3.0"
+      },
+      "source_device": "mps",
+      "source_dtype": "torch.bfloat16",
+      "files": {
+        "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+        "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+        "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+        "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+        "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+        "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+        "outputs/m3_learning_01/adapter/adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+        "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+        "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+        "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+        "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+        "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+        "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+        "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+        "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+        "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+        "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+        "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+        "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+      }
+    },
+    "files": {
+      "configs/m6_dpo_smoke.json": "eb4c370a9eac201d9b893db2ec62aed42ea4b7b6566bc35eec4836662d696135",
+      "scripts/m6_dpo.py": "b802c1847176b6b7762a0da12d06a490812827c85feaffd484f9ebc30d85bfd0",
+      "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+      "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+      "data/m6/pairs/8c42c402efe59c25/train.jsonl": "02f96ccf59e3186ceb7a8b046b566e0d2b9388120ec6716e0e4378febfe35c8f",
+      "data/m6/pairs/8c42c402efe59c25/manifest.json": "d473179a539c4e61e4e2f79bbc3f8c30020fc72069bec8a596c2216d2ba4a3e7",
+      "results/m6_preparation/reviews/batch_01_decisions.jsonl": "fd7a43fc0f77548df00c21c8540abfacf14972bb26df8298c5cb803e83dcd40f",
+      "results/m6_preparation/reviews/batch_01_candidates.jsonl": "2a1fcb21a46ee4a4b6a4a19a27eb33572925e14975c408e2dd66eb195a2f5557",
+      "results/m6_preparation/reviews/batch_01_receipt.json": "1230ee5b63ae21ff71f848b0b5952cb8356b99b7b48552d4046dd2c2b292af8e",
+      "results/m6_preparation/review/train_37eddc845e62f8e3.json": "0e5be1f045faa56e292ec4852077cbc6d0084b5d4c7cb08a4d1dce7682fdfdc3"
+    },
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "trl": "0.24.0",
+      "datasets": "4.3.0"
+    },
+    "purpose": "20对真实Qwen DPO学习验证，非完整M6正式质量实验",
+    "config": {
+      "run_id": "m6_dpo_smoke_01",
+      "purpose": "20对真实Qwen DPO学习验证，非完整M6正式质量实验",
+      "pair_file": "data/m6/pairs/8c42c402efe59c25/train.jsonl",
+      "pair_manifest": "data/m6/pairs/8c42c402efe59c25/manifest.json",
+      "review_snapshot": "results/m6_preparation/reviews/batch_01_decisions.jsonl",
+      "candidate_snapshot": "results/m6_preparation/reviews/batch_01_candidates.jsonl",
+      "review_receipt": "results/m6_preparation/reviews/batch_01_receipt.json",
+      "review_pack": "results/m6_preparation/review/train_37eddc845e62f8e3.json",
+      "training_examples": 20,
+      "max_steps": 5,
+      "learning_rate": 1e-05,
+      "beta": 0.1,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 4,
+      "max_length": 320,
+      "seed": 42,
+      "development_case_ids": [
+        "m6-dev-daily-01",
+        "m6-dev-comfort-01",
+        "m6-dev-study-01",
+        "m6-dev-technical-01",
+        "m6-dev-stability-01",
+        "m6-dev-relationship-01"
+      ],
+      "development_max_new_tokens": 128,
+      "notes": "从现有SFT复制policy/reference两个LoRA；只更新policy。提前计算冻结SFT的参考概率。训练前后观察6条新开发题，不提供参考答案、不用最终测试。该学习验证不选最优checkpoint或宣称质量改善。"
+    }
+  },
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "training_examples": 20,
+  "global_step": 5,
+  "changed_policy_lora_tensors": 112,
+  "reference_unchanged": true,
+  "base_probe_unchanged": true,
+  "source_sft_unchanged": true,
+  "initialization": "policy/reference均复制m3_learning_01；保存的policy为完整训练后LoRA，不叠加旧Adapter",
+  "training_seconds": 20.762,
+  "metrics": {
+    "train_runtime": 20.6899,
+    "train_samples_per_second": 0.967,
+    "train_steps_per_second": 0.242,
+    "train_loss": 0.6829106926918029,
+    "epoch": 1.0
+  },
+  "data_token_counts": [
+    {
+      "id": "m6-train-daily-01",
+      "prompt": 86,
+      "chosen": 43,
+      "rejected": 37
+    },
+    {
+      "id": "m6-train-comfort-01",
+      "prompt": 85,
+      "chosen": 33,
+      "rejected": 55
+    },
+    {
+      "id": "m6-train-study-01",
+      "prompt": 79,
+      "chosen": 50,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-technical-01",
+      "prompt": 81,
+      "chosen": 71,
+      "rejected": 67
+    },
+    {
+      "id": "m6-train-stability-01",
+      "prompt": 77,
+      "chosen": 2,
+      "rejected": 23
+    },
+    {
+      "id": "m6-train-relationship-01",
+      "prompt": 81,
+      "chosen": 30,
+      "rejected": 32
+    },
+    {
+      "id": "m6-train-daily-02",
+      "prompt": 84,
+      "chosen": 36,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-comfort-02",
+      "prompt": 83,
+      "chosen": 38,
+      "rejected": 39
+    },
+    {
+      "id": "m6-train-study-02",
+      "prompt": 81,
+      "chosen": 52,
+      "rejected": 49
+    },
+    {
+      "id": "m6-train-technical-02",
+      "prompt": 79,
+      "chosen": 62,
+      "rejected": 45
+    },
+    {
+      "id": "m6-train-stability-02",
+      "prompt": 83,
+      "chosen": 9,
+      "rejected": 35
+    },
+    {
+      "id": "m6-train-relationship-02",
+      "prompt": 76,
+      "chosen": 37,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-daily-03",
+      "prompt": 80,
+      "chosen": 53,
+      "rejected": 31
+    },
+    {
+      "id": "m6-train-comfort-03",
+      "prompt": 82,
+      "chosen": 40,
+      "rejected": 44
+    },
+    {
+      "id": "m6-train-study-03",
+      "prompt": 78,
+      "chosen": 49,
+      "rejected": 51
+    },
+    {
+      "id": "m6-train-technical-03",
+      "prompt": 85,
+      "chosen": 60,
+      "rejected": 92
+    },
+    {
+      "id": "m6-train-stability-03",
+      "prompt": 81,
+      "chosen": 5,
+      "rejected": 36
+    },
+    {
+      "id": "m6-train-relationship-03",
+      "prompt": 76,
+      "chosen": 40,
+      "rejected": 23
+    },
+    {
+      "id": "m6-train-daily-04",
+      "prompt": 80,
+      "chosen": 54,
+      "rejected": 52
+    },
+    {
+      "id": "m6-train-comfort-04",
+      "prompt": 81,
+      "chosen": 39,
+      "rejected": 30
+    }
+  ],
+  "memory_samples": [
+    {
+      "step": 1,
+      "allocated_bytes": 3165725440,
+      "driver_allocated_bytes": 5053087744
+    },
+    {
+      "step": 2,
+      "allocated_bytes": 3165989632,
+      "driver_allocated_bytes": 4944035840
+    },
+    {
+      "step": 3,
+      "allocated_bytes": 3165857024,
+      "driver_allocated_bytes": 4948230144
+    },
+    {
+      "step": 4,
+      "allocated_bytes": 3165874944,
+      "driver_allocated_bytes": 4948230144
+    },
+    {
+      "step": 5,
+      "allocated_bytes": 3165840384,
+      "driver_allocated_bytes": 4931584000
+    }
+  ],
+  "memory_note": "MPS周期采样，不是已证明的峰值内存",
+  "verification_messages": [
+    {
+      "role": "system",
+      "content": "你是凛音，嘴硬心软的成年虚构女性，与用户是熟悉的同伴。学习和技术交流时可以俏皮地逗一逗、带姐姐感，但解释清楚准确；难过时认真倾听，用自然中文直接接话。"
+    },
+    {
+      "role": "user",
+      "content": "今天早餐的吐司烤焦了一角，想救一下，不想整片扔掉。"
+    }
+  ],
+  "adapter_files": {
+    "adapter_model.safetensors": "57d887577c1cd2a96226552cb48c2f5c1a311ec2ce068aa058c075609e345fc6",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "tokenizer_config.json": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "adapter_config.json": "f4a04ed48f74ff62f72ce20e211e1602bf125e8f34a930a5b9dbfb5a2ef3164c",
+    "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "reference_cache_sha256": "e033ff6b81a44ca9346b72ad8f4bffbdfa4e5cafe66836642bbaf204fd0e3f52",
+  "reload_probe_sha256": "bdbc77bf721cd9896dc7d0bb8afdb21b7698f0f863868c503024d1863e8e6e9d",
+  "m6_final_test_generated": false,
+  "formal_m6_quality_experiment_complete": false
+}

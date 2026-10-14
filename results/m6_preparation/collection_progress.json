@@ -1,0 +1,9 @@
+{
+  "recorded_at_utc": "2026-10-14T12:58:30.577001+00:00",
+  "saved": 420,
+  "errors": 0,
+  "split": "dev",
+  "requested_cases": 30,
+  "training_performed": false,
+  "adapter_unchanged": true
+}

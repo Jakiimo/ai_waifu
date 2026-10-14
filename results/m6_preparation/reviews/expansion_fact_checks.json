@@ -1,0 +1,505 @@
+{
+  "purpose": "训练与开发审核事实核对；未加载模型或训练",
+  "python_checks": {
+    "m6-train-technical-01": {
+      "actual": [
+        2,
+        6
+      ],
+      "expected": [
+        2,
+        6
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-02": {
+      "actual": [
+        2,
+        4,
+        6
+      ],
+      "expected": [
+        2,
+        4,
+        6
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-03": {
+      "actual": [
+        0,
+        {}
+      ],
+      "expected": [
+        0,
+        {}
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-04": {
+      "actual": [
+        [
+          false,
+          false,
+          false
+        ],
+        [
+          "int",
+          "list",
+          "NoneType"
+        ]
+      ],
+      "expected": [
+        [
+          false,
+          false,
+          false
+        ],
+        [
+          "int",
+          "list",
+          "NoneType"
+        ]
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-05": {
+      "actual": [
+        true,
+        [
+          1,
+          2
+        ]
+      ],
+      "expected": [
+        true,
+        [
+          1,
+          2
+        ]
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-06": {
+      "actual": [
+        [
+          1,
+          "甲"
+        ],
+        [
+          2,
+          "乙"
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          "甲"
+        ],
+        [
+          2,
+          "乙"
+        ]
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-07": {
+      "actual": [
+        "34",
+        7
+      ],
+      "expected": [
+        "34",
+        7
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-08": {
+      "actual": 5,
+      "expected": 5,
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-09": {
+      "actual": [
+        null,
+        "hi\n"
+      ],
+      "expected": [
+        null,
+        "hi\n"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-10": {
+      "actual": [
+        "tuple",
+        "int"
+      ],
+      "expected": [
+        "tuple",
+        "int"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-11": {
+      "actual": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-12": {
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true,
+      "explanation": "上下文关闭资源；不消除块内异常。"
+    },
+    "m6-train-technical-14": {
+      "actual": [
+        "凛音",
+        "凛音"
+      ],
+      "expected": [
+        "凛音",
+        "凛音"
+      ],
+      "passed": true,
+      "explanation": "明确encoding与实际字节一致；跨环境默认差异参考Python open文档。"
+    },
+    "m6-train-technical-26": {
+      "actual": "凛音",
+      "expected": "凛音",
+      "passed": true,
+      "explanation": "普通相对文件路径从当前工作目录解释。"
+    },
+    "m6-train-technical-13": {
+      "actual": [
+        true,
+        "true"
+      ],
+      "expected": [
+        true,
+        "true"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-15": {
+      "actual": [
+        20,
+        30
+      ],
+      "expected": [
+        20,
+        30
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-16": {
+      "actual": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-17": {
+      "actual": [
+        2,
+        6
+      ],
+      "expected": [
+        2,
+        6
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-18": {
+      "actual": [
+        3,
+        1,
+        2
+      ],
+      "expected": [
+        3,
+        1,
+        2
+      ],
+      "passed": true,
+      "explanation": "本检查验证替代写法；set不保证输入顺序依据Python集合规范，不凭一次输出顺序推断。"
+    },
+    "m6-train-technical-19": {
+      "actual": [
+        3,
+        3.5,
+        -4
+      ],
+      "expected": [
+        3,
+        3.5,
+        -4
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-20": {
+      "actual": [
+        false,
+        true
+      ],
+      "expected": [
+        false,
+        true
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-21": {
+      "actual": [
+        [
+          1,
+          2,
+          3
+        ],
+        null
+      ],
+      "expected": [
+        [
+          1,
+          2,
+          3
+        ],
+        null
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-22": {
+      "actual": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        null,
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "expected": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        null,
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-23": {
+      "actual": [
+        "ab",
+        "AB"
+      ],
+      "expected": [
+        "ab",
+        "AB"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-24": {
+      "actual": [
+        false,
+        false,
+        true
+      ],
+      "expected": [
+        false,
+        false,
+        true
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-25": {
+      "actual": [
+        null,
+        "fallback"
+      ],
+      "expected": [
+        null,
+        "fallback"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-27": {
+      "actual": [
+        false,
+        2.0,
+        1.0,
+        true
+      ],
+      "expected": [
+        false,
+        2.0,
+        1.0,
+        true
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-28": {
+      "passed": true,
+      "method": "官方文档核查，未伪造跨设备确定性试验",
+      "claim": "相同随机种子不保证跨版本/平台/CPU-GPU复现一致",
+      "reference": "https://docs.pytorch.org/docs/2.8/notes/randomness.html"
+    },
+    "m6-train-technical-29": {
+      "actual": [
+        [
+          1,
+          2,
+          4
+        ],
+        null
+      ],
+      "expected": [
+        [
+          1,
+          2,
+          4
+        ],
+        null
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-train-technical-30": {
+      "actual": "name",
+      "expected": "name",
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-dev-technical-01": {
+      "actual": [
+        "dict",
+        "set"
+      ],
+      "expected": [
+        "dict",
+        "set"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-dev-technical-02": {
+      "actual": 2,
+      "expected": 2,
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-dev-technical-03": {
+      "actual": [
+        "x",
+        "y"
+      ],
+      "expected": [
+        "x",
+        "y"
+      ],
+      "passed": true,
+      "explanation": ""
+    },
+    "m6-dev-technical-04": {
+      "actual": [
+        "TypeError",
+        "TypeError"
+      ],
+      "expected": [
+        "TypeError",
+        "TypeError"
+      ],
+      "passed": true,
+      "explanation": "列表不可哈希；含列表的元组也不可哈希，不是所有不可变外壳都能作键。"
+    },
+    "m6-dev-technical-05": {
+      "actual": [
+        "fallback",
+        0,
+        7
+      ],
+      "expected": [
+        "fallback",
+        0,
+        7
+      ],
+      "passed": true,
+      "explanation": ""
+    }
+  },
+  "torch_version": "2.8.0",
+  "references": [
+    "https://docs.python.org/3.12/library/stdtypes.html",
+    "https://docs.python.org/3.12/library/functions.html#open",
+    "https://docs.python.org/3.12/library/exceptions.html",
+    "https://docs.python.org/3.12/library/os.html#os.getenv",
+    "https://docs.python.org/3.12/library/json.html",
+    "https://docs.pytorch.org/docs/2.8/generated/torch.Tensor.detach.html",
+    "https://docs.pytorch.org/docs/2.8/notes/randomness.html"
+  ]
+}

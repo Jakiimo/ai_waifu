@@ -8,6 +8,8 @@ M1本地推理、小样本训练和新进程重载已通过。M2已完成v3数�
 
 本次版本混用的原因与修复见 [M2一致性排查](docs/M2_一致性排查.md)。旧版完整准备包保存在 `history/m2_persona_v1/` 和 `history/m2_tsundere_v2/`；`data/m2_tsundere_v2/` 仅保留首次候选快照，主流程现在读取 `data/m2/`。
 
+M6小样本20对、5次更新与重载已由学习者完成，6题观察未显示明确整体改善。扩展后420条候选、失败0，助手审核210题并冻结179组train/6组dev；训练chosen原选26条、AI修订153条，开发无修订。学习者已完成正式DPO：179对、1轮45次更新，112个policy LoRA张量变化，reference未变，新进程重载最大logit差0.0；开发观察未支持明确整体改善。同起点chosen-only SFT、最终质量对照与M7尚未完成，操作见[M6第四步教程](docs/M6_第四步_同起点训练对照.md)。
+
 用户要求的12条台词已直接修改，同类38个学习/技术场景也已统一口吻，共影响150条训练实例；其余70个场景族保留。见 [12条修改前后](results/m2/revised_12_samples.md)。
 
 最新台词偏好与审核结果见 [人工抽查反馈](docs/M2_人工抽查反馈.md)。
@@ -16,6 +18,11 @@ M1本地推理、小样本训练和新进程重载已通过。M2已完成v3数�
 
 ## 从这里开始
 
+- [M6 入门教程](docs/M6_入门教程.md)：从当前SFT生成同题两条候选，助手审核偏好，再逐步进入DPO；不自动代跑正式实验。
+- [M6 第二步教程](docs/M6_第二步_DPO小样本教程.md)：查看实际偏好对，亲手训练20对、5次更新并观察6条开发回答。
+- [M6 第三步教程](docs/M6_第三步_扩展偏好数据.md)：保留第一批候选，扩展训练与开发采样；助手审核后再冻结正式对照。
+- [M6 第四步教程](docs/M6_第四步_同起点训练对照.md)：实际179/6数据冻结，同起点两条训练、15步开发观察与独立重载。
+- [M6 扩展审核结果](results/m6_preparation/reviews/expansion_report.md)：全部AI反馈，原候选、修订、拒收、数据覆盖与来源局限。
 - [M5 结果解读](results/m5_learning_01/结果解读.md)：本轮评分已委托AI完成，直接理解胜平负、任务退化与证据局限。
 - [M5 入门教程](docs/M5_入门教程.md)：四组公平对照与原人工评分路线；本轮AI来源见[评分方法](results/m5_learning_01/ai_review/评分方法.md)。
 - [M4 入门教程](docs/M4_入门教程.md)：先在终端调用reply，再亲手启动网页，解释模型加载、推理和会话历史。
@@ -103,7 +110,50 @@ M5先停止仍在运行的M4网页，再依次执行：
 
 prepare只核对输入并固定条件；generate由学习者执行60题×4组，共240回答，逐条保存。中断用generate --resume继续。匿名评分网页默认`http://127.0.0.1:7862`，不加载模型、不默认填分；120对覆盖四组回答，可分批保存。读完回答再评分，暂不打开原始回答或私有身份映射。
 
-评分后运行`.venv/bin/python scripts/m5.py report --reviewer "作者本人"`，结果在`results/m5_learning_01/`。完整条件、原始回答、评分与快照可核对；不足40题四组共同成功或不足40对BD评分不能标为M5完成。当前仅准备完成，不把开发QA数据当成正式评测。详见[M5验证记录](docs/M5_验证记录.md)。
+以上是原人工评分路线；本轮用户已将评分委托AI且全部完成，重建现有报告运行`.venv/bin/python scripts/m5_ai_report.py`，不能把AI分数登记成“作者本人”人工评分。结果在`results/m5_learning_01/`，详见[M5验证记录](docs/M5_验证记录.md)。
+
+M6使用新环境，只先采集小批训练候选：
+
+```bash
+.venv-m6/bin/python scripts/m6.py status
+.venv-m6/bin/python scripts/m6.py collect --split train --limit 20
+.venv-m6/bin/python scripts/m6.py review-pack --split train
+```
+
+20题×两次采样得到40条SFT候选，不更新LoRA。候选中断加`--resume`；没有真实审核不能导出chosen/rejected。当前第一批已审核为20对，2对直接选择原候选、18对明确记录AI修订chosen，原始40条保存。新环境已安装，完整版本在requirements-m6-lock.txt，旧环境和模型保留。
+
+第二步由学习者依次执行（train会开始实际更新）：
+
+```bash
+.venv-m6/bin/python scripts/m6_dpo.py inspect
+.venv-m6/bin/python scripts/m6_dpo.py train
+.venv-m6/bin/python scripts/m6_dpo.py verify
+```
+
+小样本配置固定20对、5次更新，学习者已完成并重载通过；6题前后对照在results/m6_dpo_smoke_01/development_timeline.md，未显示明确整体改善。更早开发检查的更新0次与实际训练5次分开记录；该入口不支持中断checkpoint恢复。
+
+第三步仍从原M3 SFT采样，保留原40条，学习者依次运行：
+
+```bash
+.venv-m6/bin/python scripts/m6.py collect --split train --limit 180 --resume
+.venv-m6/bin/python scripts/m6.py collect --split dev --limit 30 --resume
+.venv-m6/bin/python scripts/m6.py review-pack --split train
+.venv-m6/bin/python scripts/m6.py review-pack --split dev
+```
+
+扩展采样与审核已完成；原20组决策保留，开发不改写chosen凑量。冻结实际179组train、6组dev，训练拒收1、开发拒收24。主体为纠错，风格偏好仅2组较弱配对；开发类别覆盖不足，固定1轮终点，不做多轮试参。
+
+第四步先inspect，再由学习者依次启动两条训练并在新进程重载：
+
+```bash
+.venv-m6/bin/python scripts/m6_train.py inspect
+.venv-m6/bin/python scripts/m6_train.py train --method chosen_sft
+.venv-m6/bin/python scripts/m6_train.py verify --method chosen_sft
+.venv-m6/bin/python scripts/m6_train.py train --method dpo
+.venv-m6/bin/python scripts/m6_train.py verify --method dpo
+```
+
+两条都从原M3 SFT开始，各1轮约45步，训练前及15/30/45步生成6条固定开发回答。相同步数不代表等算力。每条结果在results/m6_formal_01_<method>/，完整Adapter在outputs/m6_formal_01_<method>/adapter/policy/。入口不支持中断checkpoint恢复；不覆盖已完成run。正式DPO已由学习者完成并重载，chosen-only SFT待运行；新最终测试仍封存。训练记录见[验证记录](docs/M6_验证记录.md)，回答变化见[开发观察](results/m6_formal_01_dpo/development_timeline.md)。
 
 本机采用 PyTorch MPS、Transformers 和 PEFT 的普通 LoRA，不是 4-bit QLoRA。`.venv` 使用 Python 3.12；完整实测依赖在 `requirements-lock.txt`。
 

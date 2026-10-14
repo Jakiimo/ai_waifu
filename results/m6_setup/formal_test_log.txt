@@ -1,0 +1,56 @@
+test_causal_probability_ignores_prompt_and_padding_but_supervises_answer (tests.test_m6_preference.PreferenceTests.test_causal_probability_ignores_prompt_and_padding_but_supervises_answer) ... ok
+test_dpo_initial_log_two_and_gradient_direction (tests.test_m6_preference.PreferenceTests.test_dpo_initial_log_two_and_gradient_direction) ... ok
+test_export_binds_real_candidate_text_and_rejects_tampered_category (tests.test_m6_preference.PreferenceTests.test_export_binds_real_candidate_text_and_rejects_tampered_category) ... ok
+test_family_leak_and_answer_in_scenario_are_rejected (tests.test_m6_preference.PreferenceTests.test_family_leak_and_answer_in_scenario_are_rejected) ... ok
+test_interrupted_candidate_collection_resumes_without_duplicates (tests.test_m6_preference.PreferenceTests.test_interrupted_candidate_collection_resumes_without_duplicates) ... ok
+test_no_low_quality_tie_unverified_or_stale_pair_can_be_accepted (tests.test_m6_preference.PreferenceTests.test_no_low_quality_tie_unverified_or_stale_pair_can_be_accepted) ... ok
+test_original_plan_has_270_cases_and_balanced_splits (tests.test_m6_preference.PreferenceTests.test_original_plan_has_270_cases_and_balanced_splits) ... ok
+test_real_tokenizer_keeps_one_eos_and_rejects_truncation (tests.test_m6_preference.PreferenceTests.test_real_tokenizer_keeps_one_eos_and_rejects_truncation) ... ok
+test_real_trl_toy_dpo_updates_only_policy_and_keeps_sft_reference (tests.test_m6_preference.PreferenceTests.test_real_trl_toy_dpo_updates_only_policy_and_keeps_sft_reference) ... /Users/jakiimo/Desktop/AI Waifu/.venv-m6/lib/python3.12/site-packages/peft/tuners/lora/layer.py:2285: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+/Users/jakiimo/Desktop/AI Waifu/.venv-m6/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:282: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Extracting prompt in train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Extracting prompt in train dataset: 100%|██████████| 2/2 [00:00<00:00, 480.78 examples/s]
+Applying chat template to train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 2/2 [00:00<00:00, 2152.58 examples/s]
+Tokenizing train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 2/2 [00:00<00:00, 529.12 examples/s]
+Train dataset reference log probs:   0%|          | 0/2 [00:00<?, ?it/s]Train dataset reference log probs:  50%|█████     | 1/2 [00:00<00:00,  7.61it/s]Train dataset reference log probs: 100%|██████████| 2/2 [00:00<00:00, 11.08it/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+ok
+test_review_pack_excludes_test_and_flags_duplicate_or_failed (tests.test_m6_preference.PreferenceTests.test_review_pack_excludes_test_and_flags_duplicate_or_failed) ... ok
+test_revision_keeps_rejected_and_records_source_and_reject_creates_no_pair (tests.test_m6_preference.PreferenceTests.test_revision_keeps_rejected_and_records_source_and_reject_creates_no_pair) ... ok
+test_test_split_cannot_generate_preferences_and_expectation_not_in_input (tests.test_m6_preference.PreferenceTests.test_test_split_cannot_generate_preferences_and_expectation_not_in_input) ... ok
+test_unknown_duplicate_corrupt_or_changed_source_candidate_rejected (tests.test_m6_preference.PreferenceTests.test_unknown_duplicate_corrupt_or_changed_source_candidate_rejected) ... ok
+test_actual_trainer_uses_fp32_loss_and_keeps_reference_and_base_unchanged (tests.test_m6_dpo.DPOTests.test_actual_trainer_uses_fp32_loss_and_keeps_reference_and_base_unchanged) ... Extracting prompt in train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Extracting prompt in train dataset: 100%|██████████| 2/2 [00:00<00:00, 1906.50 examples/s]
+Applying chat template to train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 2/2 [00:00<00:00, 2964.17 examples/s]
+Tokenizing train dataset:   0%|          | 0/2 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 2/2 [00:00<00:00, 2178.86 examples/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+Train dataset reference log probs:   0%|          | 0/2 [00:00<?, ?it/s]Train dataset reference log probs:  50%|█████     | 1/2 [00:00<00:00,  9.93it/s]Train dataset reference log probs: 100%|██████████| 2/2 [00:00<00:00, 13.82it/s]
+ok
+test_exact_reference_copy_fixes_low_precision_rounding_before_training (tests.test_m6_dpo.DPOTests.test_exact_reference_copy_fixes_low_precision_rounding_before_training) ... ok
+test_reference_context_restores_policy_even_if_reference_forward_raises (tests.test_m6_dpo.DPOTests.test_reference_context_restores_policy_even_if_reference_forward_raises) ... ok
+test_reviewed_pairs_reject_answer_split_family_or_duplicate_tampering (tests.test_m6_dpo.DPOTests.test_reviewed_pairs_reject_answer_split_family_or_duplicate_tampering) ... ok
+test_actual_both_trainers_handle_partial_accumulation_and_only_change_policy (tests.test_m6_formal.FormalTests.test_actual_both_trainers_handle_partial_accumulation_and_only_change_policy) ... The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+/Users/jakiimo/Desktop/AI Waifu/.venv-m6/lib/python3.12/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in  - will assume that the vocabulary was not modified.
+  warnings.warn(
+Extracting prompt in train dataset:   0%|          | 0/5 [00:00<?, ? examples/s]Extracting prompt in train dataset: 100%|██████████| 5/5 [00:00<00:00, 6355.01 examples/s]
+Applying chat template to train dataset:   0%|          | 0/5 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 5/5 [00:00<00:00, 8237.05 examples/s]
+Tokenizing train dataset:   0%|          | 0/5 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 5/5 [00:00<00:00, 5203.85 examples/s]
+Extracting prompt in eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]Extracting prompt in eval dataset: 100%|██████████| 1/1 [00:00<00:00, 1940.91 examples/s]
+Applying chat template to eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]Applying chat template to eval dataset: 100%|██████████| 1/1 [00:00<00:00, 2024.28 examples/s]
+Tokenizing eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]Tokenizing eval dataset: 100%|██████████| 1/1 [00:00<00:00, 1296.94 examples/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+Train dataset reference log probs:   0%|          | 0/5 [00:00<?, ?it/s]Train dataset reference log probs:  60%|██████    | 3/5 [00:00<00:00, 23.86it/s]Train dataset reference log probs: 100%|██████████| 5/5 [00:00<00:00, 22.45it/s]
+/Users/jakiimo/Desktop/AI Waifu/.venv-m6/lib/python3.12/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in  - will assume that the vocabulary was not modified.
+  warnings.warn(
+Eval dataset reference log probs:   0%|          | 0/1 [00:00<?, ?it/s]Eval dataset reference log probs: 100%|██████████| 1/1 [00:00<00:00, 1257.66it/s]
+ok
+test_chosen_sft_masks_all_context_and_excludes_rejected_with_one_eos (tests.test_m6_formal.FormalTests.test_chosen_sft_masks_all_context_and_excludes_rejected_with_one_eos) ... ok
+test_development_revision_and_unknown_test_rows_are_rejected (tests.test_m6_formal.FormalTests.test_development_revision_and_unknown_test_rows_are_rejected) ... ok
+test_final_data_retains_review_binding_and_disjoint_splits (tests.test_m6_formal.FormalTests.test_final_data_retains_review_binding_and_disjoint_splits) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 4.005s
+
+OK

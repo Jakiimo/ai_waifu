@@ -1,0 +1,31 @@
+{
+  "reviewed_at_utc": "2026-10-14T08:38:26.171355+00:00",
+  "reviewed_cases": 20,
+  "actions": {
+    "revise": 18,
+    "accept": 2
+  },
+  "reviewer": "当前对话Codex，全部AI反馈",
+  "human_feedback_count": 0,
+  "original_candidates_sha256": "2a1fcb21a46ee4a4b6a4a19a27eb33572925e14975c408e2dd66eb195a2f5557",
+  "pack_sha256": "0e5be1f045faa56e292ec4852077cbc6d0084b5d4c7cb08a4d1dce7682fdfdc3",
+  "draft_sha256": "fef815491c1f6298e46a38ca98664a40eea5920468265072243d40dfb3106596",
+  "decisions_sha256": "fd7a43fc0f77548df00c21c8540abfacf14972bb26df8298c5cb803e83dcd40f",
+  "rubric_sha256": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+  "python_fact_checks_sha256": "c8ee2d5d254aa7246faa058242769c2f2038bdae480f94449d845b3f21721a8a",
+  "limitations": [
+    "助手设计过场景并改写18条chosen，不是独立评分。",
+    "交换左右是同一上下文的复核，未调用独立Judge。",
+    "2条原候选直接选用仍有轻微表述不足，未评为满分。",
+    "新增chosen的教学信号可能解释改善，后续必须保留chosen-only SFT对照。"
+  ],
+  "technical_refs": [
+    "https://docs.python.org/3/library/stdtypes.html#dict.get",
+    "https://docs.python.org/3/library/stdtypes.html#typesseq-range"
+  ],
+  "food_refs": [
+    "https://www.fda.gov/media/87150/download",
+    "https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling"
+  ],
+  "formal_training_performed": false
+}

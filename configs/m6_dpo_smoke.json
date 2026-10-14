@@ -1,0 +1,21 @@
+{
+  "run_id": "m6_dpo_smoke_01",
+  "purpose": "20对真实Qwen DPO学习验证，非完整M6正式质量实验",
+  "pair_file": "data/m6/pairs/8c42c402efe59c25/train.jsonl",
+  "pair_manifest": "data/m6/pairs/8c42c402efe59c25/manifest.json",
+  "review_snapshot": "results/m6_preparation/reviews/batch_01_decisions.jsonl",
+  "candidate_snapshot": "results/m6_preparation/reviews/batch_01_candidates.jsonl",
+  "review_receipt": "results/m6_preparation/reviews/batch_01_receipt.json",
+  "review_pack": "results/m6_preparation/review/train_37eddc845e62f8e3.json",
+  "training_examples": 20,
+  "max_steps": 5,
+  "learning_rate": 0.00001,
+  "beta": 0.1,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "max_length": 320,
+  "seed": 42,
+  "development_case_ids": ["m6-dev-daily-01", "m6-dev-comfort-01", "m6-dev-study-01", "m6-dev-technical-01", "m6-dev-stability-01", "m6-dev-relationship-01"],
+  "development_max_new_tokens": 128,
+  "notes": "从现有SFT复制policy/reference两个LoRA；只更新policy。提前计算冻结SFT的参考概率。训练前后观察6条新开发题，不提供参考答案、不用最终测试。该学习验证不选最优checkpoint或宣称质量改善。"
+}

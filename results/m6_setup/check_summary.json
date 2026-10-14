@@ -1,0 +1,45 @@
+{
+  "recorded_at_utc": "2026-10-14T06:18:06.770986+00:00",
+  "stage": "M6-1偏好候选准备完成；M6整体未完成",
+  "m6_tests_in_m6_environment": {
+    "passed": 13,
+    "skipped": 0
+  },
+  "full_suite_in_original_environment": {
+    "collected": 72,
+    "passed": 71,
+    "skipped": 1,
+    "skip_reason": "原环境不安装TRL，实际TRL测试另在M6环境通过"
+  },
+  "pip_check_passed": true,
+  "mps_sft_sampling_qa_passed": true,
+  "tiny_cpu_trl_training_qa_passed": true,
+  "real_qwen_dpo_resource_check": "not_run",
+  "scenario_stats": {
+    "cases": 270,
+    "families": 270,
+    "counts": {
+      "train": 180,
+      "dev": 30,
+      "test": 60
+    },
+    "contextual": 16
+  },
+  "max_input_tokens": 123,
+  "formal_candidate_records": 0,
+  "actual_preference_reviews": 0,
+  "qwen_dpo_training_executed": false,
+  "chosen_only_sft_executed": false,
+  "m6_final_test_generated": false,
+  "old_sft_adapter_unchanged": true,
+  "m5_sealed_evidence_unchanged": true,
+  "manifest_sha256": "d9a93485e500023bb1271eced6694975b6657bab4af47a39738238c1d90d0e83",
+  "source_sha256": {
+    "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+    "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+    "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+    "scripts/m6_loss_demo.py": "131fc5e572d0941c92dcde75a375a7d8eae2df429ed95770ab749c5a5f23ef4b",
+    "tests/test_m6_preference.py": "fc9b34a2fa52e11b9cd76cc14fc3fde4bb1199e0655a803b6e9fd7cd667719b8"
+  },
+  "learner_next_step": ".venv-m6/bin/python scripts/m6.py collect --split train --limit 20"
+}

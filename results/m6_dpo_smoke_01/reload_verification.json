@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "verified_at_utc": "2026-10-14T09:50:14.814436+00:00",
+  "new_process_pid": 33728,
+  "different_process": true,
+  "max_logit_difference": 0.0,
+  "adapter_sha256": "57d887577c1cd2a96226552cb48c2f5c1a311ec2ce068aa058c075609e345fc6",
+  "run_manifest_sha256": "45ae35a618dc0ce1f5e78cd427cb59b5ff8a28e39cbe97516509c722e3b14fce",
+  "purpose": "仅确认20对小样本学习产物可重载，非完整M6质量结论"
+}

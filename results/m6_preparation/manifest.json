@@ -1,0 +1,1156 @@
+{
+  "prepared_at_utc": "2026-10-14T06:14:57.547195+00:00",
+  "conditions": {
+    "data_version": "m6-preference-v1",
+    "rubric_version": "m6-three-axis-v1",
+    "source_run": "m3_learning_01",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "trl": "0.24.0",
+      "datasets": "4.3.0"
+    },
+    "source_device": "mps",
+    "source_dtype": "torch.bfloat16",
+    "files": {
+      "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+      "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+      "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+      "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+      "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+      "outputs/m3_learning_01/adapter/adapter_model.safetensors": "41b51ef9b7d538f111e14d3ca6c47e90db0b7655d6041f14fb64ef6fd3cfffa6",
+      "outputs/m3_learning_01/adapter/adapter_config.json": "b9eea94e1bb980492895cf2ab0bf58648d27744f80fb0edd0a63822147ac81b5",
+      "outputs/m3_learning_01/run_manifest.json": "bcebe88491110d11436a519b6c178bd84050b8a01347087cdc26765409f4d415",
+      "models/model_manifest.json": "0fb61eb6b7088d393b3b94141f82c3326a40ac16d5a91ea3a02f1f39bdc670a3",
+      "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+      "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+      "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+      "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+      "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+      "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+      "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+      "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+      "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+      "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+    }
+  },
+  "scenario_stats": {
+    "cases": 270,
+    "families": 270,
+    "counts": {
+      "train": 180,
+      "dev": 30,
+      "test": 60
+    },
+    "contextual": 16
+  },
+  "input_token_counts": [
+    {
+      "id": "m6-train-daily-01",
+      "input_tokens": 86
+    },
+    {
+      "id": "m6-train-comfort-01",
+      "input_tokens": 85
+    },
+    {
+      "id": "m6-train-study-01",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-technical-01",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-01",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-relationship-01",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-daily-02",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-comfort-02",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-train-study-02",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-02",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-stability-02",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-train-relationship-02",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-daily-03",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-03",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-study-03",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-technical-03",
+      "input_tokens": 85
+    },
+    {
+      "id": "m6-train-stability-03",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-relationship-03",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-daily-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-04",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-study-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-technical-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-stability-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-04",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-daily-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-05",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-05",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-technical-05",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-stability-05",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-relationship-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-daily-06",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-comfort-06",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-06",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-technical-06",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-06",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-06",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-daily-07",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-train-comfort-07",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-study-07",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-train-technical-07",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-07",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-07",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-daily-08",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-08",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-08",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-08",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-stability-08",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-08",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-daily-09",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-comfort-09",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-study-09",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-technical-09",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-stability-09",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-09",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-daily-10",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-10",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-10",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-10",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-stability-10",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-relationship-10",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-daily-11",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-comfort-11",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-study-11",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-11",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-stability-11",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-relationship-11",
+      "input_tokens": 75
+    },
+    {
+      "id": "m6-train-daily-12",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-12",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-study-12",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-train-technical-12",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-stability-12",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-12",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-daily-13",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-13",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-study-13",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-technical-13",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-13",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-13",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-daily-14",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-comfort-14",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-14",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-14",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-stability-14",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-14",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-daily-15",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-comfort-15",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-study-15",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-technical-15",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-15",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-relationship-15",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-daily-16",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-16",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-16",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-technical-16",
+      "input_tokens": 86
+    },
+    {
+      "id": "m6-train-stability-16",
+      "input_tokens": 86
+    },
+    {
+      "id": "m6-train-relationship-16",
+      "input_tokens": 75
+    },
+    {
+      "id": "m6-train-daily-17",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-17",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-study-17",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-17",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-stability-17",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-17",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-daily-18",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-18",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-study-18",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-technical-18",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-18",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-relationship-18",
+      "input_tokens": 75
+    },
+    {
+      "id": "m6-train-daily-19",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-comfort-19",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-19",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-technical-19",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-19",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-relationship-19",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-daily-20",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-20",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-study-20",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-technical-20",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-stability-20",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-20",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-daily-21",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-21",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-study-21",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-technical-21",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-stability-21",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-relationship-21",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-daily-22",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-comfort-22",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-study-22",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-technical-22",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-stability-22",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-relationship-22",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-daily-23",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-comfort-23",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-study-23",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-technical-23",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-stability-23",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-23",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-daily-24",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-comfort-24",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-study-24",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-technical-24",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-stability-24",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-relationship-24",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-daily-25",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-comfort-25",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-25",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-technical-25",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-stability-25",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-relationship-25",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-daily-26",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-comfort-26",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-train-study-26",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-train-technical-26",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-26",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-relationship-26",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-daily-27",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-comfort-27",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-train-study-27",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-train-technical-27",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-train-stability-27",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-relationship-27",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-train-daily-28",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-train-comfort-28",
+      "input_tokens": 113
+    },
+    {
+      "id": "m6-train-study-28",
+      "input_tokens": 114
+    },
+    {
+      "id": "m6-train-technical-28",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-train-stability-28",
+      "input_tokens": 105
+    },
+    {
+      "id": "m6-train-relationship-28",
+      "input_tokens": 113
+    },
+    {
+      "id": "m6-train-daily-29",
+      "input_tokens": 115
+    },
+    {
+      "id": "m6-train-comfort-29",
+      "input_tokens": 110
+    },
+    {
+      "id": "m6-train-study-29",
+      "input_tokens": 115
+    },
+    {
+      "id": "m6-train-technical-29",
+      "input_tokens": 123
+    },
+    {
+      "id": "m6-train-stability-29",
+      "input_tokens": 106
+    },
+    {
+      "id": "m6-train-relationship-29",
+      "input_tokens": 109
+    },
+    {
+      "id": "m6-train-daily-30",
+      "input_tokens": 119
+    },
+    {
+      "id": "m6-train-comfort-30",
+      "input_tokens": 107
+    },
+    {
+      "id": "m6-train-study-30",
+      "input_tokens": 112
+    },
+    {
+      "id": "m6-train-technical-30",
+      "input_tokens": 118
+    },
+    {
+      "id": "m6-train-stability-30",
+      "input_tokens": 108
+    },
+    {
+      "id": "m6-train-relationship-30",
+      "input_tokens": 107
+    },
+    {
+      "id": "m6-dev-daily-01",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-dev-comfort-01",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-study-01",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-technical-01",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-dev-stability-01",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-dev-relationship-01",
+      "input_tokens": 85
+    },
+    {
+      "id": "m6-dev-daily-02",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-comfort-02",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-dev-study-02",
+      "input_tokens": 85
+    },
+    {
+      "id": "m6-dev-technical-02",
+      "input_tokens": 75
+    },
+    {
+      "id": "m6-dev-stability-02",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-dev-relationship-02",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-dev-daily-03",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-dev-comfort-03",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-dev-study-03",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-dev-technical-03",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-stability-03",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-dev-relationship-03",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-dev-daily-04",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-dev-comfort-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-study-04",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-dev-technical-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-dev-stability-04",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-dev-relationship-04",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-dev-daily-05",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-dev-comfort-05",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-dev-study-05",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-dev-technical-05",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-dev-stability-05",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-dev-relationship-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-daily-01",
+      "input_tokens": 85
+    },
+    {
+      "id": "m6-test-comfort-01",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-study-01",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-test-technical-01",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-test-stability-01",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-test-relationship-01",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-test-daily-02",
+      "input_tokens": 86
+    },
+    {
+      "id": "m6-test-comfort-02",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-study-02",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-test-technical-02",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-stability-02",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-relationship-02",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-daily-03",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-comfort-03",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-study-03",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-test-technical-03",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-stability-03",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-relationship-03",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-daily-04",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-comfort-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-study-04",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-test-technical-04",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-stability-04",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-relationship-04",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-daily-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-comfort-05",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-study-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-technical-05",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-test-stability-05",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-relationship-05",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-daily-06",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-test-comfort-06",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-test-study-06",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-test-technical-06",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-test-stability-06",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-test-relationship-06",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-test-daily-07",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-test-comfort-07",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-study-07",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-technical-07",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-test-stability-07",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-relationship-07",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-test-daily-08",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-comfort-08",
+      "input_tokens": 82
+    },
+    {
+      "id": "m6-test-study-08",
+      "input_tokens": 79
+    },
+    {
+      "id": "m6-test-technical-08",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-stability-08",
+      "input_tokens": 76
+    },
+    {
+      "id": "m6-test-relationship-08",
+      "input_tokens": 86
+    },
+    {
+      "id": "m6-test-daily-09",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-comfort-09",
+      "input_tokens": 78
+    },
+    {
+      "id": "m6-test-study-09",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-test-technical-09",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-stability-09",
+      "input_tokens": 77
+    },
+    {
+      "id": "m6-test-relationship-09",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-daily-10",
+      "input_tokens": 83
+    },
+    {
+      "id": "m6-test-comfort-10",
+      "input_tokens": 80
+    },
+    {
+      "id": "m6-test-study-10",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-test-technical-10",
+      "input_tokens": 81
+    },
+    {
+      "id": "m6-test-stability-10",
+      "input_tokens": 84
+    },
+    {
+      "id": "m6-test-relationship-10",
+      "input_tokens": 78
+    }
+  ],
+  "max_input_tokens": 123,
+  "snapshot_files": {
+    "configs/m6.json": "d084ecd012249b4bdd21a1608d4fceb1f1318ecc991ed99cb5cd5f9dc5c15631",
+    "data/m6/scenarios.jsonl": "5ef0927e7a9f0ef3779d392028b731a2971281a36df1dc8d71a7ab3985aed4b7",
+    "configs/m6_rubric.json": "1c2de3340a8d10fe1ba7f8ffb02d459dd1ca8c39a7332db415b49acdb22b4eab",
+    "configs/m2_prompts.json": "5538d0f12fc3ff03d1c976cb2531c782f9f238340e9af1f9a498af7a6ef2df3f",
+    "configs/m3_learning.json": "320bfb64e0b2ba7e26c9f763ad62c2fc78d59b411e50d70688d4512ee981ed84",
+    "requirements-m6.txt": "1b9906079d2e7c87ea15cd78a97aba929ad2b062c2f4313949fa7f392fd1de8b",
+    "requirements-m6-lock.txt": "d644085dd98137333e9cb065afda321426a732560c8e4f9f6337cf4b50a3a78a",
+    "scripts/m6.py": "91b94c21ab1494ecf49c0fb4f3e09ce6beac0864b8b8a5785def15eb85226d8f",
+    "preference_data.py": "f05066549ab6c3c922f0bb36c37424111ae5ff6ca3e9be51f6c32fbd56aaf692",
+    "scripts/create_m6_scenarios.py": "fd2b40618e64b5552302c0ed1b8507482af42fe8635ce8ec4588fceceac837b4",
+    "demo.py": "c91a2e9e3a85629d127c515fd24fbf4afa940d3aeabef0530daddc1a4dd81a06",
+    "scripts/m3.py": "a4878c362bfd5f39997f078d3475b05d6ba34b62c106a6678501962415c6eba1",
+    "training_data.py": "72635350c7929573209900c8b0f708b374f2276d8a819e15ff892e493e244607",
+    "configs/m4.json": "226e61bf068e38c0e49d20e1c3a940c44d0df7a520aa28bfbe04c921b9ec4b9a",
+    "docs/凛音_角色卡.md": "d4bb01ee5e17b1d4e1f2969cadfb606f5edb86760aed195055dcbca2e112df27"
+  },
+  "near_duplicate_hits": [],
+  "data_source": "AI辅助原创场景，尚无模型候选或审核标签",
+  "test_usage": "新最终测试封存，不采样训练候选；未证明全量语义独立",
+  "formal_training": "not_run",
+  "grading_source": "AI，未冒充人类偏好"
+}

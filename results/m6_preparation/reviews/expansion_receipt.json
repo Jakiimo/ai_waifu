@@ -1,0 +1,44 @@
+{
+  "reviewed_at_utc": "2026-10-14T13:33:44.458535+00:00",
+  "new_reviews": 190,
+  "preserved_reviews": 20,
+  "new_actions_by_split": {
+    "train": {
+      "revise": 135,
+      "accept": 24,
+      "reject": 1
+    },
+    "dev": {
+      "reject": 24,
+      "accept": 6
+    }
+  },
+  "reviewer": "当前对话Codex，全部AI反馈",
+  "human_feedback_count": 0,
+  "original_candidates_sha256": "76eb461916841f374daca63e3aa3dad28f0ef6dc9479a0cf48a444567a509b4e",
+  "new_decisions_sha256": "d8275004b94cd7bfaa351f45d7022a23cbb7e8ae4e4ff04d983ce8ce9d93547e",
+  "combined_decisions_sha256": "6e97e0137deb7e045d21988e08d07074ddef7461d151512af1cc51f5472c9668",
+  "preserved_decisions_sha256": "fd7a43fc0f77548df00c21c8540abfacf14972bb26df8298c5cb803e83dcd40f",
+  "draft_sha256": {
+    "expansion_dev_draft.json": "89239fdb10efb4bca075534e5f6b00bf199b77d7b2c5d6e30e0f357cbef1df53",
+    "expansion_train_01_draft.json": "83dd45cb89510b7ef98093c25e2516150acdbe7dd828ba081492d344fde31629",
+    "expansion_train_02_draft.json": "6691d83fa572217769dd44304c9518a6b342b9f2f3d43ad8be93c35b2679ec47",
+    "expansion_train_03_draft.json": "0a37b3d3cad78a05c542840907c1a22e19170b1982ce32da1fefdf58f87faef9",
+    "expansion_train_04_draft.json": "cb700abdbe67d9d2061b61f99e92f791ae9895c6ce097e8b69fabf28b9d31e83"
+  },
+  "facts_sha256": "ee8aec84efd9bb9944613d91bbcd4da97de089ff87e4b23a52db92834acfcc58",
+  "pack_sha256": {
+    "train_2c502572871d3a6b": "4b9a359da886188433bd442713778af367b5c13e4f4dd1ff87e8b40f5ef6f500",
+    "dev_9fb390767512ca1d": "2ada79dc03ef277a8748ac89991cec1ccad08de71353d54e7b8427fb30b52fb7"
+  },
+  "limitations": [
+    "同一AI参与场景设计、改写和审核，未独立盲评。",
+    "交换复核是同一上下文，已知偏好身份。",
+    "训练修订比例高，必须做chosen-only SFT对照。",
+    "开发只保留6组原候选偏好，类别覆盖不足；不能据此全量选参。",
+    "仅2组较弱风格偏好与1组呈现偏好，大部分为任务/情境纠错。"
+  ],
+  "dev_revisions": 0,
+  "final_test_generated": false,
+  "formal_training_performed": false
+}
